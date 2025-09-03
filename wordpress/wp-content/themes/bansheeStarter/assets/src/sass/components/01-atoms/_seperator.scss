@@ -1,0 +1,42 @@
+@use '../../abstracts' as *;
+@use '../../base/fonts' as font;
+
+/********************************
+	Atom: Content Seperator
+********************************/
+/* Content Seperators */
+.content-seperator{
+  & {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-style: normal;
+        gap: 20px;
+  }
+
+  svg {
+    max-width: 25px;
+  }
+  .u-bgColorWhite &,
+  .u-bgColorLightGray &{
+    color: swatch('Neutral')
+  }
+
+  &.has-text{
+    font-family: $font-stack-primary!important;
+    padding-bottom: .5rem;
+    &:not(:first-child){
+      margin-top: $block-padding-mobile;
+      @include create-mq($md-width) {
+        margin-top: $block-padding;
+      }
+      .block--padding-large &{
+        @include create-mq($lg-width) {
+          margin-top: $block-padding-lg;
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,26 @@
+@use '../../abstracts' as *;
+
+/********************************
+	SOCIAL ICONS
+********************************/
+
+.social__icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 1rem;
+
+    &::before {
+      display: none;
+    }
+  }
+  
+  &--inline {
+    li {
+      display: inline;
+      margin: 0 0.5rem;
+    }
+  }
+}

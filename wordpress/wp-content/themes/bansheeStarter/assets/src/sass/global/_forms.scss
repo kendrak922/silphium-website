@@ -1,0 +1,485 @@
+@use '../abstracts' as *;
+@use '../components/01-atoms/button' as button;
+@use '../base/fonts' as font;
+
+// /********************************
+// 	FORMS
+// ********************************/
+
+// @mixin form_field() {
+// 	@include font.body();
+// 	appearance: none;
+// 	background-color: transparent;
+// 	border-radius: 0;
+// 	border: none;
+// 	border-bottom: 1px swatch('White') solid;
+// 	box-shadow: none;
+// 	color: swatch('White');
+// 	display: block;
+// 	font-size: 1rem;
+// 	line-height: 1.5rem;
+// 	padding: .5rem .75rem;
+// 	transition: $transition-default;
+// 	width: 100%;
+// 	&[disabled] {
+// 		border-bottom-color: swatch('Gray');
+// 		color: swatch('Gray');
+// 	}
+// 	&:focus,
+// 	&:focus-visible {
+// 		border-color: swatch('Primary');
+// 		border-width: 2px;
+// 		outline: none;
+// 	}
+
+// 	&::placeholder {
+// 		font-size: 0.875rem;
+// 		letter-spacing: 0.08em;
+// 	}
+// }
+
+// @mixin label() {
+// 	@include font.smallNav();
+// 	color: swatch('White');
+// 	font-weight: normal;
+// 	display: block;
+// 	font-weight: 300;
+// }
+
+// body:not(.wp-admin) {
+// 	.frm_screen_reader,
+// 	.frm_verify {
+// 		@include sr_only();
+// 	}
+// 	legend {
+// 		@include label();
+// 	}
+
+// 	.wpforms-field-description {
+// 		@include label();
+// 		font-style: italic;
+// 	}
+
+// 	input,
+// 	textarea,
+// 	select {
+// 		@include form_field();
+// 	}
+
+// 	// textarea
+// 	textarea {
+// 		min-height: 6rem;
+// 		padding: 1rem;
+
+// 		&:focus,
+// 		&:focus-visible {
+// 			border-color: swatch('Neon');
+// 		}
+// 	}
+// 	form ul {
+// 		list-style: none;
+// 		gap: 20px;
+// 		display: flex;
+// 		flex-wrap: wrap;
+// 		margin-left: 0;
+// 	}
+// 	// radios and checkboxes
+// 	input[type='checkbox'],
+// 	input[type='radio'] {
+// 		display: none;
+// 		+ label,
+// 		+ legend,
+// 		+ span {
+// 			@include label();
+// 			align-items: center;
+// 			cursor: pointer;
+// 			display: flex;
+// 			position: relative;
+// 			color: swatch('Neon');
+// 			border: 1px solid swatch('Neon');
+// 			border-radius: 50px;
+// 			padding: 10px 14px;
+// 			font-weight: 500;
+// 		}
+
+// 		&:checked {
+// 			+ label,
+// 			+ span {
+// 				&::before {
+// 					background: swatch('Neutral');
+// 				}
+// 				&::after {
+// 					display: block;
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	form ul .wpforms-selected {
+// 		label,legend,span {
+// 			background-color: swatch('Neon');
+// 			color: swatch('Neutral');
+// 		}
+// 	}
+
+// 	input[type='radio'] {
+// 		+ label,
+// 		+ span {
+// 			&::before {
+// 				border-radius: 50%;
+// 			}
+
+// 			&::after {
+// 				display: none;
+// 			}
+// 		}
+
+// 		&:checked {
+// 			+ label,
+// 			+ span {
+// 				&::before {
+// 					// box-shadow: inset 0 0 0 .25rem swatch('White');
+// 				}
+
+// 				&::after {
+// 					content: '';
+// 					display: none;
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	//
+// 	// * Select
+// 	//
+// 	select {
+// 		background-color: swatch('Tertiary');
+// 		background-image: url('../imgs/icons/icon-chevron-down-white.svg');
+// 		background-position: calc(100% - 0.625rem) center;
+// 		background-repeat: no-repeat;
+// 		background-size: 1rem auto;
+// 		border-radius: 0;
+// 		border: none;
+// 		color: swatch('White');
+// 		height: 3.625rem;
+// 		padding: 1.25rem 2rem 1.25rem 1.5rem;
+// 		width: 100%;
+// 	}
+
+// 	//
+// 	// * Label
+// 	//
+// 	label,
+// 	.frm_primary_label {
+// 		@include label();
+// 		margin: 0 0 1rem;
+// 	}
+// 	.frm_hidden_container {
+// 		@media only screen and (max-width: 600px) {
+// 			margin-top: -2rem;
+// 			.frm_primary_label {
+// 				pointer-events: none;
+// 				position: absolute;
+// 				top: 0;
+// 			}
+// 		}
+// 	}
+// 	// radio and checkbox labels
+// 	div.frm_primary_label{
+// 		@include font.h5();
+// 		font-weight: $font-weight-bold;
+// 		margin: 0 0 1.5rem;
+// 	}
+// 	.frm_checkbox,
+// 	.frm_radio {
+// 		margin: 0.5rem 0;
+
+// 		+ .frm_checkbox,
+// 		+ .frm_radio {
+// 			margin: 0.5rem 0;
+// 		}
+
+// 		label {
+// 			align-items: center;
+// 			display: flex;
+// 			font-weight: normal;
+// 		}
+// 	}
+
+// 	.frm_description {
+// 		font-size: 0.75rem;
+// 		margin-top: 1rem;
+// 	}
+
+// 	// Layout elements
+// 	fieldset {
+// 		border: none;
+// 		margin: 0;
+// 		padding: 0;
+// 	}
+
+// 	.form-field {
+// 		margin-bottom: 2rem;
+// 		position: relative;
+// 	}
+
+// 	input[type='submit'],
+// 	button[type='submit'] {
+// 		@include button.btn(button.$btnOutline);
+
+// 		& {
+// 			@include font.smallNav();
+// 		}
+// 		@include create-mq($md-width) {
+// 			font-size: 1.125rem;
+// 			line-height: 1.2em;
+// 			padding: 1rem;
+// 		}
+// 		& {
+// 			color: swatch('White');
+// 			border: 1px solid swatch('White');
+// 			border-radius: 0;
+// 			padding: 16px 44px;
+// 		}
+
+// 		&:hover {
+// 			border-color: swatch('PrimaryHover');
+// 		}
+// 	}
+
+// 	// Success
+// 	.frm_message p {
+// 		color: swatch('Black');
+// 		font-weight: $font-weight-heavy;
+// 		letter-spacing: 0.02em;
+// 		text-align: center;
+// 	}
+
+// 	// Errors
+
+// 	.frm_blank_field {
+// 		label,
+// 		.frm_description {
+// 			color: swatch('Error');
+// 		}
+
+// 		input, textarea {
+// 			border-color: swatch('Error');
+// 			font-family: $font-stack-primary;
+// 		}
+// 		select {
+// 			background-color: swatch('Error');
+// 		}
+// 	}
+// 	.frm_error_style{
+// 		color: swatch('Error');
+// 		padding:0 0 2rem
+// 	}
+
+// 	.frm_error_style p,
+// 	.frm_error {
+// 		@include label();
+// 		color: swatch('Error');
+// 	}
+
+// 	.frm_error {
+// 		font-size: 0.75rem;
+// 		margin-top: 0.5rem;
+// 	}
+
+// 	.other-field {
+// 		display: flex;
+// 		label {
+// 			width: 80px;
+// 			align-content: flex-end;
+// 			margin-bottom: 0;
+// 			color: swatch('Neon');
+// 		}
+// 		input {
+// 			border-color: swatch('Neon');
+// 			flex-basis: 215px;
+// 		}
+// 	}
+// }
+
+// /** Tooltips **/
+
+// #cluetip {
+// 	.cluetip-close {
+// 		margin-bottom: 1rem;
+// 		text-align: right;
+// 		a {
+// 			font-size: 0.875rem;
+// 			font-weight: $font-weight-heavy;
+// 			letter-spacing: 0.08em;
+// 			line-height: 1.2em;
+// 			text-decoration: none;
+// 		}
+// 	}
+// }
+
+// .metabox-location-normal{
+// 	margin: 0;
+// }
+
+
+// // form {
+// //     display: flex;
+// // 	flex-direction: column;
+// //     justify-content: space-between;
+// //     color: swatch('White');
+// //     gap: 20px;
+// // }
+
+// // newsletter signup
+
+// .footer__form {
+// 	.wpforms-container .wpforms-field-label {
+// 		display: none;
+// 	}
+
+// 	.wpforms-field {
+// 		margin-top: 0!important;
+// 		input {
+// 			width: 100%;
+// 			color: swatch('White');
+// 			max-width: 447px;
+// 			border: 1px solid swatch('White');
+// 			border-radius: 0;
+// 			padding: 12px;
+// 			background-color: transparent;
+// 			margin-bottom: 0;
+// 		}
+// 	}
+
+// 	.wpforms-field-container {
+// 		flex-grow: 1;
+// 	}
+
+// 	.wpforms-submit-container button.wpforms-submit[type="submit"] {
+// 		background-color: swatch('Orange');
+// 		color: swatch('Black');
+// 		padding: 0.65rem 1.5rem;
+// 		border: none;
+// 		border-radius: 0;
+// 		&:hover {
+// 			background-color: swatch('SecondaryHover');
+// 		}
+// 	}
+
+// 	form {
+// 		flex-direction: row;
+// 		flex-wrap: wrap;
+// 	}
+	
+// }
+
+// .wpforms-hidden {
+// 	display: none;
+// }	
+
+
+// .wpforms-field-container {
+//     display: flex;
+//     flex-flow: column;
+// }
+
+// .wpforms-field-container{
+// 	.wpforms-field:not(.other-field) {
+// 		margin-top: 40px;
+// 		@include create-mq($md-width) {
+// 			margin-top: 70px;
+// 		}
+// 	}
+// 	.wpforms-field:first-child {
+// 		margin-top: 0;
+// 	}
+
+// }
+
+
+
+// em[role="alert"] {
+//     color: swatch('Error');
+// }
+
+// // enable two field row
+// fieldset > div {
+//     display: flex;
+//     flex-flow: row;
+//     gap: 30px;
+// }
+
+// fieldset > div label {
+// 	font-style: italic;
+// }
+
+// .wpforms-field-row-block.wpforms-one-half {
+// 	display: flex;
+// 	flex-flow: column;
+//     flex-basis: 50%;
+// 	margin-top: 1rem;
+// 	label {
+// 		order: -1;
+// 	}
+// }
+
+// .wpforms-required-label {
+// 	color: swatch('Orange');
+// }
+
+// .other-field {
+//     display: flex;
+// 	label {
+// 		width: 80px;
+// 		align-content: flex-end;
+// 		margin-bottom: 0;
+// 		color: swatch('Yellow');
+// 	}
+// 	input {
+// 		border-color: swatch('Yellow');
+// 		flex-basis: 215px;
+// 	}
+// }
+
+input.n1, input.CI1, .F1, .bf-phone-fld-wrp.l1{
+    border-top-width: 0!important;
+    border-left-width: 0!important;
+    border-right-width: 0!important;
+}
+
+:is(a, button, input, textarea, summary):focus-visible {
+    outline: 0;
+}
+
+form .CN1 {
+	@include create-mq($md-width) {
+		grid-template-columns: 200px 400px;
+	}
+}
+
+label {
+	margin-bottom: 31px;
+}
+
+.btcd-fld-itm {
+    margin-bottom: 20px;
+	@include create-mq($md-width) {
+		margin-bottom: 65px;
+	}
+}
+
+.bf-req-smbl {
+    color: swatch('Red')!important;
+}
+
+textarea {
+    height: 162px!important;
+	@include create-mq($md-width) {
+		height: 277px;
+	}
+}
+
+body:not(.wp-admin) main .bf-err-txt {
+    font-size: 1rem!important;
+}

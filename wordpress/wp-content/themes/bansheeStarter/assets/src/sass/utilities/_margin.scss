@@ -1,0 +1,81 @@
+@use '../abstracts' as *;
+
+/** 
+ * _margin.scss
+ * Margin helpers
+ *
+ * ~1) Horizontal and Vertical
+ * ~2) Horizontal
+ * ~3) Vertical
+ * ~4) Media queries
+ */
+
+@mixin create-margin-classes($modifier, $breakpoint) {
+    @include create-mq($breakpoint) {
+        &#{$modifier}-margin {
+            @for $i from 0 through 40 {
+                /* ~1) Horizontal and Vertical
+        ========================================================================== */
+                &#{$i}gu {
+                    margin: $grid-unit * $i;
+                }
+
+                /* ~2) Horizontal
+        ========================================================================== */
+
+                /* Left */
+                &Left#{$i}gu {
+                    margin-left: $grid-unit * $i;
+                }
+
+                /* Right */
+                &Right#{$i}gu {
+                    margin-right: $grid-unit * $i;
+                }
+
+                /* Right/Left Pairs */
+                &Horiz#{$i}gu {
+                    margin-left: $grid-unit * $i;
+                    margin-right: $grid-unit * $i;
+                }
+
+                /* ~3) Vertical
+        ========================================================================== */
+
+                /* Bottom */
+                &Bottom#{$i}gu {
+                    margin-bottom: $grid-unit * $i;
+                }
+
+                /* Top */
+                &Top#{$i}gu {
+                    margin-top: $grid-unit * $i;
+                }
+
+                &Vert#{$i}gu {
+                    margin-top: $grid-unit * $i;
+                    margin-bottom: $grid-unit * $i;
+                }
+            }
+
+            &HorizAuto {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            &LeftAuto {
+                margin-left: auto;
+            }
+
+            &RightAuto {
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+.u {
+    @each $modifier, $breakpoint in $map-width-props {
+        @include create-margin-classes($modifier, $breakpoint);
+    }
+}

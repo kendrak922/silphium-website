@@ -1,0 +1,107 @@
+@use '../../../assets/src/sass/abstracts' as *;
+
+/******************************
+    BLOCK: Hero Banner
+******************************/
+section.block--hero-banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 90vh;
+
+    @include create-mq($md-width) {
+        padding-top: 140px;
+    }
+
+    @include create-mq($lg-width) {
+        margin: 0 auto;
+    }
+
+    @include create-mq($xl-width) {
+        margin: 0 auto;
+    }
+
+    .yoast-breadcrumbs {
+        margin-bottom: 3rem;
+        margin-top: 0;
+    }
+
+    .container {
+
+        &[data-content-align-x='right'] {
+            justify-content: flex-end;
+
+            // @include create-mq($md-width) {
+            //     flex-wrap: nowrap;
+            //     justify-content: space-between;
+
+            //     .hero-banner__content {
+            //         order: 1;
+            //     }
+            // }
+        }
+        &[data-content-align-x='center'] {
+            justify-content: center;
+
+            // @include create-mq($md-width) {
+            //     flex-wrap: nowrap;
+            //     justify-content: space-between;
+
+            //     .hero-banner__content {
+            //         order: 1;
+            //     }
+            // }
+        }
+
+        &[data-content-align-x='left'] {
+            justify-content: flex-start;
+
+            // @include create-mq($md-width) {
+            //     flex-wrap: nowrap;
+            //     justify-content: space-between;
+
+            //     .hero-banner__content {
+            //         order: -1;
+            //     }
+            // }
+        }
+    }
+
+}
+
+.hero-banner {
+    &__image {
+        @include create-mq($md-width) {
+            // flex-basis: 48%;
+        }
+    }
+
+    &__content {
+        max-width: 1000px;
+        position: relative;
+        z-index: 1;
+        padding: 12px;
+        @include create-mq($md-width) {
+            padding: 48px;
+            right: auto;
+        }
+        @include create-mq($lg-width) {
+
+        }
+        img {
+            right: 0;
+            max-width: 76px;
+            position: absolute;
+            @include create-mq($md-width) {
+                right: 50px;
+            }
+        }
+        h1,h2,h3,h4 {
+            margin:0;
+        }
+    }
+
+}
+
+
+// close: .block--hero-banner

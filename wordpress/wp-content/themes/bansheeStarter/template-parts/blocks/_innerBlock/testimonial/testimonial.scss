@@ -1,0 +1,104 @@
+@use '../../../assets/src/sass/abstracts' as *;
+
+/******************************
+    BLOCK: Testimonial
+******************************/
+.testimonial {
+    margin: 0 auto;
+    &--desktop {
+        max-width: 1080px;
+    }
+    @include create-mq($lg-width) {
+    min-height: 1500px
+    }
+}
+
+.swiper {
+    width: 280px;
+    height: 800px;
+    @include create-mq($xs-width) {
+        width: 320px;
+    }
+}
+
+.testimonial__single {
+    max-width: 300px;
+    margin-bottom: 40px;
+
+    @include create-mq($md-width) {
+        max-width: 520px;
+    }
+    
+    &-content {
+        padding: 32px 32px 50px 100px;
+        position: relative;
+        height: fit-content;
+        @include create-mq($md-width) {
+            padding: 32px 32px 50px 120px;
+        }
+        &::before {
+            content: '';
+            background-image: url('/wp-content/themes/bansheeStarter/assets/dist/imgs/icons/icon-quote.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            bottom: 100%;
+            display: block;
+            height: 1.5rem;
+            left: 32px;
+            margin: 0;
+            position: absolute;
+            top: 32px;
+            width: 2rem;
+            height: 2rem;
+
+            @include create-mq($md-width) {
+                height: 2.5rem;
+                width: 3rem;
+            }
+    
+            .wp-admin & {
+                top:0;
+            }
+        }
+    }
+
+    &-image {
+        display: flex;
+        align-items: flex-end;
+        max-height: 300px;
+        @include create-mq($md-width) {
+            max-height: unset;
+
+        }
+    }
+
+    &-author {
+        margin-top: 24px;
+    }
+
+    img {
+        width: 100%;
+        flex-grow: 0;
+    }
+
+    [data-atom='heading']{
+        max-width: fit-content;
+    }
+    .display-quote {
+          font-style: italic;
+          font-weight: 400; 
+          line-height: 120%;
+          font-size: 1.5rem!important; //24
+              @include create-mq($md-width) {
+                padding-right: 40px;
+                font-size: 1.8125!important; //29
+            }
+    
+    }
+}
+
+// @media only screen and (max-width: 768px) {
+//     .testimonial__single {
+//         flex-basis: 100%;
+//     }
+// }

@@ -1,0 +1,184 @@
+/*************************************************************
+   * WP ADMIN
+*************************************************************/
+/* DEFINE CSS3 VARS */
+:root {
+  --admin_sidebarWidth: 27%;
+  --admin_sidebarWidth_min: 400px;
+}
+
+/***** GLOBAL ADMIN *****/
+.wp-admin ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.wp-admin ul li {
+  padding: 0;
+  margin: 0;
+}
+
+.wp-block-freeform {
+  padding: 10px 20px;
+}
+
+/***** TABLET AND UP *****/
+@media screen and (min-width: 782px) {
+  /* GUTENBERG EDITOR */
+  .wp-admin .edit-post-layout .interface-interface-skeleton__body {
+    padding-bottom: 30px;
+  }
+  .wp-admin .edit-post-layout .wp-block {
+    max-width: 100%;
+  }
+  .wp-admin .edit-post-layout .block-editor-block-list__layout .wp-block {
+    border: solid 1px #ccc;
+  }
+  .wp-admin .edit-post-layout .wp-block + .wp-block {
+    margin-top: 10px;
+  }
+
+  /* GUTENBERG SIDEBAR */
+  .wp-admin
+    .edit-post-layout.is-sidebar-opened
+    .block-editor-editor-skeleton__sidebar,
+  .wp-admin
+    .edit-post-layout.is-sidebar-opened
+    .interface-interface-skeleton__sidebar {
+    width: var(--admin_sidebarWidth);
+    min-width: var(--admin_sidebarWidth_min);
+  }
+  .wp-admin .edit-post-layout.is-sidebar-opened .edit-post-sidebar {
+    width: 100%;
+  }
+} /* end: tablet^ styles */
+
+/* ---------------------------------------------------------------------
+ Admin CSS - Injected into the WordPress Dashboard
+------------------------------------------------------------------------ */
+
+/* ---------------------------------------------------------------------
+ Hide customize button on Theme selection pages
+------------------------------------------------------------------------ */
+/*  */
+.theme-actions .button.customize {
+  display: none !important;
+}
+
+/* ---------------------------------------------------------------------
+Add interface colored swatches to ACF picker
+------------------------------------------------------------------------ */
+.acf-radio-list {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+
+.acf-radio-list::before,
+.acf-radio-list::after {
+  display: none;
+}
+
+.acf-radio-list input[type=radio] {
+  margin-right: 10px;
+}
+
+.acf-radio-list > li > label {
+  display: inline-block;
+  border: 1px solid transparent;
+  padding: 5px 16px;
+  border-radius: 22px;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=default]),
+.acf-radio-list > li > label:has(input[type=radio][value=txtColor]),
+.acf-radio-list > li > label:has(input[type=radio][value=hdgColor]) {
+  background-color: #F0FBEF;
+  border-color: #ccc;
+  border-style: dotted;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=transparent]) {
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+
+.acf-radio-list > li > label:has(input[type=radio][value=White]) {
+  background-color: #F0FBEF;
+  border-color: #ccc;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Primary]) {
+  background-color: #8F4521;
+  border-color: #8F4521;
+  color: #fff;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Secondary]) {
+  background-color: #CFE4FF;
+  border-color: #CFE4FF;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Tertiary]) {
+  background-color: #3C896D;
+  border-color: #3C896D;
+  color: #fff;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Blue]) {
+  background-color: #1B5299;
+  border-color: #1B5299;
+  color: #fff;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Red]) {
+  background-color: #DB3A34;
+  border-color: #DB3A34;
+  color: #fff;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=LightBlue]) {
+  background-color: #CFE4FF;
+  border-color: #CFE4FF;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Pink]) {
+  background-color: #F75590;
+  border-color: #F75590;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=LightGreen]) {
+  background-color: #D0EFB1;
+  border-color: #D0EFB1;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Brown]) {
+  background-color: #8F4521;
+  border-color: #8F4521;
+  color: #fff;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Green]) {
+  background-color: #3C896D;
+  border-color: #3C896D;
+  color: #fff;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Yellow]) {
+  background-color: #FCFDAF;
+  border-color: #FCFDAF;
+}
+
+
+.acf-radio-list > li > label:has(input[type=radio][value=Gray]) {
+  background-color: #8F9191;
+  border-color: #8F9191;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Black]) {
+  background-color: #1A1D18;
+  border-color: #1A1D18;
+  color: #fff;
+}
+

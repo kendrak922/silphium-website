@@ -1,0 +1,317 @@
+@use '../abstracts' as *;
+
+/////////////////
+/// * NOTES * ///
+/////////////////
+
+/// ! Required variables (from abstracts/_variables.scss)
+// All from Layout -> Grid elements, container elements, breakpoints and $map-width-props
+
+//////////////////
+/// * MIXINS * ///
+//////////////////
+
+// these are only used locally (within this file) so we don't need to add them to the main mixins file at this time.
+
+// create the column classes, this will loop through all modifiers ($map-width-props from abstracts/_variables.scss), columns and breakpoints
+@mixin create-col-classes($modifier, $grid-columns, $breakpoint) {
+  @include create-mq($breakpoint) {
+    @for $i from 1 through $grid-columns {
+      &#{$modifier}--#{$i} {
+        flex-basis: calc(((100 / (#{$grid-columns} / #{$i})) * 1%) - 1px);
+
+        @each $gutter-modifier, $gutter-size in $grid-gutter-props {
+          .grid--#{$gutter-modifier} > & {
+            flex-basis: calc(
+              100% / #{$grid-columns} * #{$i} - #{$gutter-size} / #{$grid-columns} * (#{$grid-columns} - #{$i})
+            );
+          }
+        }
+      }
+
+      &#{$modifier}--#{$i}--strict {
+        flex: none;
+        width: calc((100 / ($grid-columns / $i)) * 1%);
+      }
+
+      &#{$modifier}--offset-#{$i} {
+        margin-left: calc((100 / ($grid-columns / $i)) * 1%);
+      }
+    }
+
+    &#{$modifier}-auto {
+      flex-basis: 0;
+    }
+
+    // spacing the boxes
+    &#{$modifier}--spaced {
+      margin: $grid-gutter;
+    }
+
+    // fit content
+    &#{$modifier}--fit-content {
+      flex: none;
+      width: auto;
+    }
+
+    // first and last order
+    &#{$modifier}--flex-first {
+      order: -1;
+    }
+    &#{$modifier}--flex-last {
+      order: 9999;
+    }
+  }
+}
+
+// This creates all of the flex classes so we can change the layout
+@mixin create-flex-classes($modifier, $breakpoint) {
+  @include create-mq($breakpoint) {
+    // direction
+    &#{$modifier}--row {
+      flex-direction: row;
+    }
+    &#{$modifier}--row-reverse {
+      flex-direction: row-reverse;
+    }
+    &#{$modifier}--column {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+    &#{$modifier}--column-reverse {
+      flex-direction: column-reverse;
+      flex-wrap: nowrap;
+    }
+
+    // wrapping
+    &#{$modifier}--no-wrap {
+      flex-wrap: nowrap;
+    }
+    &#{$modifier}--wrap {
+      flex-wrap: wrap;
+    }
+    &#{$modifier}--wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+
+    // vertical alignment
+    &#{$modifier}--align-top {
+      align-items: flex-start;
+    }
+    &#{$modifier}--align-center {
+      align-items: center;
+    }
+    &#{$modifier}--align-bottom {
+      align-items: flex-end;
+    }
+    // equal heights
+    &#{$modifier}--align-stretch {
+      align-items: stretch;
+    }
+
+    // horizontal alignment
+    &#{$modifier}--justify-start {
+      justify-content: flex-start;
+    }
+    &#{$modifier}--justify-center {
+      justify-content: center;
+    }
+    &#{$modifier}--justify-end {
+      justify-content: flex-end;
+    }
+    &#{$modifier}--justify-around {
+      justify-content: space-around;
+    }
+    &#{$modifier}--justify-between {
+      justify-content: space-between;
+    }
+    &#{$modifier}--justify-even {
+      justify-content: space-evenly;
+    }
+  }
+}
+
+// Outer container
+.container {
+  margin: 0 auto;
+  max-width: $container-width;
+  padding: 0 $container-padding-mobile;
+  @include create-mq($md-width) {
+    padding: 0 $container-padding-tablet;
+  }
+  @include create-mq($lg-width) {
+    padding: 0 $container-padding;
+  }
+
+  &--layout {
+    padding: $container-padding-mobile;
+    @include create-mq($md-width) {
+      padding: $container-padding;
+    }
+    section.block {
+      padding: 3rem 0;
+      & > .container {
+        padding: 0;
+      }
+    }
+    hr {
+      margin: 1.5rem 0;
+    }
+  }
+  
+  &--narrow {
+    max-width: $container-width-narrow;
+  }
+  &--default {
+    max-width: $container-width;
+  }
+  &--ultra-narrow {
+    max-width: $container-width-ultra-narrow;
+  }
+  &--wide {
+    max-width: $container-width-wide;
+  }
+  &--ultra-wide {
+    max-width: $container-ultra-wide;
+  }
+  &--wide-content,
+  &--cta {
+    max-width: $container-width-wide-content;
+  }
+  &--wide-media {
+    max-width: $container-width-wide-media;
+  }
+  &--full {
+    max-width: none;
+    width: 100%;
+  }
+
+  &--left{
+    margin-left: -$container-padding-mobile;
+    @include create-mq($md-width) {
+      margin-left: -$container-padding-tablet;
+    }
+    @include create-mq($lg-width) {
+      margin-left: -$container-padding;
+    }
+  }
+  &--right{
+    margin-right: -$container-padding-mobile;
+    @include create-mq($md-width) {
+      margin-right: -$container-padding-tablet;
+    }
+    @include create-mq($lg-width) {
+      margin-right: -$container-padding;
+    }
+  }
+}
+
+// Grid elements themselves
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--gutters {
+    gap: $grid-gutter;
+    &-narrow {
+      gap: $grid-gutter-narrow;
+    }
+    &-wide {
+      gap: $grid-gutter-wide;
+    }
+    &-ultra-wide {
+      gap: $grid-gutter-ultra-wide;
+    }
+  }
+
+  &--column {
+    flex-direction: column;
+  }
+  @each $modifier, $breakpoint in $map-width-props {
+    @include create-flex-classes($modifier, $breakpoint);
+  }
+
+  &__col {
+    flex: 1 1 0%;
+    width: auto;
+
+    @media (max-width: (#{$md-width} - 1px)) {
+      flex-basis: 100%;
+    }
+
+    @each $modifier, $breakpoint in $map-width-props {
+      @include create-col-classes($modifier, $grid-columns, $breakpoint);
+    }
+
+    // vertical alignment, individual unit
+    &--align-top {
+      align-self: flex-start;
+    }
+    &--align-middle {
+      align-self: center;
+    }
+    &--align-bottom {
+      align-self: flex-end;
+    }
+    &--align-end {
+      align-self: end;
+    }
+    &--stretch {
+      align-self: stretch;
+    }
+    &--full {
+      max-width: none;
+      width: 100%;
+    }
+    &--grow {
+      flex-grow: 1;
+    }
+    &--grow-0 {
+      flex-grow: 0;
+    }
+  }
+}
+
+// Show the QA grid
+.guides,
+.guides--spaced {
+  bottom: 0;
+  display: none;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99999;
+  .container {
+    height: 100%;
+  }
+  .grid__col {
+    pointer-events: none;
+  }
+  .grid__col:nth-of-type(even) {
+    background: rgba(243, 142, 190, 0.3);
+  }
+  .grid__col:nth-of-type(odd) {
+    background: rgba(148, 161, 234, 0.3);
+  }
+}
+
+
+////helper class to reverse column order on mobile
+.column-reverse-mobile {
+  &.wp-block-columns {
+    flex-flow: column-reverse;
+    @include create-mq($lg-width) {
+      flex-flow: row;
+    }
+  }
+}
+
+.no-gap .wp-block-columns {
+  gap: 0;
+}
+
+.some-gap .wp-block-columns {
+  gap: 10px;
+}

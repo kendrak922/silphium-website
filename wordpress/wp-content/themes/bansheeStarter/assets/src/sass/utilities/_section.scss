@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+section.u-section{
+    &Shape{
+        &Round{
+            clip-path: ellipse(90% 100% at top)
+        }
+        &Half {
+            background-size: 50%;
+        }
+        &Full {
+            background-size: cover;
+        }
+    }
+
+}

@@ -1,0 +1,64 @@
+@use '../../abstracts' as *;
+
+/********************************
+	Card
+********************************/
+@mixin card($type: 'default') {
+    display: block;
+    position: relative;
+
+    &--clickable {
+        cursor: pointer;
+    }
+
+    .card__image{
+        margin-bottom: 2rem;
+        img{
+            aspect-ratio: 1.5;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+    .card__eyebrow{
+        margin-bottom: .75rem;
+        span{
+            margin: 0 .5rem;
+        }
+    }
+    .card__title{
+        margin-bottom: 1rem;
+        text-decoration: none;
+        &:active,
+        &:focus,
+        &:hover{
+            // color: swatch("Neutral");
+            & + .inner-block--divider{
+                span{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .inner-block--divider{
+        margin: 1rem 0;
+        span{
+            width: 3.5rem;
+        }
+    }
+
+    @if $type == 'column' {
+        // default - styles above
+    }
+
+    // Horizontal card layout
+    @else if $type == 'row' {
+
+    }
+}
+
+/***** LAYOUTS *****/
+// Default card
+.card,
+.card--default {
+    @include card('column');
+}

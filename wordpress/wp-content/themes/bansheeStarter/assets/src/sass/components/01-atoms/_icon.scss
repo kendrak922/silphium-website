@@ -1,0 +1,160 @@
+@use '../../abstracts' as *;
+@use "sass:map";
+
+$iconDefault: (
+	'color': swatch('Primary'),
+);
+$iconDark: (
+	'color': swatch('White'),
+);
+@mixin iconColor($icon: $iconDefault) {
+	svg {
+		circle {
+			stroke: map.get($icon, 'color');
+		}
+		path {
+			stroke: map.get($icon, 'color');
+		}
+	}
+	&--fill {
+		svg {
+			path {
+				stroke: transparent;
+				fill: map.get($icon, 'color');
+				.btn:focus &,
+				.btn:hover & {
+					fill: map.get($icon, 'color');
+				}
+			}
+		}
+	}
+}
+
+/********************************
+	Atom: Icon
+********************************/
+.icons {
+	display: flex;
+	gap: 1.25rem;
+}
+
+.icon {
+	text-decoration: none;
+	position: relative;
+
+	svg {
+		height: auto;
+		width: 2rem;
+		@include create-mq($md-width) {
+			height: auto;
+			width: 3.25rem;
+		}
+		circle {
+			fill: swatch('Primary');
+		}
+		circle,
+		path {
+			transition: $transition-default;
+		}
+	}
+
+	/* size */
+	&--small {
+		svg {
+			@include create-mq($md-width) {
+				height: 2rem;
+				width: 2rem;
+			}
+		}
+	}
+
+	/* variant */
+	&--fill {
+		svg {
+			path {
+				fill: rgba(swatch('Primary'), 1);
+			}
+		}
+		&:focus,
+		&:hover {
+			svg {
+				path {
+					fill: rgba(swatch('Tertiary'), 1);
+					stroke: rgba(swatch('Tertiary'), 0.7);
+				}
+			}
+		}
+	}
+
+	/* variant */
+	&--outline {
+		svg {
+			path {
+				fill: transparent;
+				.btn:focus &,
+				.btn:hover & {
+					fill: transparent;
+				}
+			}
+		}
+	}
+
+	&--instagram {
+		&:focus,
+		&:hover {
+			svg {
+				path:nth-child(2) {
+					fill: rgba(swatch('White'), 1);
+					stroke: rgba(swatch('White'), 0.3);
+				}
+			}
+		}
+	}
+
+	/* dark mode */
+	.u-darkMode & {
+		@include iconColor($iconDark);
+	}
+
+	/* light mode */
+	.u-lightMode & {
+		@include iconColor($iconDefault);
+	}
+}
+
+/********************************
+	Atom: Social Icon
+********************************/
+.social__icon {
+	border: 1px solid swatch('Tertiary');
+	border-radius: 50%;
+	color: swatch('Tertiary');
+	display: inline-block;
+	height: 1.75rem;
+	padding: 0.375rem;
+	text-decoration: none;
+	transition: $transition-default;
+	width: 1.75rem;
+
+	&:hover,
+	&:focus {
+		background: swatch('White');
+	}
+
+	.u-darkMode & {
+		border-color: swatch('White');
+		color: swatch('White');
+
+		&:hover,
+		&:focus {
+			background: swatch('Tertiary');
+		}
+	}
+
+	@include create-mq($md-width) {
+		border-width: 2px;
+		height: 3.375rem;
+		padding: 0.875rem;
+		width: 3.375rem;
+	}
+}

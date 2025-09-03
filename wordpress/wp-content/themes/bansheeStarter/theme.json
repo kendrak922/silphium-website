@@ -1,0 +1,237 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "custom": true,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultGradients": false,
+      "defaultPalette": false,
+      "background": true,
+      "defaultDuotone": false,
+      "text": true
+    },
+    "typography": {
+      "dropCap": false,
+      "fontStyle": false,
+      "textTransform": false,
+      "textDecoration": false,
+      "letterSpacing": false,
+      "fontSizes": [
+        {
+          "name": "Small (14)",
+          "slug": "small",
+          "size": ".875rem"
+        },
+        {
+          "name": "Medium (16)",
+          "slug": "medium",
+          "size": "1rem"
+        },
+        {
+          "name": "Large (20)",
+          "slug": "large",
+          "size": "1.25rem"
+        },
+        {
+          "name": "XL (24)",
+          "slug": "xlarge",
+          "size": "1.5rem"
+        },
+        {
+          "name": "XXL (32)",
+          "slug": "xxlarge",
+          "size": "2rem"
+        }
+      ],
+      "fontFamilies": [
+        {
+          "fontFamily": "Old Standard",
+          "name": "Old Standard TT",
+          "slug": "Old+Standard+TT"
+        },
+        {
+          "fontFamily": "IBM Plex Sans",
+          "name": "IBM Plex Sans",
+          "slug": "IBM+Plex+Sans"
+        },
+        {
+          "fontFamily": "rosella-deco",
+          "name": "Rosella Deco",
+          "slug": "rosella-deco"
+        }
+      ]
+    },
+    "blocks": {
+      "acf/section": {
+        "color": {
+          "background": true
+        },
+        "spacing": {
+          "padding": true,
+          "margin": true
+        }
+      },
+      "acf/container": {
+        "attributes": {
+          "align": {
+            "type": "string",
+            "default": "center"
+          }
+        }
+      },
+      "acf/hero-banner": {
+        "color": {
+          "background": true
+        }
+      },
+      "core/quote": {
+        "typography": {
+          "fontWeight": true,
+          "fontSizes": [],
+          "fontFamilies": []
+        },
+        "color": {
+          "text": true,
+          "background": true
+      }
+      },
+      "core/paragraph": {
+        "typography": {
+          "fontWeight": true,
+          "fontSizes": [ {
+            "name": "Small",
+            "slug": "small",
+            "size": ".75rem"
+          },
+          {
+            "name": "Medium",
+            "slug": "medium",
+            "size": "1rem"
+          },
+          {
+            "name": "Large",
+            "slug": "large",
+            "size": "1.25rem"
+          },
+          {
+            "name": "XL (24)",
+            "slug": "extra-large",
+            "size": "1.5rem"
+          }
+          ],
+          "fontFamilies": [
+            {
+              "fontFamily": "Old Standard",
+              "name": "Old Standard TT",
+              "slug": "Old+Standard+TT"
+            },
+            {
+              "fontFamily": "IBM Plex Sans",
+              "name": "IBM Plex Sans",
+              "slug": "IBM+Plex+Sans"
+            },
+            {
+              "fontFamily": "Gwendolyn",
+              "name": "gwendolyn",
+              "slug": "gwendolyn"
+            }
+          ]
+      },
+      "color": {
+        "background": true,
+        "link": true,
+        "text": true
+      }
+    },
+      "core/post-title": {
+        "typography": {
+          "fontWeight": false,
+          "fontSizes": [
+            {
+              "name": "Small (h5)",
+              "slug": "h5",
+              "size": "1.5rem"
+            },
+            {
+              "name": "Medium (h4)",
+              "slug": "h4",
+              "size": "2rem"
+            },
+            {
+              "name": "Large (h3)",
+              "slug": "h3",
+              "size": "2.5rem"
+            },
+            {
+              "name": "XL (h2)",
+              "slug": "h2",
+              "size": "3rem"
+            },
+            {
+              "name": "XXL (h1)",
+              "slug": "h1",
+              "size": "4.5rem"
+            }
+          ]
+        }
+      },
+      "core/heading": {
+        "typography": {
+          "fontWeight": false,
+          "fontSizes": [
+            {
+              "name": "Small (h5)",
+              "slug": "h5",
+              "size": "default5"
+            },
+            {
+              "name": "Medium (h4)",
+              "slug": "h4",
+              "size": "default4"
+            },
+            {
+              "name": "Large (h3)",
+              "slug": "h3",
+              "size": "default3"
+            },
+            {
+              "name": "XL (h2)",
+              "slug": "h2",
+              "size": "default2"
+            },
+            {
+              "name": "XXL (h1)",
+              "slug": "h1",
+              "size": "default1"
+            }
+          ]
+        },
+        "color": {
+          "background": true,
+          "link": true,
+          "text": true
+        }
+      }
+    }
+  },
+  "styles": {
+    "elements": {
+      "button": {
+        "typography": {
+          "fontWeight": "600",
+          "fontSize": "1rem"
+        },
+        "color": {
+          "background": "transparent",
+          "text": "#111111"
+        },
+        "border": {
+          "radius": "0",
+          "width": "0 0 0 2px",
+          "style": "solid"
+        }
+      }
+    }
+  }
+}

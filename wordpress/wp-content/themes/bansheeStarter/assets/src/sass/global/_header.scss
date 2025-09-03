@@ -1,0 +1,194 @@
+@use '../abstracts' as *;
+@use "sass:map";
+@use "sass:meta";
+/********************************
+	HEADER
+********************************/
+
+.header {
+    font-size: rem(16);
+    height: calc(map.get($headerHeight, 'sm'));
+    position: relative;
+    transition: height 0.2s ease-in-out;
+    z-index: 99998;
+
+    @include create-mq($lg-width) {
+        height: calc(map.get($headerHeight, 'lg'));
+    }
+
+    //header
+    &--fixed {
+        position: fixed;
+        width: 100%;
+        z-index: 99999;
+
+        &.animate {
+            transition: top 0.6s ease-in-out;
+        }
+    }
+
+    // logo
+    &__logo {
+        height: auto;
+
+        img {
+            height: 4.5rem;
+            width: auto;
+            object-fit: contain;
+
+            @include create-mq($lg-width) {
+                height: 6.5rem;
+                transition: height ease-in-out $t-default;
+
+                body.scrolled & {
+                    height: 2.5rem;
+                }
+            }
+        }
+    }
+
+    // overlay
+    &__overlay {
+        content: '';
+        background: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        opacity: 0;
+        pointer-events: none;
+        transition: $transition-default;
+        backdrop-filter: blur(5px);
+
+        .active--mobileMenu & {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    // header bar molecule
+    &-bar {
+        // border-bottom: 2px solid swatch('Primary');
+        // background-color: swatch('LightBlue');
+        &--main {
+            .header-bar__wrapper {
+                height: map.get($headerHeight, 'sm');
+                @include create-mq($lg-width) {
+                    gap:32px;
+                    height: map.get($headerHeight, 'lg');
+                    transition: height ease-in-out $t-default;
+
+                    body.scrolled & {
+                        height: calc(map.get($headerHeight, 'scroll'));
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        &--utility {
+            .menu>li {
+                a {
+                    padding: 0;
+                }
+            }
+        }
+
+        &__item {
+            align-items: center;
+            display: flex;
+
+            &__inner {
+                flex-direction: column;
+
+                &--balance {
+                    transition: $transition-default;
+
+                    @include create-mq($lg-width) {
+                        padding-top: 1.75rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .btn--primary {
+        margin-top: 4px;
+        @include create-mq($lg-width) {
+            margin-left: 50px;
+        }
+    }
+    svg {
+        margin: auto;
+        @include create-mq($lg-width) {
+            display: none;
+        }
+    }
+}
+
+.darkModeLogo {
+    display: none;
+}
+.lightModeLogo {
+    display: block;
+}
+
+.u-darkMode {
+    .darkModeLogo {
+        display: block;
+    }
+
+    .lightModeLogo {
+        display: none;
+    }
+}
+
+    .has-hero-banner {
+       .wrapper > header[aria-label="Global header navigation"] {
+            position: absolute;
+        }
+
+        .page__wrapper {
+            padding-top: 0;
+        }
+    }
+
+    .has-hero-banner__image {
+        .wrapper > header[aria-label="Global header navigation"] {
+            position: absolute;
+        }
+
+        .page__wrapper {
+            padding-top: 0;
+        }
+         .header--fixed {
+             background-color: swatch('Black');
+             opacity: .7;  
+         }
+     }
+ 
+
+.scrolled {
+    .header {
+        &--fixed {
+            background-color: swatch('Cream');
+            opacity: 1;
+        }
+    }
+    .u-darkMode {
+        .header {
+            &--fixed {
+                background-color: swatch('Black');
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+.active--mobileMenu {
+    .header--fixed {
+        background-color: swatch('Green');
+    }
+}

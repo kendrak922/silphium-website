@@ -1,0 +1,96 @@
+@use '../../abstracts' as *;
+
+.glossary-listing{
+    & + .glossary-listing{
+        margin-top: $block-padding-mobile;
+        @include create-mq($md-width) {
+            margin-top: $block-padding;
+        }
+        @include create-mq($lg-width) {
+            margin-top: $block-padding-lg;
+        }
+    }
+}
+
+.glossary-entry{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    font-size: 1rem;
+    @include create-mq($md-width) {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap:4.5rem;
+    }
+    &:last-child{
+        margin-bottom: 0;
+    }
+    & > div:last-child,
+    .glossary-entry__right{
+        flex-shrink: 0;
+        @include create-mq($md-width) {
+            width: 48%;
+        }
+        @include create-mq($xl-width) {
+            width: 31.5rem;
+        }
+    }
+    &--left-wide{
+        & > div:first-child,
+        .glossary-entry__left{
+            flex-shrink: 0;
+            @include create-mq($md-width) {
+                width: 48%;
+            }
+            @include create-mq($xl-width) {
+                width: 31.5rem;
+            }
+        }
+        & > div:last-child,
+        .glossary-entry__right{
+            width: unset;
+            flex-shrink: unset;
+        }
+    }
+    &--right-wide{
+        & > div:last-child,
+        .glossary-entry__right{
+            flex-shrink: 0;
+            @include create-mq($md-width) {
+                width: 48%;
+            }
+            @include create-mq($xl-width) {
+                width: 31.5rem;
+            }
+        }
+    }
+
+    // glossary-entries in a row
+    &+.glossary-entry{
+        border-top: .5px solid swatch("Neutral");
+        margin-top: 3rem;
+        padding-top: 3rem;
+    }
+    .content-seperator + &{
+        margin-top: 3rem;
+    }
+
+    .h--smNav,
+    .h--caption{
+        font-weight: 500;
+        color: swatch("Gray");
+    }
+
+    .h--caption{
+        margin-bottom: 0;
+    }
+
+    .wp-admin .is-root-container & {
+        .h--smNav,
+        .h--caption{
+            font-weight: 500;
+            color: swatch("Gray");
+            margin-bottom: 0;
+        }
+    }
+}

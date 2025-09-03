@@ -1,0 +1,33 @@
+version: 0.2
+env:
+  variables:
+    WORDPRESS_VERSION: '6.8.1'
+    THEME_NAME: 'bansheeStarter' # the name of the wordpress theme directory
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+      php: 8.4
+  build:
+    commands:
+      - cp deployment/$deployment_environment/appspec.yml appspec.yml
+      - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+      - php wp-cli.phar core download --skip-content --path=wordpress-out --allow-root --version=$WORDPRESS_VERSION
+      - cp -r wordpress/. wordpress-out
+      - cd wordpress-out/wp-content/themes/$THEME_NAME
+      - npm install
+      - npx gulp build
+      - rm -rf node_modules
+      - rm -rf assets/src
+      - rm -rf .gitignore
+      - rm -rf CHANGELOG.md
+      - rm -rf Gulpfile.js
+      - rm -rf package.json
+      - rm -rf package-lock.json
+      - rm -rf phpDocumentor.phar
+      - rm -rf README.md
+artifacts:
+  files:
+    - wordpress-out/**/*
+    - scripts/**/*
+    - appspec.yml

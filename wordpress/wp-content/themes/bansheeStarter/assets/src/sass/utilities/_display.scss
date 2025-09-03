@@ -1,0 +1,89 @@
+@use '../abstracts' as *;
+
+/**
+ * _display.scss
+ * Custom display properties
+ */
+
+.u-disabled {
+  opacity: 0.5;
+}
+.u-invisible {
+  visibility: hidden;
+}
+.u-transparent {
+  opacity: 0;
+}
+
+.u-overflow {
+  overflow: auto;
+}
+.u-overflowX {
+  overflow-x: auto;
+}
+.u-overflowY {
+  overflow-y: auto;
+}
+
+.u-overflowHidden {
+  overflow: hidden;
+}
+.u-overflowXHidden {
+  overflow-x: hidden;
+}
+.u-overflowYHidden {
+  overflow-y: hidden;
+}
+
+/* width targeting */
+
+@mixin create-display-classes($modifier, $breakpoint) {
+  @include create-mq($breakpoint) {
+    &#{$modifier}-hidden {
+      display: none;
+    }
+    &#{$modifier}-block {
+      display: block;
+    }
+    &#{$modifier}-inlineBlock {
+      display: inline-block;
+    }
+    &#{$modifier}-inline {
+      display: inline;
+    }
+    &#{$modifier}-flex {
+      display: flex;
+    }
+    &#{$modifier}-no-shrink {
+      flex-shrink: 0;
+    }
+    &#{$modifier}-no-shrink {
+      flex-shrink: 1;
+    }
+  }
+}
+
+.u {
+  @each $modifier, $breakpoint in $map-width-props {
+    @include create-display-classes($modifier, $breakpoint);
+  }
+}
+
+/* ---------------------------------------------------------------------
+ Helper: Visibility
+------------------------------------------------------------------------ */
+.isHidden,
+.isVisuallyHidden,
+.screen-reader-text,
+.sr-only {
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    clip: rect(0, 0, 0, 0) !important;
+    clip-path: inset(100%) !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+}

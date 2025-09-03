@@ -1,0 +1,10 @@
+@use '../../../assets/src/sass/abstracts' as *;
+
+/******************************
+    BLOCK: Button
+******************************/
+.inner-block--buttons {
+    &:last-child{
+        margin-bottom: 0;
+    }
+} // close: .inner-block--button

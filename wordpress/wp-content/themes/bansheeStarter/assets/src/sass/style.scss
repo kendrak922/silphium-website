@@ -1,0 +1,32 @@
+/*
+Theme Name:
+Author:
+Author URI:
+Text Domain:
+*/
+
+// libraries and dependencies
+@use 'vendor/_vs_studio'; 
+// @use 'vendor/__vendor-overwrites'; 
+// @use 'vendor/_normalize';
+
+
+
+// // ABSTRACTS
+@use 'abstracts';
+
+// // BASE
+@use 'base';
+
+// // // GLOBAL
+@use 'global';
+
+// // // REUSABLE COMPONENTS
+@use 'components';
+
+// // // ALL BLOCKS
+// // // - Individual blocks imported into this file
+@use '../../../template-parts/blocks/_assets/blocks-imports';
+
+// // // UTILITY CLASSES
+@use 'utilities';

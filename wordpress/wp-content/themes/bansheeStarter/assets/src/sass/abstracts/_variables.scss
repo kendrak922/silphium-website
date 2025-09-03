@@ -1,0 +1,254 @@
+
+@use "sass:map";
+@use "sass:meta";
+// ! Contains all site variables
+
+// ! NOTE: all variables are required, if some are missing set it equal to a similar var. Do that here, NOT in utilities/*
+
+//////////////////
+/// * LAYOUT * ///
+//////////////////
+$headerHeight: (
+  'sm': 4.5rem,
+  'lg': 6.5rem,
+  'scroll': 4rem,
+);
+$adminHeight: (
+  'sm': 2.875rem,
+  //46
+  'lg': 2rem,
+  //32
+);
+
+$headerHeight_sm: map.get($headerHeight, 'sm');
+$headerHeight_md: map.get($headerHeight, 'lg');
+$sitePaddingMobile: 3rem;
+$sitePaddingDesktop: 4rem;
+
+
+// Grid elements
+$grid-unit: 0.25rem;
+$grid-columns: 12;
+
+// Grid gutters
+$grid-gutter: 2rem; // 32
+$grid-gutter-narrow: 1rem; //16
+$grid-gutter-wide: 2.5rem; //40
+$grid-gutter-ultra-wide: 8.75rem; //60
+$grid-gutter-props: (
+  'gutters': $grid-gutter,
+  'gutters-narrow': $grid-gutter-narrow,
+  'gutters-wide': $grid-gutter-wide,
+  'gutters-ultra-wide': $grid-gutter-ultra-wide,
+);
+
+// Container elements
+
+$container-width: 79rem; // 1264 - 32
+$container-width-wide: 84rem; 
+$container-ultra-wide: 99rem;
+$container-width-narrow: 62.5rem;
+$container-width-ultra-narrow: 49.5rem;
+//840
+
+$container-width-wide-content: 61.5rem; // 840 = 52.5rem + 9rem (cta)
+$container-width-wide-media : 73.5rem; //1032 = 64.5rem + 9
+
+$container-padding: 2rem; //72
+$container-padding-tablet: 2rem; //32
+$container-padding-mobile: 1.5rem; //24
+
+// Breakpoints
+$xs-width: 21.5rem; //342px;
+$sm-width: 31.25rem; //500px;
+$md-width: 48rem; //768px;
+$lg-width: 64rem; //1024px;
+$xl-width: 87.5rem; //1400px;
+$xxl-width: 117.25rem; //1876px;
+$admin-width: 48.875rem; //782;
+
+$map-width-props: (
+  '': 0,
+  '-xs': $xs-width,
+  '-sm': $sm-width,
+  '-md': $md-width,
+  '-lg': $lg-width,
+  '-xl': $xl-width,
+);
+
+//////////////////
+/// * COLORS * ///
+//////////////////
+
+$color-primary: #434341;;
+$color-secondary: #4A3D25;;
+$color-tertiary: #748CAB;
+$primary-hover: #8F6D50;
+// Basics
+$color-black:#434341;
+$color-white:#ffffff;
+$color-neutral: #4A3D25;
+
+$palette: (
+  'Primary': $color-primary,
+  'PrimaryHover': #8F6D50,
+  'PrimaryActive':#8F6D50,
+  'Secondary': $color-secondary,
+  'SecondaryHover': #8F6D50,
+  'SecondaryActive': #8F6D50,
+  'Tertiary': $color-tertiary,
+  // Text color
+  'Neutral': $color-neutral,
+  'LightNeutral' : #E6DFD4,
+  'Cream' : #E6DFD4,
+  'Yellow' : #FCFDAF,
+  // Style Guide
+  'Brown' : #4A3D25,
+  'LightBlue' : #CFE4FF,
+  'Red': #DB3A34,
+  'Blue' : #748CAB,
+  // 'Pink': #F75590,
+  'Green': #3C896D,
+  'LightGreen': #D0EFB1,
+  'Gray' : #8F9191,
+  'Gold' : #8F6D50,
+  'Black': $color-black,
+  'White': $color-white,
+  'Success':#3C896D,
+  'Error': #DB3A34,
+);
+body {
+//   --tec-color-accent-primary: #{$color-primary};
+//   --tec-color-background : #{$color-secondary};
+//   --tec-color-text-secondary :#{$color-white};
+//   --tec-color-button-primary : #{$color-white};
+//   --tec-color-button-primary-hover :#{$primary-hover};
+//   --tec-color-accent-primary-hover: #{$primary-hover};
+//   --tec-color-accent-primary-active: #{$primary-hover};
+//   --tec-color-button-primary-active: #{$primary-hover};
+//   --tec-color-text-event-title: #{$color-primary};
+  --tec-color-text-primary: #{$color-neutral};
+//   --tec-color-background-events-bar :  #{$color-white};
+}
+
+
+
+
+/////////////////
+/// * FONTS * ///
+/////////////////
+
+// Weights
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-book: 350;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-heavy: 900;
+
+// Font Stack
+$font-stack-primary: (
+  "IBM Plex Sans", sans-serif,
+  serif
+);
+$font-stack-secondary: (
+  "Old Standard TT", serif,
+  'Helvetica',
+  sans-serif
+);
+
+
+$font-stack-tertiary: (
+  "rosella-deco",
+);
+
+
+$font-awesome: (
+  'Font Awesome 5 Pro',
+  sans-serif
+);
+$font-awesome-brands: (
+  'Font Awesome 5 Brands',
+  sans-serif
+);
+
+// Font Base sizes
+$font-base: 1rem; // mobile
+$font-base-md: $font-base; // md breakpoint and up. If not changing, set = $font-base
+
+// Font Face Declarations (if applicable)
+
+// Font scale factor, for more visit https://type-scale.com
+// Note: these are simply baked in options, set $type-scale = to the desired ratio - Major Third and Perfect Forth are most common
+$minor-second: 1.067;
+$major-second: 1.125;
+$minor-third: 1.2;
+$major-third: 1.25;
+$perfect-forth: 1.333;
+$augmented-forth: 1.414;
+$perfect-fifth: 1.5;
+$golden-ratio: 1.618;
+
+$type-scale: $major-second;
+$type-scale-reverse: (
+  2 - $type-scale) * 1.05;
+
+///////////////////////
+/// * TRANSITIONS * ///
+///////////////////////
+$t-short: 0.1s;
+$t-med: 0.3s;
+$t-long: 0.6s;
+$t-max: 1s;
+
+$t-default: $t-med;
+
+$transition-default: all ease-in-out $t-default;
+
+//********************************
+//	Z-INDEX
+//********************************
+$z-below: -1;
+$z-default: 1;
+
+$z-low: 10;
+$z-med: 20;
+$z-high: 30;
+$z-overlay: 100;
+$z-max: 1000;
+$z-maxest: 1001;
+
+///////////////////////
+/// * MISC * ///
+///////////////////////
+
+/*** MEDIA ***/
+$video_aspectRatio: 56.25%;
+
+$wp-adminBar-height: 32px;
+$wp-adminBar-height-mobile: 46px;
+
+///////////////////////
+/// * BLOCKS * ///
+///////////////////////
+$block-padding: 2.5rem; // 40
+$block-padding-lg: 7.5rem; // 120
+$block-padding-mobile: 3rem; // 48
+
+///////////////////////
+/// * DOMAINS * ///
+///////////////////////
+
+$domain: (
+  'local': 'silphium.lndo.site',
+);
+
+//********************************
+//	ADA OUTLINE
+//********************************
+$outline-size: max(2px, 1.25px);
+$outline-style: solid;
+$outline-color: currentColor;

@@ -1,0 +1,40 @@
+@use '../../../assets/src/sass/abstracts' as *;
+
+/******************************
+    BLOCK: Content Stacks
+******************************/
+.content-stacks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+@include create-mq($md-width) {
+    .content-stacks {
+        flex-wrap: nowrap;
+    }
+}
+
+.content-stacks--two-mobile .content-stacks .content-stack__single {
+    flex-basis: 46%;
+    @include create-mq($md-width) {
+        flex-basis: unset;
+    }
+}
+
+.content-stack__single {
+flex-basis: 400px;
+    [data-atom='heading']{
+        border : 1px solid swatch('Primary');
+        border-radius: 50px;
+        text-align: center;
+        padding: 8px 40px;
+        max-width: fit-content;
+        margin: 0 auto 20px;
+    }
+
+    &-text {
+        padding: 32px 50px;
+    }
+}

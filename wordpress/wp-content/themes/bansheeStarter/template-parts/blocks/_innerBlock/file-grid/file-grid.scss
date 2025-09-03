@@ -1,0 +1,20 @@
+@use '../../../assets/src/sass/abstracts' as *;
+
+body main .inner-block--file-grid {
+    margin-top: 1.25rem;
+    .file-grid {
+        &--wrapper {
+
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap : 12px;
+            @include create-mq($md-width) {
+                grid-template-columns: repeat(2, 1fr);
+                row-gap : 28px;
+            }
+        }
+    }
+    .content-seperator.has-text {
+        margin-bottom: 2rem;
+    }
+}

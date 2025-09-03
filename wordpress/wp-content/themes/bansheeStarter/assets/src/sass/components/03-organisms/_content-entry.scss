@@ -1,0 +1,96 @@
+@use '../../abstracts' as *;
+
+//used on resource and news listings (feeds)
+
+.content-listing{
+
+    & {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 21px;
+        width: 100%;
+    }
+
+    & + .content-listing{
+        margin-top: $block-padding-mobile;
+        @include create-mq($md-width) {
+            margin-top: $block-padding;
+        }
+        @include create-mq($lg-width) {
+            margin-top: $block-padding-lg;
+        }
+    }
+    .content-seperator + &{
+        margin-top: 2rem;
+        @include create-mq($md-width) {
+            margin-top: 3rem;
+        }
+    }
+}
+
+.content-entry{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    @include create-mq($md-width) {
+        flex-basis: 50%;
+        // flex-direction: row;
+        // flex-wrap: nowrap;
+        align-content: center;
+        gap: 2rem;
+        &.content-entry--reverse{
+            flex-direction: row-reverse;
+        }
+    }
+    .content-entry__left{
+        flex-shrink: 0;
+        @include create-mq($md-width) {
+            width: 53%;
+        }
+        @include create-mq($xl-width) {
+            width: 34.5rem;
+        }
+    }
+    .content-entry__right{
+        flex-grow: 1;
+    }
+
+    &__title{
+        text-decoration: none;
+        color: swatch("Neutral");
+        &:active,
+        &:focus,
+        &:hover{
+            color: swatch("Neutral");
+            & + .inner-block--divider{
+                span{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    img{
+        object-fit: cover;
+        object-position: center 10%;
+        width: 100%;
+    }
+
+    .h--smNav,
+    .h--caption{
+        font-weight: 500;
+    }
+
+    .inner-block--divider span{
+        width: 3.5rem;
+    }
+
+    &+.content-entry{
+        margin-top: 2rem; //32
+        padding-top: 2rem; //32
+        @include create-mq($md-width) {
+            margin-top: 6rem; //96
+            padding-top: 6rem; //96
+        }
+    }
+}

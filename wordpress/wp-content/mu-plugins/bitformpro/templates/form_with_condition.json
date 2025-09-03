@@ -1,0 +1,1561 @@
+{
+  "name": "bitform test confirmation and conditions",
+  "theme": "bitformDefault",
+  "themeColors": {
+    "lightThemeColors": {
+      "--bf-lower-track-clr": "var(--global-accent-color)",
+      "--bf-upper-track-clr": "#ffffff",
+      "--bg-0": "hsl(0, 0%, 100%)",
+      "--bg-10": "hsl(0, 0%, 90%)",
+      "--bg-100": "hsl(0, 0%, 0%)",
+      "--bg-15": "hsl(0, 0%, 85%)",
+      "--bg-20": "hsl(0, 0%, 80%)",
+      "--bg-25": "hsl(0, 0%, 75%)",
+      "--bg-30": "hsl(0, 0%, 70%)",
+      "--bg-35": "hsl(0, 0%, 65%)",
+      "--bg-40": "hsl(0, 0%, 60%)",
+      "--bg-45": "hsl(0, 0%, 55%)",
+      "--bg-5": "hsl(0, 0%, 95%)",
+      "--bg-50": "hsl(0, 0%, 50%)",
+      "--bg-55": "hsl(0, 0%, 45%)",
+      "--bg-60": "hsl(0, 0%, 40%)",
+      "--bg-65": "hsl(0, 0%, 35%)",
+      "--bg-70": "hsl(0, 0%, 30%)",
+      "--bg-75": "hsl(0, 0%, 25%)",
+      "--bg-80": "hsl(0, 0%, 20%)",
+      "--bg-85": "hsl(0, 0%, 15%)",
+      "--bg-90": "hsl(0, 0%, 10%)",
+      "--bg-95": "hsl(0, 0%, 5%)",
+      "--btn-bdr-clr": "none",
+      "--btn-bg": "var(--global-accent-color)",
+      "--btn-bgc": "var(--global-accent-color)",
+      "--btn-c": "hsla(0, 0%, 100%, 100%)",
+      "--btn-sh": "0   2px 4px -2px hsla(0, 0%, 0%, 40%)",
+      "--ck-bdr-c": "hsla(210, 78%, 96%, 100%)",
+      "--err-bdr-clr": "hsla(0, 50%, 90%, 100%)",
+      "--err-bg": "hsla(0, 100%, 94%, 100%)",
+      "--err-c": "hsla(0, 100%, 11%, 100%)",
+      "--err-sh": "",
+      "--err-txt-pre-i-bdr-clr": "",
+      "--err-txt-pre-i-clr": "",
+      "--err-txt-pre-i-fltr": "",
+      "--err-txt-pre-i-sh": "",
+      "--err-txt-suf-i-bdr-clr": "",
+      "--err-txt-suf-i-clr": "",
+      "--err-txt-suf-i-fltr": "",
+      "--err-txt-suf-i-sh": "",
+      "--fld-focs-i-fltr": "invert(26%) sepia(41%) saturate(6015%) hue-rotate(211deg) brightness(100%) contrast(108%)",
+      "--fld-inp-c": "var(--global-font-color)",
+      "--fld-lbl-bdr-clr": "",
+      "--fld-lbl-bg": "",
+      "--fld-lbl-c": "var(--global-font-color)",
+      "--fld-lbl-sh": "",
+      "--fld-wrp-bdr-clr": "",
+      "--fld-wrp-bg": "",
+      "--fld-wrp-sh": "",
+      "--g-o-c": "hsla(217, 100%, 50%, 100%)",
+      "--gaa": "100%",
+      "--gah": 217,
+      "--gal": "50%",
+      "--gas": "100%",
+      "--gbg-a": "100%",
+      "--gbg-h": 0,
+      "--gbg-l": "100%",
+      "--gbg-s": "0%",
+      "--gfa": "100%",
+      "--gfbc-a": "100%",
+      "--gfbc-h": 0,
+      "--gfbc-l": "67%",
+      "--gfbc-s": "0%",
+      "--gfbg-a": "100%",
+      "--gfbg-h": 0,
+      "--gfbg-l": "100%",
+      "--gfbg-s": "0%",
+      "--gfh": 0,
+      "--gfl": "14%",
+      "--gfs": "0%",
+      "--global-accent-color": "hsla(217, 100%, 50%, 100%)",
+      "--global-bg-color": "",
+      "--global-fld-bdr-clr": "hsla(0, 0%, 67%, 100%)",
+      "--global-fld-bg-color": "",
+      "--global-font-color": "hsla(0, 0%, 14%, 100%)",
+      "--hlp-txt-bdr-clr": "",
+      "--hlp-txt-bg": "",
+      "--hlp-txt-c": "hsla(var(--gfh), var(--gfs), var(--gfl), 0.7)",
+      "--hlp-txt-pre-i-bdr-clr": "",
+      "--hlp-txt-pre-i-clr": "",
+      "--hlp-txt-pre-i-fltr": "",
+      "--hlp-txt-pre-i-sh": "",
+      "--hlp-txt-sh": "",
+      "--hlp-txt-suf-i-bdr-clr": "",
+      "--hlp-txt-suf-i-clr": "",
+      "--hlp-txt-suf-i-fltr": "",
+      "--hlp-txt-suf-i-sh": "",
+      "--lbl-pre-i-bdr-clr": "",
+      "--lbl-pre-i-clr": "",
+      "--lbl-pre-i-fltr": "",
+      "--lbl-pre-i-sh": "",
+      "--lbl-suf-i-bdr-clr": "",
+      "--lbl-suf-i-clr": "",
+      "--lbl-suf-i-fltr": "",
+      "--lbl-suf-i-sh": "",
+      "--lbl-wrp-bdr-clr": "",
+      "--lbl-wrp-bg": "",
+      "--lbl-wrp-sh": "",
+      "--pre-i-bdr-clr": "",
+      "--pre-i-clr": "",
+      "--pre-i-fltr": "",
+      "--pre-i-sh": "",
+      "--req-smbl-c": "var(--global-font-color)",
+      "--sub-titl-bdr-clr": "",
+      "--sub-titl-bg": "",
+      "--sub-titl-c": "hsla(var(--gfh), var(--gfs), var(--gfl), 0.7)",
+      "--sub-titl-pre-i-bdr-clr": "",
+      "--sub-titl-pre-i-clr": "",
+      "--sub-titl-pre-i-fltr": "",
+      "--sub-titl-pre-i-sh": "",
+      "--sub-titl-sh": "",
+      "--sub-titl-suf-i-bdr-clr": "",
+      "--sub-titl-suf-i-clr": "",
+      "--sub-titl-suf-i-fltr": "",
+      "--sub-titl-suf-i-sh": "",
+      "--suf-i-bdr-clr": "",
+      "--suf-i-clr": "",
+      "--suf-i-fltr": "",
+      "--suf-i-sh": ""
+    }
+  },
+  "themeVars": {
+    "lgLightThemeVars": {
+      "--btn-bdr": "none",
+      "--btn-bdr-rad": "var(--g-bdr-rad)",
+      "--btn-bdr-width": "0",
+      "--btn-f-style": "",
+      "--btn-fs": "var(--fld-fs)",
+      "--btn-fw": 700,
+      "--btn-m": "0px 0px",
+      "--btn-p": "13px 20px",
+      "--dir": "ltr",
+      "--err-bdr": "solid",
+      "--err-bdr-rad": "8px",
+      "--err-bdr-width": "1px",
+      "--err-h": "",
+      "--err-m": "5px 0 0 0",
+      "--err-p": "10px",
+      "--err-txt-al": "",
+      "--err-txt-font-style": "",
+      "--err-txt-font-w": 400,
+      "--err-txt-fs": "12px",
+      "--err-txt-pre-i-bdr": "",
+      "--err-txt-pre-i-bdr-rad": "8px",
+      "--err-txt-pre-i-bdr-width": "",
+      "--err-txt-pre-i-h": "15px",
+      "--err-txt-pre-i-m": "0px 5px 0px 0px",
+      "--err-txt-pre-i-p": "",
+      "--err-txt-pre-i-w": "15px",
+      "--err-txt-suf-i-bdr": "",
+      "--err-txt-suf-i-bdr-rad": "8px",
+      "--err-txt-suf-i-bdr-width": "",
+      "--err-txt-suf-i-h": "15px",
+      "--err-txt-suf-i-m": "0px 0px 0px 5px",
+      "--err-txt-suf-i-p": "",
+      "--err-txt-suf-i-w": "15px",
+      "--fld-f-style": "normal",
+      "--fld-f-w": 500,
+      "--fld-fs": "14px",
+      "--fld-lbl-bdr": "",
+      "--fld-lbl-bdr-rad": "",
+      "--fld-lbl-bdr-width": "",
+      "--fld-lbl-fs": "1rem",
+      "--fld-lbl-m": "",
+      "--fld-lbl-p": "",
+      "--fld-lbl-pn": "",
+      "--fld-m": "",
+      "--fld-p": "10px",
+      "--fld-wrp-bdr": "",
+      "--fld-wrp-bdr-rad": "",
+      "--fld-wrp-bdr-width": "",
+      "--fld-wrp-dis": "block",
+      "--fld-wrp-fdir": "",
+      "--fld-wrp-justify": "center",
+      "--fld-wrp-m": "",
+      "--fld-wrp-p": "7px 10px",
+      "--fld-wrp-width": "",
+      "--g-bdr-rad": "11px",
+      "--g-bdr-width": "1px",
+      "--g-font-family": "inherit",
+      "--g-o-offset": "1px",
+      "--g-o-s": "solid",
+      "--g-o-w": "1px",
+      "--global-fld-bdr": "solid",
+      "--global-outline": "1px solid var(--global-accent-color)",
+      "--global-outline-offset": "1px",
+      "--hlp-txt-al": "",
+      "--hlp-txt-bdr": "",
+      "--hlp-txt-bdr-rad": "",
+      "--hlp-txt-bdr-width": "",
+      "--hlp-txt-font-style": "",
+      "--hlp-txt-font-w": 400,
+      "--hlp-txt-fs": "12px",
+      "--hlp-txt-m": "2px 0px 0px 0px",
+      "--hlp-txt-p": "3px 0",
+      "--hlp-txt-pre-i-bdr": "",
+      "--hlp-txt-pre-i-bdr-rad": "8px",
+      "--hlp-txt-pre-i-bdr-width": "",
+      "--hlp-txt-pre-i-h": "15px",
+      "--hlp-txt-pre-i-m": "0px 5px 0px 0px",
+      "--hlp-txt-pre-i-p": "",
+      "--hlp-txt-pre-i-w": "15px",
+      "--hlp-txt-suf-i-bdr": "",
+      "--hlp-txt-suf-i-bdr-rad": "8px",
+      "--hlp-txt-suf-i-bdr-width": "",
+      "--hlp-txt-suf-i-h": "15px",
+      "--hlp-txt-suf-i-m": "0px 0px 0px 5px",
+      "--hlp-txt-suf-i-p": "",
+      "--hlp-txt-suf-i-w": "15px",
+      "--inp-wrp-width": "",
+      "--lbl-al": "",
+      "--lbl-font-style": "",
+      "--lbl-font-w": 500,
+      "--lbl-pre-i-bdr": "",
+      "--lbl-pre-i-bdr-rad": "8px",
+      "--lbl-pre-i-bdr-width": "",
+      "--lbl-pre-i-h": "20px",
+      "--lbl-pre-i-m": "0px 5px 0px 0px",
+      "--lbl-pre-i-p": "",
+      "--lbl-pre-i-w": "20px",
+      "--lbl-suf-i-bdr": "",
+      "--lbl-suf-i-bdr-rad": "8px",
+      "--lbl-suf-i-bdr-width": "",
+      "--lbl-suf-i-h": "20px",
+      "--lbl-suf-i-m": "0px 0px 0px 5px",
+      "--lbl-suf-i-p": "",
+      "--lbl-suf-i-w": "20px",
+      "--lbl-wrp-bdr": "",
+      "--lbl-wrp-bdr-rad": "",
+      "--lbl-wrp-bdr-width": "",
+      "--lbl-wrp-m": "0 0 5px 0",
+      "--lbl-wrp-p": "",
+      "--lbl-wrp-sa": "",
+      "--lbl-wrp-width": "100%",
+      "--pre-i-bdr": "",
+      "--pre-i-bdr-rad": "8px",
+      "--pre-i-bdr-width": "",
+      "--pre-i-h": "25px",
+      "--pre-i-m": "0px 0px 0px 3px",
+      "--pre-i-p": "",
+      "--pre-i-w": "25px",
+      "--req-smbl-fs": "",
+      "--req-smbl-fw": "",
+      "--req-smbl-lh": "",
+      "--req-smbl-lt": "",
+      "--req-smbl-m": "",
+      "--req-smbl-p": "",
+      "--req-smbl-pn": "",
+      "--req-smbl-rt": "",
+      "--sub-titl-al": "",
+      "--sub-titl-bdr": "",
+      "--sub-titl-bdr-rad": "",
+      "--sub-titl-bdr-width": "",
+      "--sub-titl-font-style": "",
+      "--sub-titl-font-w": 500,
+      "--sub-titl-fs": "12px",
+      "--sub-titl-m": "2px 0px 0px 0px",
+      "--sub-titl-p": "3px 0",
+      "--sub-titl-pre-i-bdr": "",
+      "--sub-titl-pre-i-bdr-rad": "8px",
+      "--sub-titl-pre-i-bdr-width": "",
+      "--sub-titl-pre-i-h": "15px",
+      "--sub-titl-pre-i-m": "0px 5px 0px 0px",
+      "--sub-titl-pre-i-p": "",
+      "--sub-titl-pre-i-w": "15px",
+      "--sub-titl-suf-i-bdr": "",
+      "--sub-titl-suf-i-bdr-rad": "8px",
+      "--sub-titl-suf-i-bdr-width": "",
+      "--sub-titl-suf-i-h": "15px",
+      "--sub-titl-suf-i-m": "0px 0px 0px 5px",
+      "--sub-titl-suf-i-p": "",
+      "--sub-titl-suf-i-w": "15px",
+      "--suf-i-bdr": "",
+      "--suf-i-bdr-rad": "8px",
+      "--suf-i-bdr-width": "",
+      "--suf-i-h": "25px",
+      "--suf-i-m": "0px 3px 0px 0px",
+      "--suf-i-p": "",
+      "--suf-i-w": "25px"
+    }
+  },
+  "conditions": [
+    {
+      "title": "km vergoeding 1",
+      "action_type": "oninput",
+      "action_run": "create_edit",
+      "action_behaviour": "cond",
+      "conditions": [
+        {
+          "cond_type": "if",
+          "actions": {
+            "fields": [
+              {
+                "field": "fld_key-60",
+                "action": "value",
+                "val": "Number(${fld_key-59})*0.21"
+              }
+            ],
+            "success": []
+          },
+          "logics": [
+            {
+              "field": "fld_key-59",
+              "logic": "not_null",
+              "val": ""
+            },
+            "or",
+            {
+              "field": "fld_key-59",
+              "logic": "null",
+              "val": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "km vergoeding 2",
+      "action_type": "oninput",
+      "action_run": "create_edit",
+      "action_behaviour": "cond",
+      "conditions": [
+        {
+          "cond_type": "if",
+          "actions": {
+            "fields": [
+              {
+                "field": "fld_key-69",
+                "action": "value",
+                "val": "Number(${fld_key-68})*0.21"
+              }
+            ],
+            "success": []
+          },
+          "logics": [
+            {
+              "field": "fld_key-68",
+              "logic": "not_null",
+              "val": ""
+            },
+            "or",
+            {
+              "field": "fld_key-68",
+              "logic": "null",
+              "val": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "km vergoeding 3",
+      "action_type": "oninput",
+      "action_run": "create_edit",
+      "action_behaviour": "cond",
+      "conditions": [
+        {
+          "cond_type": "if",
+          "logics": [
+            {
+              "field": "fld_key-81",
+              "logic": "not_null",
+              "val": ""
+            },
+            "or",
+            {
+              "field": "fld_key-81",
+              "logic": "null",
+              "val": ""
+            }
+          ],
+          "actions": {
+            "fields": [
+              {
+                "field": "fld_key-83",
+                "action": "value",
+                "val": "Number(${fld_key-81})*0.21"
+              }
+            ],
+            "success": []
+          }
+        }
+      ]
+    },
+    {
+      "title": "km vergoeding 4",
+      "action_type": "oninput",
+      "action_run": "create_edit",
+      "action_behaviour": "cond",
+      "conditions": [
+        {
+          "cond_type": "if",
+          "logics": [
+            {
+              "field": "fld_key-90",
+              "logic": "not_null",
+              "val": ""
+            }
+          ],
+          "actions": {
+            "fields": [
+              {
+                "field": "fld_key-91",
+                "action": "value",
+                "val": "${fld_key-90}*0.21"
+              }
+            ],
+            "success": []
+          }
+        }
+      ]
+    },
+    {
+      "title": "Total other costs",
+      "action_type": "onsubmit",
+      "action_run": "create_edit",
+      "action_behaviour": "cond",
+      "conditions": [
+        {
+          "cond_type": "if",
+          "actions": {
+            "fields": [
+              {
+                "field": "",
+                "action": "value"
+              }
+            ],
+            "success": []
+          },
+          "logics": [
+            {
+              "field": "",
+              "logic": "",
+              "val": ""
+            },
+            "or",
+            {
+              "field": "",
+              "logic": "",
+              "val": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Total all costs",
+      "action_type": "always",
+      "action_run": "create_edit",
+      "action_behaviour": "cond",
+      "conditions": [
+        {
+          "cond_type": "if",
+          "actions": {
+            "fields": [
+              {
+                "field": "fld_key-53",
+                "action": "value",
+                "val": "Number(((Number(${fld_key-59})+Number(${fld_key-68})+Number(${fld_key-81})+Number(${fld_key-90}))*0.28)+Number(${fld_key-56})+Number(${fld_key-70})+Number(${fld_key-89})+Number(${fld_key-88}))"
+              }
+            ],
+            "success": []
+          },
+          "logics": [
+            {
+              "field": "fld_key-59",
+              "logic": "not_null",
+              "val": ""
+            },
+            "or",
+            {
+              "field": "fld_key-68",
+              "logic": "not_null",
+              "val": ""
+            },
+            "or",
+            {
+              "field": "fld_key-81",
+              "logic": "not_null",
+              "val": ""
+            },
+            "or",
+            {
+              "field": "fld_key-90",
+              "logic": "not_null",
+              "val": ""
+            },
+            "or",
+            {
+              "field": "fld_key-56",
+              "logic": "not_null",
+              "val": ""
+            },
+            "or",
+            {
+              "field": "fld_key-70",
+              "logic": "not_null",
+              "val": ""
+            },
+            "or",
+            {
+              "field": "fld_key-89",
+              "logic": "not_null",
+              "val": ""
+            },
+            "or",
+            {
+              "field": "fld_key-88",
+              "logic": "not_null",
+              "val": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Show Success Message",
+      "action_type": "onsubmit",
+      "action_run": "create_edit",
+      "action_behaviour": "always",
+      "conditions": [
+        {
+          "cond_type": "if",
+          "logics": [
+            {
+              "field": "",
+              "logic": "",
+              "val": ""
+            },
+            "or",
+            {
+              "field": "",
+              "logic": "",
+              "val": ""
+            }
+          ],
+          "actions": {
+            "fields": [
+              {
+                "field": "",
+                "action": "value"
+              }
+            ],
+            "success": [
+              {
+                "type": "successMsg",
+                "details": {
+                  "id": "{\"index\":\"0\"}"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "layouts": {
+    "lg": [
+      {
+        "w": 60,
+        "h": 32,
+        "x": 0,
+        "y": 0,
+        "i": "fld_key-75",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 60,
+        "h": 31,
+        "x": 0,
+        "y": 32,
+        "i": "fld_key-62",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 60,
+        "h": 32,
+        "x": 0,
+        "y": 63,
+        "i": "fld_key-64",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 13,
+        "h": 77,
+        "x": 0,
+        "y": 95,
+        "i": "fld_key-57",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 29,
+        "h": 77,
+        "x": 13,
+        "y": 95,
+        "i": "fld_key-55",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 9,
+        "h": 77,
+        "x": 42,
+        "y": 95,
+        "i": "fld_key-59",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 9,
+        "h": 77,
+        "x": 51,
+        "y": 95,
+        "i": "fld_key-60",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 13,
+        "h": 77,
+        "x": 0,
+        "y": 172,
+        "i": "fld_key-66",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 29,
+        "h": 77,
+        "x": 13,
+        "y": 172,
+        "i": "fld_key-67",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 9,
+        "h": 77,
+        "x": 42,
+        "y": 172,
+        "i": "fld_key-68",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 9,
+        "h": 77,
+        "x": 51,
+        "y": 172,
+        "i": "fld_key-69",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 13,
+        "h": 77,
+        "x": 0,
+        "y": 249,
+        "i": "fld_key-77",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 29,
+        "h": 77,
+        "x": 13,
+        "y": 249,
+        "i": "fld_key-79",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 9,
+        "h": 77,
+        "x": 42,
+        "y": 249,
+        "i": "fld_key-81",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 9,
+        "h": 77,
+        "x": 51,
+        "y": 249,
+        "i": "fld_key-83",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 13,
+        "h": 77,
+        "x": 0,
+        "y": 326,
+        "i": "fld_key-76",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 29,
+        "h": 77,
+        "x": 13,
+        "y": 326,
+        "i": "fld_key-78",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 9,
+        "h": 77,
+        "x": 42,
+        "y": 326,
+        "i": "fld_key-90",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 9,
+        "h": 77,
+        "x": 51,
+        "y": 326,
+        "i": "fld_key-91",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 60,
+        "h": 77,
+        "x": 0,
+        "y": 403,
+        "i": "fld_key-73",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 60,
+        "h": 31,
+        "x": 0,
+        "y": 480,
+        "i": "fld_key-61",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 60,
+        "h": 32,
+        "x": 0,
+        "y": 511,
+        "i": "fld_key-65",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 13,
+        "h": 77,
+        "x": 0,
+        "y": 543,
+        "i": "fld_key-54",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 34,
+        "h": 77,
+        "x": 13,
+        "y": 543,
+        "i": "fld_key-58",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 13,
+        "h": 77,
+        "x": 47,
+        "y": 543,
+        "i": "fld_key-56",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 13,
+        "h": 77,
+        "x": 0,
+        "y": 620,
+        "i": "fld_key-72",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 34,
+        "h": 77,
+        "x": 13,
+        "y": 620,
+        "i": "fld_key-71",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 13,
+        "h": 77,
+        "x": 47,
+        "y": 620,
+        "i": "fld_key-70",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 13,
+        "h": 77,
+        "x": 0,
+        "y": 697,
+        "i": "fld_key-85",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 34,
+        "h": 77,
+        "x": 13,
+        "y": 697,
+        "i": "fld_key-87",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 13,
+        "h": 77,
+        "x": 47,
+        "y": 697,
+        "i": "fld_key-89",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 13,
+        "h": 77,
+        "x": 0,
+        "y": 774,
+        "i": "fld_key-84",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 34,
+        "h": 77,
+        "x": 13,
+        "y": 774,
+        "i": "fld_key-86",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 13,
+        "h": 77,
+        "x": 47,
+        "y": 774,
+        "i": "fld_key-88",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 60,
+        "h": 77,
+        "x": 0,
+        "y": 851,
+        "i": "fld_key-74",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 60,
+        "h": 31,
+        "x": 0,
+        "y": 928,
+        "i": "fld_key-63",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 60,
+        "h": 77,
+        "x": 0,
+        "y": 959,
+        "i": "fld_key-53",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 60,
+        "h": 100,
+        "x": 0,
+        "y": 1036,
+        "i": "fld_key-28",
+        "minW": 20,
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 60,
+        "h": 38,
+        "x": 0,
+        "y": 1136,
+        "i": "fld_key-30",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 60,
+        "h": 54,
+        "x": 0,
+        "y": 1174,
+        "i": "fld_key-1",
+        "moved": false,
+        "static": false
+      }
+    ]
+  },
+  "nestedLayout": {},
+  "confirmations": {
+    "type": {
+      "successMsg": [
+        {
+          "title": "Form Success Message",
+          "msg": "<p style=\"text-align: center;\"><span style=\"font-size: 12pt;\"><strong>Successfully Submitted.&nbsp;</strong></span></p>",
+          "config": {
+            "msgType": "below",
+            "position": "bottom-right",
+            "animation": "fade",
+            "autoHide": true,
+            "duration": 3,
+            "styles": {
+              "width": "300px",
+              "padding": "5px 35px 5px 20px",
+              "background": "#bdffd4e8",
+              "color": "var(--global-font-color)",
+              "borderWidth": "1px",
+              "borderType": "solid",
+              "borderColor": "#a9ffa3",
+              "borderRadius": "var(--g-bdr-rad)",
+              "boxShadow": [
+                {
+                  "x": "0px",
+                  "y": "0px",
+                  "blur": "0px",
+                  "spread": "0px",
+                  "color": "rgb(0 0 0 / 6%)",
+                  "inset": ""
+                }
+              ],
+              "closeBackground": "transparent",
+              "closeHover": "var(--bg-10)",
+              "closeIconColor": "var(--bg-40)",
+              "closeIconHover": "var(--bg-50)"
+            }
+          }
+        }
+      ],
+      "redirectPage": [
+        {
+          "url": "",
+          "title": "Untitled Redirect Url 1"
+        }
+      ],
+      "webHooks": [
+        {
+          "url": "",
+          "method": "GET",
+          "title": "Untitled Webhook 1"
+        }
+      ]
+    }
+  },
+  "fields": {
+    "fld_key-1": {
+      "typ": "button",
+      "btnSiz": "md",
+      "btnTyp": "submit",
+      "txt": "Submit declaration",
+      "icn": {
+        "pos": "",
+        "url": ""
+      },
+      "valid": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-1"
+    },
+    "fld_key-28": {
+      "typ": "file-up",
+      "btnTxt": "Attach File",
+      "valid": {},
+      "prefixIcn": "https://intranet.masterskip.com/wp-content/plugins/bit-form/assets/../static/file-upload/paperclip.svg",
+      "err": {
+        "maxSize": {
+          "dflt": "<p style=\"margin:0\">File Size is Exceeded</p>",
+          "show": true
+        },
+        "minFile": {
+          "dflt": "<p style=\"margin:0\">Minimum 0 file required</p>",
+          "show": true
+        },
+        "maxFile": {
+          "dflt": "Maximum 0 File can uploaded",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "config": {
+        "multiple": true,
+        "allowMaxSize": true,
+        "showMaxSize": true,
+        "maxSize": "500",
+        "sizeUnit": "MB",
+        "isItTotalMax": false,
+        "showSelectStatus": true,
+        "fileSelectStatus": "No File Selected",
+        "allowedFileType": ".xbm,.tif,.pjp,.pjpeg,.svgz,.jpg,.jpeg,.ico,.tiff,.gif,.svg,.bmp,.png,.jfif,.webp,.tif,._RF_,.pdf",
+        "showFileList": true,
+        "fileExistMsg": "A file allready exist",
+        "showFilePreview": true,
+        "showFileSize": true,
+        "duplicateAllow": false,
+        "accept": "",
+        "minFile": 0,
+        "maxFile": 0,
+        "maxSizeLabel": "500mb"
+      },
+      "fieldName": "fld_key-28",
+      "lbl": "Upload receipts",
+      "subtitleHide": true,
+      "subtitle": "Attach receipts of all your expenses"
+    },
+    "fld_key-30": {
+      "typ": "decision-box",
+      "adminLbl": "Confirmation",
+      "adminLblHide": true,
+      "lbl": "<p style=\"margin: 0;\"><span style=\"font-family: 'lucida sans', 'lucida grande', lucida, arial, sans-serif; font-size: 15px;\">I hereby confirm that all information provided is true and accurate to the best of my knowledge.</span></p>",
+      "msg": {
+        "checked": "Accepted",
+        "unchecked": "Rejected"
+      },
+      "valid": {
+        "req": true
+      },
+      "err": {
+        "req": {
+          "dflt": "<p style=\"margin:0\">This field is required</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-30"
+    },
+    "fld_key-53": {
+      "typ": "number",
+      "lbl": "Total all costs",
+      "ph": "e.g. 123",
+      "phHide": true,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-53"
+    },
+    "fld_key-54": {
+      "typ": "date",
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-54",
+      "lbl": "Other costs date 1"
+    },
+    "fld_key-55": {
+      "typ": "text",
+      "phHide": false,
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-55",
+      "lbl": "Travel description 1"
+    },
+    "fld_key-56": {
+      "typ": "number",
+      "lbl": "Amount in euro 1",
+      "phHide": false,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-56",
+      "defaultValueHide": false
+    },
+    "fld_key-57": {
+      "typ": "date",
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-57",
+      "lbl": "Travel date 1"
+    },
+    "fld_key-58": {
+      "typ": "text",
+      "lbl": "Expense description 1",
+      "phHide": false,
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-58"
+    },
+    "fld_key-59": {
+      "typ": "number",
+      "lbl": "Kilometers 1",
+      "phHide": false,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        },
+        "regexr": {
+          "dflt": "<p style=\"margin:0\">Pattern not matched</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-59",
+      "defaultValueHide": false,
+      "suggestionHide": true
+    },
+    "fld_key-60": {
+      "typ": "number",
+      "phHide": false,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fle_key-60",
+      "subtitleHide": false,
+      "hlpTxtHide": false,
+      "lbl": "Euro 1",
+      "defaultValueHide": false
+    },
+    "fld_key-61": {
+      "typ": "divider",
+      "adminLbl": "Divider",
+      "adminLblHide": true,
+      "valid": {},
+      "divider": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-61"
+    },
+    "fld_key-62": {
+      "typ": "divider",
+      "adminLbl": "Divider",
+      "adminLblHide": true,
+      "valid": {},
+      "divider": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-62"
+    },
+    "fld_key-63": {
+      "typ": "divider",
+      "adminLbl": "Divider",
+      "adminLblHide": true,
+      "valid": {},
+      "divider": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-63"
+    },
+    "fld_key-64": {
+      "typ": "title",
+      "adminLbl": "Title",
+      "adminLblHide": true,
+      "titleImg": "",
+      "logoHide": true,
+      "title": "Travel expenses",
+      "titleHide": false,
+      "subtitleHide": true,
+      "titleTag": "h3",
+      "subTitleTag": "h5",
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-64"
+    },
+    "fld_key-65": {
+      "typ": "title",
+      "adminLbl": "Title",
+      "adminLblHide": true,
+      "titleImg": "",
+      "logoHide": true,
+      "title": "Other expenses",
+      "titleHide": false,
+      "subtitleHide": true,
+      "titleTag": "h3",
+      "subTitleTag": "h5",
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-65"
+    },
+    "fld_key-66": {
+      "typ": "date",
+      "valid": {
+        "hideLbl": false
+      },
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-66",
+      "lbl": "Travel date 2"
+    },
+    "fld_key-67": {
+      "typ": "text",
+      "lbl": "Travel description 2",
+      "phHide": false,
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-67"
+    },
+    "fld_key-68": {
+      "typ": "number",
+      "lbl": "Kilometers 2",
+      "phHide": false,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-68",
+      "defaultValueHide": false
+    },
+    "fld_key-69": {
+      "typ": "number",
+      "lbl": "Euro 2",
+      "phHide": false,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-69",
+      "defaultValueHide": false
+    },
+    "fld_key-70": {
+      "typ": "number",
+      "phHide": false,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-70",
+      "lbl": "Amount in euro 2",
+      "defaultValueHide": false
+    },
+    "fld_key-71": {
+      "typ": "text",
+      "phHide": false,
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-71",
+      "lbl": "Expense description 2"
+    },
+    "fld_key-72": {
+      "typ": "date",
+      "lbl": "Other costs date 2",
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "fld_key-72"
+    },
+    "fld_key-73": {
+      "typ": "number",
+      "lbl": "Total travel costs",
+      "ph": "e.g. 123",
+      "phHide": true,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "number-2-73"
+    },
+    "fld_key-74": {
+      "typ": "number",
+      "lbl": "Total other costs",
+      "ph": "e.g. 123",
+      "phHide": true,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "number-2-74"
+    },
+    "fld_key-75": {
+      "typ": "title",
+      "adminLbl": "Title",
+      "adminLblHide": true,
+      "titleImg": "",
+      "logoHide": true,
+      "title": "Your details",
+      "titleHide": false,
+      "subtitleHide": true,
+      "titleTag": "h3",
+      "subTitleTag": "h5",
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "title-2-75"
+    },
+    "fld_key-76": {
+      "typ": "date",
+      "valid": {
+        "hideLbl": false
+      },
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "date-2-76",
+      "lbl": "Travel date 4"
+    },
+    "fld_key-77": {
+      "typ": "date",
+      "valid": {
+        "hideLbl": false
+      },
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "date-2-77",
+      "lbl": "Travel date 3"
+    },
+    "fld_key-78": {
+      "typ": "text",
+      "lbl": "Travel description 4",
+      "phHide": false,
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "text-2-78"
+    },
+    "fld_key-79": {
+      "typ": "text",
+      "lbl": "Travel description 3",
+      "phHide": false,
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "text-2-79"
+    },
+    "fld_key-81": {
+      "typ": "number",
+      "lbl": "Kilometers 3",
+      "phHide": false,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "number-2-81",
+      "defaultValueHide": false
+    },
+    "fld_key-83": {
+      "typ": "number",
+      "lbl": "Euro 3",
+      "phHide": false,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "number-2-83",
+      "defaultValueHide": false
+    },
+    "fld_key-84": {
+      "typ": "date",
+      "lbl": "Other costs date 4",
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "date-2-84"
+    },
+    "fld_key-85": {
+      "typ": "date",
+      "lbl": "Other costs date 3",
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "date-2-85"
+    },
+    "fld_key-86": {
+      "typ": "text",
+      "phHide": false,
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "text-2-86",
+      "lbl": "Expense description 4"
+    },
+    "fld_key-87": {
+      "typ": "text",
+      "phHide": false,
+      "valid": {},
+      "err": {},
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "text-2-87",
+      "lbl": "Expense description 3"
+    },
+    "fld_key-88": {
+      "typ": "number",
+      "phHide": false,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        },
+        "mn": {
+          "dflt": "<p style=\"margin:0\">Minimum number is 0<p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "number-2-88",
+      "lbl": "Amount in euro 4",
+      "defaultValueHide": false,
+      "mn": "0"
+    },
+    "fld_key-89": {
+      "typ": "number",
+      "phHide": false,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "number-2-89",
+      "lbl": "Amount in euro 3",
+      "defaultValueHide": false
+    },
+    "fld_key-90": {
+      "typ": "number",
+      "lbl": "Kilometers 4",
+      "phHide": false,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "number-2-90",
+      "defaultValueHide": false
+    },
+    "fld_key-91": {
+      "typ": "number",
+      "lbl": "Euro 4",
+      "phHide": false,
+      "valid": {},
+      "err": {
+        "invalid": {
+          "dflt": "<p style=\"margin:0\">Number is invalid</p>",
+          "show": true
+        }
+      },
+      "customClasses": {},
+      "customAttributes": {},
+      "fieldName": "number-2-91",
+      "defaultValueHide": false
+    }
+  }
+}

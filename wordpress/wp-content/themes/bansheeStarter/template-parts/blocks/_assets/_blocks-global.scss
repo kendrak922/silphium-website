@@ -1,0 +1,380 @@
+@use '../../../assets/src/sass/abstracts' as *;
+@use '../../../assets/src/sass/base/fonts' as font;
+
+/******************************
+    BLOCK: Global
+******************************/
+
+/***** BLOCK STYLES *****/
+section.block {
+	padding: $block-padding-mobile 0;
+
+	@include create-mq($md-width) {
+		padding: $block-padding 0;
+	}
+
+	&.block--padding-large {
+		@include create-mq($lg-width) {
+			padding: $block-padding-lg 0;
+		}
+	}
+
+	&.block--padding-none,
+	&.u-paddingVert0gu {
+		padding: 0;
+	}
+}
+
+//stacked spacing
+.u-bgColorNone:not(.u-bgMedia)+.u-bgColorNone:not(.u-bgMedia),
+.u-bgColorWhite:not(.u-bgMedia)+.u-bgColorWhite:not(.u-bgMedia),
+.u-bgColorPrimary:not(.u-bgMedia)+.u-bgColorPrimary:not(.u-bgMedia) {
+	padding-top: 0;
+}
+
+/***** BLOCK FORMATTING *****/
+body * {
+
+	// Horizontal Align
+	&[data-align-x='left'] {
+		justify-content: flex-start;
+		text-align: left;
+	}
+
+	&[data-align-x='center'] {
+		justify-content: center;
+		text-align: center;
+
+		.btn__container {
+			justify-content: center;
+			text-align: center;
+		}
+	}
+
+	&[data-align-x='right'] {
+		justify-content: flex-end;
+		text-align: right;
+
+		.btn__container {
+			justify-content: flex-end;
+			text-align: right;
+		}
+		
+	}
+
+	// Vertical Align
+	&[data-align-y='top'] {
+		align-items: flex-start;
+
+		.wp-block-columns {
+			align-items: flex-start;
+		}
+	}
+
+	&[data-align-y='center'] {
+		align-items: center;
+		.wp-block-columns {
+			align-items: center!important;
+		}
+	}
+
+	&[data-align-y='bottom'] {
+		align-items: flex-end;
+
+		.wp-block-columns {
+			align-items: flex-end;
+		}
+	}
+}
+
+@media (max-width: 1023.99px) {
+
+	//64rem
+	.wp-block-group {
+		&>* {
+			max-width: 100% !important
+		}
+	}
+}
+
+
+
+/******************************
+    GUTENBURG
+******************************/
+.wp-block-footnotes {
+	// font-family: $font-stack-secondary;
+	@include font.bodySans();
+}
+
+.wp-block-media-text {
+	grid-template-columns: 100%;
+
+	// multiple in a row
+	&+.wp-block-media-text {
+		margin-top: 3rem;
+	}
+
+	//media-text:content
+	.wp-block-media-text__content {
+		grid-column: 1;
+		grid-row: 2;
+		padding: 48px 0 0;
+
+		*:first-child {
+			margin-top: 0;
+		}
+
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.wp-block-media-text__media {
+		grid-column: 1;
+	}
+
+	&.has-media-on-the-right {
+		grid-template-columns: 100%;
+
+		.wp-block-media-text__content {
+			grid-column: 1;
+			grid-row: 2;
+			padding: 48px 0 0;
+		}
+
+		.wp-block-media-text__media {
+			grid-column: 1;
+		}
+	}
+
+	@include create-mq($md-width) {
+		grid-template-columns: 50% 1fr;
+
+		&+.wp-block-media-text {
+			margin-top: 4.5rem;
+		}
+
+		.wp-block-media-text__content {
+			grid-column: 2;
+			grid-row: 1;
+			padding: 0 0 0 96px;
+		}
+
+		&.has-media-on-the-right {
+			grid-template-columns: 1fr 50%;
+
+			.wp-block-media-text__content {
+				grid-column: 1;
+				grid-row: 1;
+				padding: 0 96px 0 0;
+			}
+
+			.wp-block-media-text__media {
+				grid-column: 2;
+			}
+		}
+	}
+}
+
+
+/******************************
+    ADMIN
+******************************/
+.admin-only {
+	display: none;
+}
+
+.block-editor__container {
+	.acf-block-panel .acf-fields>.acf-field>.acf-label label {
+		font-weight: $font-weight-bold;
+	}
+
+	.admin--block-head {
+		padding: 15px;
+	}
+
+	.admin-block-title {
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid #e1e1e1;
+		color: #999;
+		font-size: 21px;
+		font-family: sans-serif;
+		font-weight: $font-weight-light;
+		margin-top: 0;
+		margin-bottom: 5px;
+		padding: 0 0 3px;
+
+		span {
+			display: block;
+			font-size: 18px;
+			font-weight: $font-weight-bold;
+
+			&.dashicons {
+				margin-right: 5px;
+			}
+		}
+	}
+
+	.admin-block-desc {
+		color: #999;
+		font-size: 14px;
+		font-family: sans-serif;
+		font-weight: $font-weight-light;
+		margin-top: 0;
+		margin-bottom: 5px;
+		padding: 0 0 3px;
+	}
+}
+
+.inner-block {
+	&--author {
+		position: relative;
+		margin-top: 8px;
+		line-height: 1rem;
+		@include create-mq($md-width) {
+			padding-left: 12px;	
+		}
+
+		.h--caption {
+			color: swatch("Gray");
+			display: block;
+			margin-bottom: 8px;
+			@include create-mq($md-width) {
+				margin-bottom: 0;
+				display:inline;
+			}
+		}
+
+		ul,li {
+			list-style: none;
+			display: inline-block;
+			margin: 0;
+		}
+		li {
+			position: relative;
+			display: block;
+			margin-left: 10px;
+			margin-bottom: 8px;
+			border-bottom: 1px solid $color-black;
+			&:last-of-type{
+				border: none;
+			}
+			@include create-mq($md-width) {
+				padding-left: 10px;
+				margin-bottom: 0;
+				display: inline;
+				border-bottom:none;
+				&:before {
+					content: ',';
+					right: -5px;
+					bottom: 0;
+					display: block;
+					position: absolute;
+					z-index: 0;
+				}
+				&:last-of-type{
+					&:before {
+						display: none;
+					}
+				}
+			}
+
+		}
+
+		ul {
+			position: relative;
+			&:before {
+				content: '';
+				bottom: 0;
+				display: block;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 0.25rem;
+				z-index: 0;
+				background-color: $color-black;
+				@include create-mq($md-width) {
+					display: none;
+				}
+			}
+		}
+	
+		@include create-mq($md-width) {
+			&:before {
+				content: '';
+				bottom: 0;
+				display: block;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 0.25rem;
+				z-index: 0;
+				background-color: $color-black;
+			}
+        }
+	}
+
+	&--date {
+		position: relative;
+		line-height: 1rem;
+		span {
+			display: block;
+			&:not(.h--caption){
+				position: relative;
+				padding-left: 10px;
+				margin-left: 0;
+				&:before {
+					content: '';
+					bottom: 0;
+					display: block;
+					left: 0;
+					position: absolute;
+					top: 0;
+					width: 0.25rem;
+					z-index: 0;
+					background-color: $color-black;
+				}
+				@include create-mq($md-width) {
+					&:before {
+						display: none;
+					}
+				}
+
+			}
+			@include create-mq($md-width) {
+				padding-left: 12px;	
+				display: inline;
+			}
+
+		}
+
+
+		.h--caption {
+			color: swatch("Gray");
+			display: block;
+			margin-bottom: 8px;
+			@include create-mq($md-width) {
+				margin-bottom: 0;
+				display: inline;
+			}
+		}
+		@include create-mq($md-width) {
+			&:before {
+				content: '';
+				bottom: 0;
+				display: block;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 0.25rem;
+				z-index: 0;
+				background-color: $color-black;
+			}
+        }
+		// &:before {
+		// 	display: none;
+		// }
+	}
+}

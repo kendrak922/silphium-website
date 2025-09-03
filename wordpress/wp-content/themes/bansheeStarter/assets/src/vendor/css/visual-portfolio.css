@@ -1,0 +1,31 @@
+.vp-portfolio .vp-portfolio__layout-elements.vp-portfolio__layout-elements-top.vp-portfolio__layout-elements-align-center {
+    justify-content: flex-start;
+}
+
+.vp-portfolio .vp-portfolio__layout-elements .vp-filter__style-dropdown select {
+    background-color: transparent;
+    color: #004169;
+    padding-left: 2px;
+    text-transform: unset;
+    background-image: url("data:image/svg+xml,%3Csvg width='17' height='10' viewBox='0 0 17 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 1.5L8.5 8.5L1 1.5' stroke='%23004169' stroke-width='2'/%3E%3C/svg%3E%0A")!important;
+    background-size: .8rem;
+    font-size: 1rem;
+    font-family: 'Instrument Sans';
+    min-width: 150px;
+}
+
+.vp-portfolio .vp-filter__style-dropdown select:hover {
+    background-color: transparent;
+    color: #004169;
+    cursor: pointer;
+}
+
+.vp-pagination__item a {
+    text-transform: unset!important;
+    font-family: 'Instrument Sans';
+    font-weight: 400!important;
+}
+
+.vp-pagination__style-minimal .vp-pagination__item>a:focus, .vp-pagination__style-minimal .vp-pagination__item>a:hover {
+    color: black;
+}

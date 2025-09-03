@@ -1,0 +1,53 @@
+@use '../../../assets/src/sass/abstracts' as *;
+
+/******************************
+    BLOCK: Marquee
+******************************/
+
+.marquee {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 40px;
+    margin: 40px 0;
+
+    img {
+        height: 45px;
+    }
+
+    &__container {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        gap: 40px;
+        min-width: 100%;
+        animation: scroll-left 45s linear infinite;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+}
+
+.scroll-right .marquee__container {
+    animation-direction: reverse;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+    
+    to {
+        transform: translateX(calc(-100% - 600px));
+    }
+}
+
+@media only screen and (max-width: 768px) {
+	.marquee {
+		gap: 40px;
+	}
+}

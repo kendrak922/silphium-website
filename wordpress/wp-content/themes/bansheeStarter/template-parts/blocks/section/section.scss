@@ -1,0 +1,54 @@
+@use '../../../assets/src/sass/abstracts' as *;
+
+/******************************
+    BLOCK: section
+******************************/
+.block--section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    @include create-mq($md-width) {
+        gap: 4.5rem;
+    }
+    
+    & > *{
+        width:100%;
+    }
+    
+    .wp-block-columns:not(.glossary-entry){
+        margin:0;
+        padding:0;
+    }
+
+    &.block--subwayTile {
+        margin: 100px 0;
+        &-top:before {
+            content: '';
+        }
+        &-bottom:after {
+            content: '';
+        }
+
+        &:before, &:after {
+            background-image: url("/wp-content/themes/bansheeStarter/assets/dist/imgs/checkered.svg");
+            width: 100%;
+            background-color: swatch('Black');
+            background-repeat: repeat;
+            height: 50px;
+            display: inline-block;
+            position: absolute;
+            background-size: 20px;
+        }
+
+        &:before {
+            top: -100px;
+        }
+
+        &:after {
+            bottom: -100px;
+            transform: scale(-1, -1);
+        }
+    }
+
+} // close: .block--section

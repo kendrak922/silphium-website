@@ -1,0 +1,60 @@
+@use '../abstracts' as *;
+
+/**
+ * _background.scss
+ * Background Utilities
+ */
+
+/**
+* Background Colors
+*/
+
+.u-bgColor {
+  &White {
+    background: $color-white;
+  }
+  &Black {
+    background: $color-black;
+  }
+  &None {
+    background: transparent;
+  }
+  
+  @each $color, $value in $palette {
+    &#{$color} {
+      background-color: swatch($color);
+    }
+  }
+}
+
+// .u-boxShadow {
+//   @include boxShadow();
+// }
+
+/**
+ * Background Positioning
+ */
+
+.u-bgFixed {
+  background-attachment: fixed;
+}
+
+/**
+ * Background Size
+ */
+
+.u-bgSize50 {
+  background-size: 50%;
+}
+.u-bgSize75 {
+  background-size: 75%;
+}
+.u-bgSizeFull {
+  background-size: 100%;
+}
+.u-bgSizeCover {
+  background-size: cover;
+}
+.u-bgSizeContain {
+  background-size: contain;
+}

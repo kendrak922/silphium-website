@@ -1,0 +1,547 @@
+@use '../abstracts' as *;
+@use "sass:map";
+@use "sass:meta";
+
+/*************************************************************
+   ** FONT THEME STYLES
+*************************************************************/
+
+/***** DEFAULT FONTS *****/
+@mixin font-appearance() {
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'kern';
+    font-kerning: normal;
+    vertical-align: baseline;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin default-font($font: $font-stack-primary) {
+    @include font-appearance();
+    font-family: $font;
+}
+
+@mixin default-anchor($color: swatch('Neutral'), $hoverColor: swatch('Tertiary')) {
+    @include font-appearance();
+    color: $color;
+    transition: $transition-default;
+    font-weight: 500;
+    &:hover,
+    &:focus {
+        color: $hoverColor;
+    }
+}
+
+@mixin default-heading($font: $font-stack-secondary) {
+    @include font-appearance();
+    font-family: $font;
+    letter-spacing: -0.01;
+}
+
+/***** HEADING MIXINS *****/
+@mixin h1() {
+    font-size: 2.5rem!important; 
+    line-height: 125%;
+    font-weight: 400;
+    @include create-mq($sm-width) {
+        font-size: 3rem!important;
+    }
+    @include create-mq($md-width) {
+        font-size: 5rem!important; //80
+    }
+}
+
+@mixin h2() {
+    font-size: 2rem!important; 
+    line-height: 120%;
+    font-weight: 400;
+    @include create-mq($sm-width) {
+        font-size: 2.5rem!important;
+    }
+    @include create-mq($md-width) {
+        font-size: 3.375rem!important; //54
+        line-height: 120%;
+    }
+}
+
+@mixin h3() {
+    font-size: 1.75rem!important; //28
+    line-height: 2.5rem;
+    font-weight: 400;
+}
+
+@mixin h4() {
+    font-weight: 400;
+    font-size: 1.5rem!important; //24
+    line-height: 1.75;
+}
+
+@mixin h5() {
+    font-size: 1.25rem!important; //20
+    line-height: 1.5;
+    // @include create-mq($md-width) {
+    //     font-size: 1.5rem; //24
+    // }
+}
+
+/***** HEADING CLASSES *****/
+body:not(.wp-admin) main,
+.wp-admin .is-root-container, footer{
+    h1,
+    .h1,
+    .has-h-1-font-size,
+    h2:not(.tribe-events-single-section-title ),
+    .h2,
+    .has-h-2-font-size,
+    h3,
+    .h3,
+    .has-h-3-font-size,
+    h4,
+    .h4,
+    .has-h-4-font-size,
+    h5,
+    .h5{
+        @include default-heading();
+    }
+
+    h1,
+    .h1,
+    .wp-block-heading.has-h-1-font-size,
+    .wp-block-post-title.has-h-1-font-size {
+        @include h1();
+        &.display-heading {
+            padding-left: 0!important;
+            @include create-mq($md-width) {
+                font-size: 120px!important;
+            }
+        }
+    }
+
+    h2:not(.tribe-events-single-section-title),
+    .h2,
+    .wp-block-heading.has-h-2-font-size,
+    .wp-block-post-title.has-h-2-font-size{
+        @include h2();
+    }
+
+    h3,
+    .h3,
+    .wp-block-heading.has-h-3-font-size,
+    .wp-block-post-title.has-h-3-font-size {
+        @include h3();
+    }
+
+    h4,
+    .h4,
+    .wp-block-heading.has-h-4-font-size,
+    .wp-block-post-title.has-h-4-font-size {
+        @include h4();
+    }
+
+    h5,
+    .h5,
+    .wp-block-heading.has-h-5-font-size,
+    .wp-block-post-title.has-h-5-font-size  {
+        @include h5();
+    }
+}
+
+h1,h2,h3,h4,h5{
+    margin: 0 0 1rem;
+}
+.wp-admin .is-root-container{
+    h1,h2,h3,h4,h5{
+        margin: 0 0 1.5rem;
+    }
+}
+
+/***************************************
+    * THEME BASED CLASSES & MIXINS
+***************************************/
+// The mixins/classes in this section are just examples of mixins to create for your theme
+// Identify common text elements across your theme like section headings that you can create a mixin/class for
+
+/***** THEME MIXINS *****/
+
+// Subheadings
+@mixin lines() {
+    line-height: 1.3;
+}
+@mixin body() {
+    @include lines();
+    font-weight: 200;
+}
+@mixin bodyXs() {
+    @include lines();
+    font-size: .875rem !important //14
+}
+@mixin bodySm() {
+    @include lines();
+    font-size: 1rem !important //16
+}
+@mixin bodylg() {
+    @include lines();
+    font-size: 1.25rem !important // 20
+}
+
+@mixin bodyxl() {
+    @include lines();
+    font-size: 1.5rem !important // 24
+}
+@mixin bodySans() {
+    @include body();
+    font-family: $font-stack-primary;
+}
+@mixin quote() {
+    @include h5();
+    @include lines();
+    font-family: $font-stack-primary;
+}
+@mixin divider() {
+    @include h5();
+    font-family: $font-stack-primary;
+    font-weight: normal;
+    font-style: italic;
+}
+//caption
+@mixin caption() {
+    font-family: $font-stack-secondary;
+    font-weight: $font-weight-medium;
+    font-size: 0.875rem !important; //14
+    line-height: 1;
+    letter-spacing: 0;
+}
+@mixin captionLines() {
+    @include caption();
+    @include lines();
+}
+@mixin captionAttribution() {
+    @include captionLines();
+    text-transform: uppercase;
+}
+//nav
+@mixin largeNav() {
+    font-family: $font-stack-secondary;
+    font-size: 2.5rem;
+    line-height: 120%;
+    letter-spacing: -.01;
+}
+
+@mixin smallNav() {
+    font-family: $font-stack-primary;
+    font-weight: $font-weight-regular;
+    font-size: 1rem !important;
+    line-height: 1rem;
+    letter-spacing: -0.01;
+}
+
+@mixin smallNavLines() {
+    @include smallNav();
+    @include lines();
+}
+
+/***** THEME CLASSES *****/
+// SUBHEADS
+body:not(.wp-admin) main,
+.wp-admin .is-root-container{
+    .h{
+        &--lines{
+            @include lines();
+        }
+        &--divider{
+            @include divider();
+        }
+        &--body{
+            @include body();
+        }
+        &--quote{
+            @include quote();
+        }
+        &--caption {
+            @include captionLines();
+        }
+        &--smNav {
+            @include smallNav();
+        }
+        &--smNavLines {
+            @include smallNavLines();
+        }
+    }
+}
+
+/***************************************
+    * STANDARD ELEMENTS & CLASSES
+***************************************/
+
+html {
+    font-size: 16px;
+}
+body {
+    @include default-font();
+    color:  swatch('Neutral');
+    font-family: $font-stack-primary;
+    line-height: 1.625;
+    @include create-mq($md-width) {
+        font-size: $font-base;
+        line-height: 1.625
+    }
+}
+
+/***** TEXT/INLINE ELEMENTS *****/
+.txt a,
+.font--a, a {
+    @include default-anchor();
+}
+
+// * because a:not(.class) is slightly too powerful
+.a--null {
+    color: inherit;
+    pointer-events: none;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+        color: inherit;
+    }
+}
+.a--logo,
+.a--image,
+.a--clean {
+    color: inherit;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+        color: inherit;
+    }
+}
+
+p{
+    margin: 0 0 1rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.text-base {
+    @include default-font();
+}
+.text-xs {
+    font-size: .875rem; //14
+    line-height: 1.5;
+}
+.text-sm {
+    font-size: 1rem; //16
+    line-height: 1.5;
+}
+
+.text-md {
+    font-size: 1.25rem; //18
+    line-height: 1.5;
+}
+
+.text-lg {
+    font-size: 1.25rem; //20
+    line-height: 1.5rem;
+}
+.text-xl {
+    font-size: 1.5rem; //24
+    line-height: 2.25;
+}
+.text-xxl {
+    font-size: 1.5rem; //32
+    line-height: 2.25;
+}
+b,
+strong {
+    font-weight: $font-weight-bold;
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+blockquote {
+    margin: 5.5rem 0 3rem;
+    padding: 32px 32px 50px 120px;
+    position: relative;
+    &:first-child{
+        margin-top: 2.5rem !important;
+    }
+    @include create-mq($md-width) {
+        margin: 6rem 0 3rem;
+        &:first-child{
+            margin-top: 3rem !important;
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    // &.has-background{
+    //     // padding-left: 2rem;
+    //     // padding-right: 2rem;
+    // }
+
+    // &.is-style-plain{
+    //     p {
+    //         line-height: 1.3em;
+    //         font-size: 1.5rem; //24
+    //         @include create-mq($md-width) {
+    //             font-size: 1.5rem; //32
+    //         }
+    //     }
+    // }
+
+    &::before {
+        content: '';
+        background-image: url('/wp-content/themes/bansheeStarter/assets/dist/imgs/icons/icon-quote.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        bottom: 100%;
+        display: block;
+        height: 2.5rem;
+        left: 32px;
+        margin: 0;
+        position: absolute;
+        top: 32px;
+        width: 2.5rem;
+    
+        @include create-mq($md-width) {
+            height: 3rem;
+            width: 3rem;
+        }
+        .wp-admin & {
+            top:0;
+        }
+    }
+
+
+    .u-darkMode &{
+        border-top-color: swatch("White");
+        border-bottom-color: swatch("White");
+        &::before {
+            background-image: url('/wp-content/themes/bansheeStarter/assets/dist/imgs/icons/icon-quote-white.svg');
+        }
+    }
+}
+
+/***** MISC ELEMENTS *****/
+caption,
+.wp-caption-text {
+    // letter-spacing: kern(80);
+    color: swatch('Primary');
+    font-family: $font-stack-secondary;
+    font-size: typeScaleMinus(1);
+    font-weight: $font-weight-medium;
+    letter-spacing: kern(80);
+    line-height: 1.2;
+    margin: 0.5rem 0 1rem 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+cite {
+    @include smallNav();
+    display: block;
+    font-style: normal;
+    &::before {
+        content: '–';
+        margin-right: 0.25rem;
+    }
+}
+
+address {
+    font-style: normal;
+}
+
+sub,
+sup {
+    font-size: 60%;
+    line-height: 0;
+    position: relative;
+}
+
+sub {
+    bottom: -0.2em;
+    vertical-align: sub;
+}
+
+sup {
+    top: 0;
+    vertical-align: super;
+}
+
+pre {
+    max-width: 100%;
+    white-space: pre-wrap;
+}
+
+/******* ADMIN STYLES *******/
+
+body.wp-admin {
+    font-size: 1rem;
+
+    .block-editor__container .popover-slot,
+    .edit-post-layout__metaboxes,
+    .interface-navigable-region{
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif !important;
+    }
+    .editor-post-title{
+        padding-left: 24px;
+    }
+    .wp-block-post-excerpt__more-link{
+        display: none !important;
+    }
+
+    .components-panel__body{
+        height: max-content;
+    }
+
+    .block {
+        font-size: $font-base;
+        @include create-mq($md-width) {
+            font-size: $font-base-md;
+        }
+
+        h1,
+        .h1 {
+            @include h1();
+        }
+        h2,
+        .h2 {
+            @include h2();
+        }
+        h3,
+        .h3 {
+            @include h3();
+        }
+        h4,
+        .h4 {
+            @include h4();
+        }
+        h5,
+        .h5 {
+            @include h5();
+        }
+
+        h1,
+        .h1,
+        h2,
+        .h2,
+        h3,
+        .h3,
+        h4,
+        .h4,
+        h5,
+        .h5 {
+            &.u-textColorWhite,
+            .u-textColorWhite & {
+                color: swatch('White');
+            }
+            &.u-textColorPrimary,
+            .u-textColorPrimary & {
+                color: swatch('Secondary');
+            }
+        }
+    }
+}

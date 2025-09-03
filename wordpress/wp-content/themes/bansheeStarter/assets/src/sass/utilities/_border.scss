@@ -1,0 +1,71 @@
+@use '../abstracts' as *;
+
+/**
+ * _border.scss
+ * Border Utilities
+ */
+
+/**
+* Border constants
+*/
+
+$border-color: swatch('Black');
+$border-width: 1px;
+$border-stroke: solid;
+
+@mixin create-border-classes($modifier, $breakpoint) {
+  @include create-mq($breakpoint) {
+    &#{$modifier}-decoBorder,
+    &#{$modifier}-decoBorderVert,
+    &#{$modifier}-decoBorderHoriz,
+    &#{$modifier}-decoBorderTop,
+    &#{$modifier}-decoBorderRight,
+    &#{$modifier}-decoBorderBottom,
+    &#{$modifier}-decoBorderLeft {
+      border-color: $border-color;
+      border-style: $border-stroke;
+      border-width: 0;
+    }
+
+    &#{$modifier}-decoBorder {
+      border-width: $border-width;
+    }
+    &#{$modifier}-decoBorderVert {
+      border-width: $border-width 0;
+    }
+    &#{$modifier}-decoBorderHoriz {
+      border-width: 0 $border-width;
+    }
+    &#{$modifier}-decoBorderTop {
+      border-top-width: $border-width;
+    }
+    &#{$modifier}-decoBorderRight {
+      border-right-width: $border-width;
+    }
+    &#{$modifier}-decoBorderBottom {
+      border-bottom-width: $border-width;
+    }
+    &#{$modifier}-decoBorderLeft {
+      border-left-width: $border-width;
+    }
+
+    &#{$modifier}-decoBorderResetTop {
+      border-top-width: 0;
+    }
+    &#{$modifier}-decoBorderResetRight {
+      border-right-width: 0;
+    }
+    &#{$modifier}-decoBorderResetBottom {
+      border-bottom-width: 0;
+    }
+    &#{$modifier}-decoBorderResetLeft {
+      border-left-width: 0;
+    }
+  }
+}
+
+.u {
+  @each $modifier, $breakpoint in $map-width-props {
+    @include create-border-classes($modifier, $breakpoint);
+  }
+}

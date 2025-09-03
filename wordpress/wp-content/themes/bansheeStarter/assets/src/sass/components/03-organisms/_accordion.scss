@@ -1,0 +1,212 @@
+@use '../../abstracts' as *;
+
+@use '../../components/01-atoms/_chip.scss' as chip;
+@use '../../components/01-atoms/_button.scss' as button;
+
+/***********************************************
+    TAB MIXINS
+***********************************************/
+/** MOBILE - JUMP NAV **/
+@mixin tabstyle-jumpnav {
+    position: relative;
+    z-index: 999;
+    .jumpnav__label {
+        font-size: 0.875rem;
+        font-weight: 900;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+    }
+    .jumpnav__toggle {
+        background: swatch('White');
+        border-radius: 0.25rem;
+        border: none;
+        color: swatch('Black');
+        cursor: pointer;
+        display: flex;
+        font-size: 0.875rem;
+        font-weight: 900;
+        justify-content: space-between;
+        letter-spacing: 0.02em;
+        padding: 1rem 1rem 1rem 1.5rem;
+        text-transform: uppercase;
+        width: 100%;
+        &.is-active {
+            border-radius: 0.25rem 0.25rem 0 0;
+        }
+        @include create-mq($md-width) {
+            display: none;
+        }
+    }
+    .jumpnav__wrapper {
+        border-radius: 0.25rem;
+        position: relative;
+        button.is-active + div {
+            display: block;
+        }
+    }
+}
+@mixin tabstyle-jumpnav-tab {
+    background: swatch('White');
+    border: none;
+    border-radius: 0;
+    border-top: .5px swatch('Black') solid;
+    color: swatch('Neutral', 800);
+    cursor: pointer;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 900;
+    height: auto;
+    letter-spacing: 0.02em;
+    padding: 1rem 1rem 1rem 1.5rem;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    &:hover {
+        background: swatch('White');
+        color: swatch('Neutral', 800);
+    }
+    &.active,
+    &.is-active {
+        display: none;
+    }
+    .toggle {
+        display: none;
+    }
+}
+@mixin tabstyle-jumpnav-wrapper {
+    background-color: swatch('White');
+    box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 99%;
+}
+
+/** DESKTOP - TABS **/
+@mixin tabstyle-tabs-tab {
+    align-items: center;
+    background-color: transparent;
+    border-radius: 0.25rem 0.25rem 0 0;
+    border: none;
+    color: swatch('Black');
+    cursor: pointer;
+    display: flex;
+    flex: 1 1 auto;
+    font-size: 0.875rem;
+    font-weight: 700;
+    height: 4.25rem; //68
+    justify-content: center;
+    letter-spacing: 0.02em;
+    padding: 0 1rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: auto;
+    &.active,
+    &.is-active {
+        background-color: swatch('White');
+        color: swatch('Black');
+        display: flex;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .toggle {
+        display: none;
+    }
+}
+@mixin tabstyle-tabs-wrapper {
+    align-items: stretch;
+    background-color: transparent;
+    box-shadow: unset;
+    cursor: pointer;
+    display: flex !important;
+    flex-flow: row wrap;
+    gap: 1rem;
+    position: relative;
+    top: 0;
+    @include create-mq($lg-width) {
+        flex-wrap: nowrap;
+    }
+}
+
+/** DESKTOP - CHIPS **/
+@mixin tabstyle-chips-tab {
+    @include chip.chip;
+    width: auto;
+    border: none;
+    background-color: swatch('White');
+    color: swatch('Black');
+    &:hover{
+        background-color: swatch('Oatmeal');
+    }
+    &.active,
+    &.is-active {
+        display: block;
+        background-color: swatch('Primary');
+        color: swatch('White');
+    }
+    .toggle {
+        display: none;
+    }
+}
+@mixin tabstyle-chips-wrapper {
+    align-items: stretch;
+    background-color: transparent;
+    box-shadow: unset;
+    display: flex !important;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: center;
+    position: relative;
+    top: 0;
+}
+
+/** DESKTOP - BUTTONS **/
+@mixin tabstyle-buttons-tab {
+    @include button.btn(button.$btnSolidWhite);
+    border: none;
+    flex: 1 1 auto;
+    width: auto;
+    &.active,
+    &.is-active {
+        background-color: swatch('Tertiary');
+        color: swatch('White');
+        display: block;
+    }
+    .toggle {
+        display: none;
+    }
+    @include create-mq($md-width) {
+        font-size: 0.875rem;
+        line-height: 1.2em;
+        padding: 1.25rem 2.25rem;
+    }
+}
+@mixin tabstyle-buttons-wrapper {
+    align-items: stretch;
+    background-color: transparent;
+    box-shadow: unset;
+    display: flex !important;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: center;
+    position: relative;
+    top: 0;
+}
+
+/** CONTENT **/
+@mixin tabstyle-content {
+    background-color: swatch('White');
+    border-radius: 0.25rem;
+    padding: 2rem 0.5rem;
+    margin-top: 1rem;
+    @include create-mq($md-width) {
+        border-radius: 0 0 0.25rem 0.25rem;
+        padding: 3rem 0;
+        margin-top: 0;
+    }
+}

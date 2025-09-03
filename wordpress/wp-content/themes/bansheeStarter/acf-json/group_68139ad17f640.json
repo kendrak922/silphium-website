@@ -1,0 +1,69 @@
+{
+    "key": "group_68139ad17f640",
+    "title": "Block : Section",
+    "fields": [
+        {
+            "key": "field_68139ad13cc5a",
+            "label": "Section Edge Top",
+            "name": "section_edge_top",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Do you want this section to have a decorative top border?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_689a23a3efd76",
+            "label": "Section Edge Bottom",
+            "name": "section_edge_bottom",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Do you want this section to have a decorative bottom border?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1754932146
+}

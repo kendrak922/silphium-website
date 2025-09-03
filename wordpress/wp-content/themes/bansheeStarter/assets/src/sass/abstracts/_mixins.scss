@@ -1,0 +1,235 @@
+@use 'variables' as *;
+@use 'functions' as *;
+@use "sass:map";
+
+
+/***********************************************
+    THEME MIXINS
+***********************************************/
+// Theme specific mixins
+// @mixin boxShadow($color: swatch('Gray', 900), $alpha: 0.02) {
+// 	box-shadow: 0 0 0.5rem 1rem rgba($color, $alpha);
+// }
+
+/***********************************************
+    GENERAL MIXINS
+***********************************************/
+
+// create a media query
+// makes a simple, min width media query
+@mixin create-mq($breakpoint) {
+	@if ($breakpoint == 0) {
+		@content;
+	} @else {
+		@media (min-width: $breakpoint) {
+			@content;
+		}
+	}
+}
+
+// create a material Color
+// returns a property and a color, values are (50, 100, 200, 300, 400, 500, 600, 700, 800, 900)
+@mixin paletteColor($property, $color, $value: 500) {
+	#{$property}: paletteColorValue($color, $value);
+}
+
+// high ppi display backgrounds
+// makes a hi res background image based on screen aspect
+@mixin background-2x($path, $ext: 'png', $w: auto, $h: auto, $pos: center center, $repeat: no-repeat) {
+	$at1x_path: '#{$path}.#{$ext}';
+	$at2x_path: '#{$path}@2x.#{$ext}';
+
+	background-image: url('#{$at1x_path}');
+	background-size: $w $h;
+	background-position: $pos;
+	background-repeat: $repeat;
+
+	@media all and (-webkit-min-device-pixel-ratio: 1.5),
+		all and (-o-min-device-pixel-ratio: 3/2),
+		all and (min--moz-device-pixel-ratio: 1.5),
+		all and (min-device-pixel-ratio: 1.5) {
+		background-image: url('#{$at2x_path}');
+	}
+}
+
+// Clearfix
+// makes a parent div expand to wrap all floated elements
+// to use, add "@include clearfix" to a container
+@mixin clearfix {
+	&:after {
+		content: '';
+		clear: both;
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		height: 0;
+	}
+}
+
+// Accessibility tool
+// hides element from layout, but allows for screen readers to focus and read
+@mixin sr_only() {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+// CSS element fade mixin
+@mixin element_fade($fade) {
+	transition: all $t_med;
+
+	@if $fade == 'in' {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+	} @else if $fade == 'out' {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+}
+
+// Background sizing mixin
+@mixin background-size($size: 'cover') {
+	background-size: $size;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+// Stretch Children
+// makes all child divs stretch to the same height, for Safari/IE depends on parent container having a set height
+// to use, add "@include stretchChildren" to the parent element
+@mixin stretchChildren {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
+// Placeholder text styles
+// makes input placeholder text the specified color then makes it disappear on focus
+// to use put "@include input-placeholder([hex code or variable for color])" on any input
+// for example: @include input-placeholder(#c5c5c5);
+@mixin input-placeholder($color) {
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&:-moz-placeholder {
+		color: $color;
+	}
+	&::-moz-placeholder {
+		color: $color;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+	// clear placeholder on focus
+	&:focus::-webkit-input-placeholder {
+		color: transparent;
+	}
+	&:focus:-moz-placeholder {
+		color: transparent;
+	} /* FF 4-18 */
+	&:focus::-moz-placeholder {
+		color: transparent;
+	} /* FF 19+ */
+	&:focus:-ms-input-placeholder {
+		color: transparent;
+	} /* IE 10+ */
+}
+
+// CSS Gradient tools
+@mixin gradient($topColor, $bottomColor) {
+	background: -webkit-linear-gradient($topColor, $bottomColor);
+	background: -moz-linear-gradient($topColor, $bottomColor);
+	background: -ms-linear-gradient($topColor, $bottomColor);
+	background: -o-linear-gradient($topColor, $bottomColor);
+	background: linear-gradient($topColor, $bottomColor);
+}
+
+// for gradients with more color spans
+// also used for hard stop gradients for full width color columns
+@mixin advGradient(
+	$direction,
+	$firstColor,
+	$firstDistance,
+	$secondColor,
+	$secondDistance,
+	$thirdColor,
+	$thirdDistance,
+	$fourthColor,
+	$fourthDistance
+) {
+	background: -webkit-linear-gradient(
+		$direction,
+		$firstColor $firstDistance,
+		$secondColor $secondDistance,
+		$thirdColor $thirdDistance,
+		$fourthColor $fourthDistance
+	);
+	background: -moz-linear-gradient(
+		$direction,
+		$firstColor $firstDistance,
+		$secondColor $secondDistance,
+		$thirdColor $thirdDistance,
+		$fourthColor $fourthDistance
+	);
+	background: -ms-linear-gradient(
+		$direction,
+		$firstColor $firstDistance,
+		$secondColor $secondDistance,
+		$thirdColor $thirdDistance,
+		$fourthColor $fourthDistance
+	);
+	background: -o-linear-gradient(
+		$direction,
+		$firstColor $firstDistance,
+		$secondColor $secondDistance,
+		$thirdColor $thirdDistance,
+		$fourthColor $fourthDistance
+	);
+	background: linear-gradient(
+		$direction,
+		$firstColor $firstDistance,
+		$secondColor $secondDistance,
+		$thirdColor $thirdDistance,
+		$fourthColor $fourthDistance
+	);
+}
+
+/***********************************************
+    VENDOR MIXINS
+***********************************************/
+// Hide slides as they're loading so they don't stack and occupy the whole page vertically
+@mixin slickSlider_loading($slideClass: '.slick-slide') {
+	&.slick-initialized {
+		.slick-slide {
+			opacity: 1;
+			visibility: visible;
+			position: relative;
+		}
+	}
+	#{$slideClass} {
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		transition: opacity 0.5s;
+	}
+}
+
+// no hover for touch screens, hover focus for all else
+@mixin hover {
+	@media (hover: hover) {
+		&:hover,
+		&:focus,
+		&:focus-within {
+			@content;
+		}
+	}
+}

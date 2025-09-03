@@ -1,0 +1,48 @@
+@use '../../abstracts' as *;
+
+
+@use "sass:map";
+@use "sass:meta";
+
+/********************************
+	DEFAULT
+********************************/
+.page__wrapper {
+	padding: $sitePaddingMobile 0;
+	@include create-mq($md-width) {
+		padding: $sitePaddingDesktop 0;
+	}
+
+	// TODO: if has announcment, add padding to the page wrapper
+	// body & {
+	// 	padding-top: calc($headerHeight_sm + rem(40));
+
+	// 	@include create-mq($md-width) {
+	// 		padding-top: calc($headerHeight_md + rem(40));
+	// 	}
+	// }
+}
+
+.image--overlap {
+	flex-flow : column-reverse;
+	max-width: 90%;
+    margin: 0 auto!important;
+	@include create-mq($md-width) {
+		max-width: 100%;
+		flex-flow : row;
+		margin: 0 auto;
+	}
+    figure, img {
+		margin-top: -100px;
+		margin-right: 0;
+		margin-left: -10px;
+        z-index: 1;
+        position: relative;
+        @include create-mq($md-width) {
+			margin-left: auto;
+            font-size: 1.5rem; //24
+			margin-top: 160px;
+			margin-right: -50px;
+        } 
+    }
+}

@@ -1,0 +1,250 @@
+@use '../abstracts' as *;
+@use '../base/fonts' as font;
+
+@use "sass:map";
+@use "sass:meta";
+
+
+
+.social {
+    &__head {
+        margin-bottom: 1rem;
+        line-height: 1;
+    }
+
+    div {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        @include create-mq($md-width) {
+            justify-content: flex-start;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+}
+
+// /********************************
+// 	FOOTER
+// ********************************/
+.footer {
+    font-weight: 400;
+    line-height: 1.2em;
+    margin-top: 50px;
+    position: relative;
+    padding-top: 50px;
+
+    //
+    // * Logo
+    //
+    &__logo {
+        margin: 0 auto;
+        grid-row: 1;
+        @include create-mq($md-width) {
+            grid-column: 1;
+            grid-row: 1;
+            margin-right: auto;
+            max-width: 500px;
+            text-align: left;
+            gap: 45px;
+        }
+    }
+
+    &__graphic {
+        max-width: 50px;
+    }
+
+    .container {
+        display: grid;
+        grid-row-gap: 20px; 
+        grid-template-columns: auto;
+        grid-column-gap: 20px;
+        @include create-mq($lg-width) {
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-column-gap: 60px; 
+        }
+    }
+
+    //
+    // * Main - menu and logo
+    //
+    &__main {
+        padding: 1.25rem 0 1.5rem;
+
+        @include create-mq($md-width) {
+            padding: 1rem 0;
+        }
+
+        @include create-mq($lg-width) {
+            padding: 1rem 0;
+        }
+
+        a:not(.btn--primary) {
+            color: swatch('Primary');
+            &:hover {
+                color: swatch('PrimaryHover');
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 50px;
+        }
+    }
+
+    &__content {
+        position: relative;
+        display: grid;
+        grid-row-gap: 32px;
+        grid-column-gap: 0;
+        margin-top: 40px;
+        text-align: center;
+
+        @include create-mq($md-width) {
+            grid-column: 3;
+            grid-row-gap: 20px;
+            text-align: left;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 0;
+        }
+
+        a {
+            position: relative;
+            text-decoration: none;
+            &:hover {
+                opacity: 50%;
+            }
+
+        }
+        h3 {
+            margin-bottom: 0;
+        }
+
+    }
+
+    &__contact {
+        max-width: 100%;
+        text-align: center;
+
+        @include create-mq($md-width) {
+            padding-bottom: 2.5rem;
+            padding: unset;
+            text-align: left;
+        }
+
+        a:first-child {
+            display: block;
+            @include create-mq($md-width) {
+                display: inline;
+                margin-right: 32px;
+            }
+        }
+    }
+
+    &__text {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        flex-flow: column;
+        justify-self: center;
+        gap: 16px;
+
+        p {
+            text-align: center;
+        }
+
+        @include create-mq($md-width) {
+            text-align: left;
+            margin-right: auto;
+            align-items: flex-end;
+            flex-flow: row;
+            gap: 45px;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-flow: column;
+        padding: 20px;
+        border-top: 2px solid swatch('Primary');
+        @include create-mq($md-width) {
+            display: flex;
+            flex-flow: row;
+            justify-content: space-between;
+            align-items: end;
+            grid-row-start: 2;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            padding: 20px 60px 20px;
+        }
+
+        .menu-wrapper__content {
+            flex-grow: 1;
+        }
+
+    }
+
+    &__attribute {
+        margin-top: 16px;
+        grid-column: 1 / span 2;
+        align-self: center;
+        margin-right: 0;
+        line-height: 150%;
+        align-self: center;
+
+        @include create-mq($md-width) {
+            align-self: flex-end;
+        }
+        &:first-child {
+            margin-top: 60px;
+        }
+    }
+
+
+    // * Bottom - social/text
+
+
+    &__social {
+        padding: 0;
+        text-align: center;
+
+        @include create-mq($md-width) {
+            padding-top: 2.5rem;
+            text-align: left;
+            border: none;
+            padding: unset;
+        }
+
+        a {
+            line-height: 25.2px;
+        }
+
+        li:hover {
+            svg {
+                path {
+                    fill: swatch("Blue");
+                }
+            }
+        }
+
+    }
+
+    //
+    // * Menu
+    //
+    &__nav--wrapper {
+        .nav--footer {
+            a {
+                width: max-content;
+            }
+        }
+    }
+}
+
+// close: footer.footer

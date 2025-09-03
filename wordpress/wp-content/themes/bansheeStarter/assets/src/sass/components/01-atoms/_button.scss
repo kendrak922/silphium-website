@@ -1,0 +1,535 @@
+@use '../../abstracts' as *;
+@use '../../base/fonts' as font;
+@use '../../components/01-atoms/icon' as icon;
+@use "sass:map";
+
+
+/********************************
+	Atom: Button
+********************************/
+$buttonRadius : 50px;
+$btnDefault: (
+	'textColor': swatch('LightNeutral'),
+	'bgColor': swatch('Primary'),
+	'borderColor': swatch('Primary'),
+	'hoverTextColor':swatch('LightNeutral'),
+	'hoverBgColor': swatch('PrimaryHover'),
+	'hoverBorderColor': swatch('PrimaryHover'),
+	'disabled': swatch('Gray'),
+	'disabledTextColor': swatch('Neutral'),
+	'activeBgColor': swatch('Neutral'),
+	'activeBorderColor': swatch('Neutral'),
+	'activeTextColor': swatch('Neutral'),
+);
+// Dark Mode Colors
+$btnWhite: (
+	'textColor': swatch('White'),
+	'bgColor': transparent,
+	'borderColor': swatch('Blue'),
+	'hoverTextColor': swatch('White'),
+	'hoverBgColor': transparent,
+	'hoverBorderColor': swatch('Blue'),
+	'disabled': swatch('Gray'),
+	'disabledTextColor': swatch('Gray'),
+	'activeBgColor': swatch('White'),
+	'activeBorderColor': swatch('White'),
+	'activeTextColor': swatch('Neutral'),
+);
+
+// Mixin and corresponding class to remove default browser styles for buttons
+@mixin btnNormalize() {
+	@include font.font-appearance();
+	background: transparent;
+	text-align: center;
+	border-radius: $buttonRadius;
+	box-shadow: none;
+	cursor: pointer;
+	line-height: 1.2em;
+	padding: 0;
+	text-decoration: none;
+	width: fit-content;
+	max-width: 100%;
+	text-decoration: none;
+}
+
+@mixin btn($button: $btnDefault) {
+	& {
+	@include btnNormalize();
+	text-decoration: none;
+	background-color: map.get($button, 'bgColor');
+	border-radius: $buttonRadius;
+	color: map.get($button, 'textColor');
+	display: inline-flex;
+	text-align: center;
+	font-family: $font-stack-primary;
+	font-weight: $font-weight-medium;
+	gap:.5rem;
+	letter-spacing: kern(60);
+	line-height: 1.2rem;
+	// min-height: 3rem;
+	padding: 0.5rem 1.25rem 0.5rem;
+	position: relative;
+	text-align: center;
+    align-items: center;
+	}
+	@supports not (-webkit-overflow-scrolling: touch) {
+		transition: $transition-default;
+	}
+
+	&:hover,
+	&:focus {
+		color: map.get($button, 'hoverTextColor');
+		background-color: map.get($button, 'hoverBgColor');
+	}
+	&:active {
+		background-color: map.get($button, 'activeBgColor');
+		color: map.get($button, 'activeTextColor');
+	}
+
+	&:disabled,
+	&[disabled],
+	&.disabled,
+	&.btn--disabled {
+		background-color: map.get($button, 'disabled');
+		box-shadow: inset 0 0 0 1px map.get($button, 'disabled');
+		color: map.get($button, 'disabledTextColor');
+		opacity: 1;
+		pointer-events: none;
+	}
+
+	span{
+		position: relative;
+		z-index: 1;
+	}
+}
+
+@mixin btnColors($button: $btnDefault) {
+	background-color: map.get($button, 'bgColor');
+	border-radius: $buttonRadius;
+	border-color: map.get($button, 'borderColor'); 
+	color: map.get($button, 'textColor');
+	&::after{
+		display: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		border-radius: $buttonRadius;
+		color: map.get($button, 'hoverTextColor');
+		background-color: map.get($button, 'hoverBgColor');
+	}
+	&:active {
+		background-color: map.get($button, 'activeBgColor');
+		// box-shadow: inset 0 0 0 1px map.get($button, 'activeBorderColor'); // inset border
+	}
+	a {
+		color: map.get($button, 'textColor');
+		&:hover,
+		&:focus,
+		&:active {
+			color: map.get($button, 'hoverTextColor');
+			background-color: map.get($button, 'hoverBgColor');
+			border-radius: $buttonRadius;
+		}
+	}
+}
+
+/***** CLASSES *****/
+
+/********************************
+	Button - Default
+********************************/
+.wp-block-button .wp-block-button__link,
+.btn {
+	&::after{
+		background-color: swatch("Blue");
+		bottom: 0;
+		content: '';
+		display: block;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: .25rem;
+		z-index: 0;
+		.u-bgColorPurple &,
+		.u-bgColorYellow &{
+			background-color: swatch("Neutral");
+		}
+		@supports not (-webkit-overflow-scrolling: touch) {
+			transition: $transition-default;
+		}
+			@include btn($btnDefault);
+			& {
+			box-shadow: none;
+			text-align: left;
+			}
+	}
+
+	.icon {
+		@include icon.iconColor(icon.$iconDefault);
+	}
+	&:hover,
+	&:focus {
+		border-radius: $buttonRadius;
+		box-shadow: none;
+		overflow: hidden;
+		.icon {
+			@include icon.iconColor(icon.$iconDark);
+		}
+		&::after{
+			width: 100%;
+		}
+	}
+	&:active {
+		box-shadow: none;
+		&::after{
+			width: 100%;
+			background-color: swatch("Neutral");
+		}
+	}
+
+	.u-bgColorPurple &,
+	.u-bgColorYellow &{
+		&:active{
+			color: swatch("Neutral");
+			&::after{
+				background: swatch("White")
+			}
+		}
+	}
+}
+
+/********************************
+	Button - SOLID
+********************************/
+$btnSolidDefault: (
+	'textColor': swatch('Neutral'),
+	'bgColor': swatch('LightNeutral'),
+	'borderColor': swatch('LightNeutral'),
+	'hoverTextColor': swatch('LightNeutral'),
+	'hoverBgColor': swatch('PrimaryHover'),
+	'hoverBorderColor': swatch('PrimaryHover'),
+	'disabled': swatch('Gray'),
+	'disabledTextColor': swatch('White'),
+	'activeBgColor': swatch('PrimaryActive'),
+	'activeBorderColor': swatch('Neutral'),
+);
+// Secondary Colors
+$btnSolidSecondary: (
+	'textColor': swatch('LightNeutral'),
+	'bgColor': swatch('Secondary'),
+	'borderColor': swatch('Secondary'),
+	'hoverTextColor': swatch('LightNeutral'),
+	'hoverBgColor': swatch('SecondaryHover'),
+	'hoverBorderColor': swatch('SecondaryHover'),
+	'disabled': swatch('Gray'),
+	'disabledTextColor': swatch('Black'),
+	'activeBgColor': swatch('SecondaryActive'),
+	'activeBorderColor': swatch('SecondaryActive'),
+);
+// Dark Mode Colors
+$btnSolidWhite: (
+	'textColor': swatch('Primary'),
+	'bgColor': swatch('White'),
+	'borderColor': swatch('White'),
+	'hoverTextColor': swatch('White'),
+	'hoverBgColor': swatch('Tertiary'),
+	'hoverBorderColor': swatch('Tertiary'),
+	'disabled': swatch('Gray'),
+	'disabledTextColor': swatch('Black'),
+	'activeBgColor': swatch('Orange'),
+	'activeBorderColor': swatch('Orange'),
+);
+
+.btn--solid,
+.btn--primary {
+		@include btnNormalize();
+		@include btnColors($btnSolidDefault);
+		padding: 0.5rem 1rem 0.5rem;
+		border: 0;
+
+	&::after{
+		display: none
+	}
+	.icon {
+		@include icon.iconColor(icon.$iconDark);
+	}
+
+	.u-bgColorPurple &,
+	.u-bgColorYellow &{
+		background-color: swatch("Neutral");
+		box-shadow: inset 0 0 0 1px swatch("Neutral");
+		&:active{
+			background-color: swatch("White");
+			box-shadow: inset 0 0 0 1px swatch("White");
+			color: swatch("Neutral");
+		}
+	}
+
+
+}
+// .u-darkMode a.btn:hover {
+// 	color: $color-white;
+// }
+.btn--secondary {
+	@include btnNormalize();
+	@include btnColors($btnSolidSecondary);
+	padding: 0.5rem 1rem 0.5rem;
+}
+
+/********************************
+	Button - Outline
+********************************/
+$btnOutline: (
+	'textColor': swatch('Primary'),
+	'bgColor': transparent,
+	'borderColor': swatch('Primary'),
+	'hoverTextColor': swatch('PrimaryHover'),
+	'hoverBgColor': swatch('transparent'),
+	'hoverBorderColor': swatch('PrimaryHover'),
+	'disabled': swatch('Gray'),
+	'disabledTextColor': swatch('Black'),
+	'activeBgColor': swatch('Black'),
+	'activeBorderColor': swatch('Black'),
+);
+$btnOutlineWhite: (
+	'textColor': swatch('LightNeutral'),
+	'bgColor': transparent,
+	'borderColor': swatch('LightNeutral'),
+	'hoverTextColor': swatch('Neutral'),
+	'hoverBgColor': swatch('LightNeutral'),
+	'hoverBorderColor': swatch('LightNeutral'),
+	'disabled': swatch('Gray'),
+	'disabledTextColor': swatch('Black'),
+	'activeBgColor': swatch('Black'),
+	'activeBorderColor': swatch('Black'),
+);
+
+.wp-block-button.is-style-outline .wp-block-button__link,
+.btn--border,
+.btn--outline {
+	@include btn($btnOutline);
+	& {
+		padding: 0.5rem 1rem 0.5rem;
+		border: 1px solid;
+	}
+	&::after{
+		display: none
+	}
+	
+	.u-bgColorPurple &,
+	.u-bgColorYellow &{
+		box-shadow: inset 0 0 0 1px swatch("Neutral");
+		&:hover,
+		&:focus{
+			background-color: swatch("Neutral");
+		}
+		&:active{
+			background-color: swatch("White");
+			box-shadow: inset 0 0 0 1px swatch("White");
+			// color: swatch("Neutral");
+		}
+	}
+
+	.u-darkMode  {
+		&button {
+				@include btnColors($btnOutlineWhite);
+			.icon {
+				@include icon.iconColor(icon.$iconDark);
+			}
+			&:hover {
+				.icon {
+					@include icon.iconColor(icon.$iconDark);
+				}
+			}	
+		}
+	}
+
+	&:disabled,
+	&[disabled],
+	&.disabled,
+	&.btn--disabled {
+		background-color: map.get($btnOutline, 'bgColor');
+		border: none;
+		box-shadow: inset 0 0 0 1px map.get($btnOutline, 'disabled');
+		color: map.get($btnOutline, 'disabled');
+		opacity: 1;
+		pointer-events: none;
+	}
+}
+
+/********************************
+	Button - Arrow
+********************************/
+$btnArrow: (
+	'textColor': swatch('Primary'),
+	'bgColor': transparent,
+	'borderColor': transparent,
+	'hoverTextColor': swatch('Blue'),
+	'hoverBgColor': transparent,
+	'hoverBorderColor': transparent,
+	'disabled': swatch('Gray'),
+	'disabledTextColor': swatch('Gray'),
+);
+$btnArrowDark: (
+	'textColor': swatch('Neutral'),
+	'bgColor': transparent,
+	'borderColor': transparent,
+	'hoverTextColor': swatch('Gray'),
+	'hoverBgColor': transparent,
+	'hoverBorderColor': transparent,
+	'disabled': swatch('Gray'),
+	'disabledTextColor': swatch('Gray'),
+);
+
+.btn--text,
+.btn--arrow {
+	@include btnColors($btnArrow);
+	align-items: center;
+	display: inline-flex;
+	gap: 0.5rem;
+	line-height: unset;
+	min-height: unset;
+	padding: 0;
+	padding-left: 0!important;
+	text-align: unset!important;
+	font-weight: $font-weight-medium;
+	text-decoration: none;
+
+	svg {
+		height: 1rem;
+		width: 1rem;
+		fill: swatch("Neutral") !important;
+			@include create-mq($md-width) {
+			height: 1rem;
+			width: 1rem;
+		}
+		path{
+			stroke: swatch("Neutral") !important;
+		}
+	}
+
+	&:hover{
+		overflow: visible;
+		svg {
+			fill: map.get($btnArrow, 'hoverTextColor')!important;
+			path{
+				stroke: map.get($btnArrow, 'hoverTextColor')!important;
+			}
+		}
+	}
+
+	@include create-mq($md-width) {
+		gap: 0.75rem;
+	}
+
+	&.btn--medium,
+	&.btn[data-size='medium'] {
+		padding: 0;
+	}
+
+	&.btn--large,
+	&.btn[data-size='large'] {
+		padding: 0;
+	}
+
+
+	&:disabled,
+	&[disabled],
+	&.disabled,
+	&.btn--disabled {
+		background-color: transparent;
+		box-shadow: none;
+		color: map.get($btnArrow, 'disabled');
+		opacity: 1;
+		pointer-events: none;
+	}
+}
+.u-darkMode {
+	&.btn--text,
+	&.btn--arrow {
+		@include btnColors($btnArrowDark);
+		svg path{
+			stroke: swatch("LightNeutral") !important;
+		}
+		svg {
+			fill: swatch("LightNeutral") !important;
+		}
+		&:hover{
+			overflow: visible;
+			svg {
+				fill: map.get($btnArrowDark, 'hoverTextColor')!important;
+				path{
+					stroke: map.get($btnArrowDark, 'hoverTextColor')!important;
+				}
+			}
+		}
+	}
+}
+
+.btn--icon {
+	align-items: center;
+	justify-content: center;
+	display: inline-flex;
+	gap: 0.5rem;
+}
+
+.btn--normalize {
+	@include btnNormalize();
+}
+
+/***** SIZE *****/
+
+.btn--small,
+.btn[data-size='small'] {
+	@include create-mq($md-width) {
+		font-size: $font-base;
+		// line-height: 2;
+		padding: 0.65rem 1rem
+	}
+}
+
+.btn--medium,
+.btn[data-size='medium'] {
+	@include create-mq($md-width) {
+		box-shadow: none;
+		overflow: hidden;
+		font-size: 23px;
+		font-weight: 500;
+		line-height: 1.5;
+		padding: 1rem 2rem;
+		.icon {
+			margin-left: -0.25rem;
+		}
+	}
+}
+
+.btn--large,
+.btn[data-size='large'] {
+	@include create-mq($md-width) {
+		font-size: typeScalePlus(2);
+		line-height: 2;
+		padding: 1.25rem 2rem 1rem;
+		.icon {
+			margin-left: -0.5rem;
+		}
+	}
+}
+
+/***** LAYOUTS *****/
+.btn--full {
+	width: 100%;
+	display: block;
+    text-align: center;
+}
+
+/***** LAYOUTS *****/
+.menu-item.btn {
+	padding: 12px;
+	@include create-mq($md-width) {
+		padding: 0;
+	}
+}
+
+

@@ -1,0 +1,49 @@
+{
+  "name": "banshee-starter",
+  "version": "2.0.0",
+  "description": "banshee starter theme for WordPress.",
+  "main": "Gulpfile.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "registerBlock": "rsync -rv ./template-parts/blocks/__register/$1 project-qa@l05:~/fjorge-wp-starter.l05.project-qa.com/wp-content/themes/fjorge-wp-starter/template-parts/blocks/__register/",
+    "which": "echo node $npm_package_engines_node; echo npm $npm_package_engines_npm;"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "better-docs": "^1.1.4",
+    "browser-sync": "^3.0.3",
+    "cssnano": "^7.0.6",
+    "file-system": "^1.2.2",
+    "fs": "0.0.1-security",
+    "gulp": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-jsdoc3": "^2.0.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^6.0.0",
+    "gulp-shell": "^0.6.3",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-template": "^5.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-webserver": "^0.5.0",
+    "sass": "^1.83.4",
+    "sassdoc": "^1.10.12"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "ie >= 10",
+    "defaults"
+  ],
+  "dependencies": {
+    "bootstrap": "^5.2.1",
+    "masonry-layout": "^4.2.2",
+    "swiper": "^11.2.6"
+  }
+}

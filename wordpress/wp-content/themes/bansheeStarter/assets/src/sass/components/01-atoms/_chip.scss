@@ -1,0 +1,43 @@
+@use '../../abstracts' as *;
+
+/********************************
+	Atom: Chip (category links on cards)
+********************************/
+
+@mixin chip() {
+    // background-color: swatch('Primary');
+    // border-radius: 0.25rem;
+    color: swatch('White');
+    cursor: default;
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    list-style: 1rem;
+    padding: 0.375rem 0.5rem 0.25rem;
+    text-decoration: none;
+    // text-transform: uppercase;
+    &.chip--clickable {
+        cursor: pointer;
+    }
+
+    @each $color, $value in $palette {
+        // for each color in the map, for 1 through 10, call the color funciton, and create a class
+        &.chip#{$color} {
+            background-color: swatch($color);
+            &.chip--clickable {
+                cursor: pointer;
+                &.active,
+                &.is-active,
+                &:focus,
+                &:hover {
+                    background-color: swatch($color);
+                }
+            }
+        }
+    }
+}
+
+.chip {
+    @include chip;
+} // close: .chip

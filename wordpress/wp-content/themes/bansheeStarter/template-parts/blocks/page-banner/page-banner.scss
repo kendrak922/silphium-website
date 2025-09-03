@@ -1,0 +1,45 @@
+@use '../../../assets/src/sass/abstracts' as *;
+
+/******************************
+    BLOCK: Hero Banner
+******************************/
+section.block--page-banner {
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include create-mq($md-width) {
+        padding-top: 140px;
+    }
+
+    @include create-mq($lg-width) {
+        margin: 0 auto;
+    }
+
+    @include create-mq($xl-width) {
+        margin: 0 auto;
+    }
+
+    .yoast-breadcrumbs {
+        margin-bottom: 3rem;
+        margin-top: 0;
+    }
+
+}
+
+body.single-tribe_events {
+    .page-banner {
+        display: none;
+    } 
+}
+
+// .page-banner {
+//     &__image {
+//         @include create-mq($md-width) {
+//             // flex-basis: 48%;
+//         }
+//     }
+
+// }
+
+
+// close: .block--page-banner

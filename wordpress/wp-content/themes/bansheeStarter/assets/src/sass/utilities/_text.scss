@@ -1,0 +1,242 @@
+@use '../abstracts' as *;
+
+/* text.scss */
+/**
+ * @define utilities
+ * Text utilities
+ */
+
+/* Text Utilities
+  ========================================================================== */
+
+/* Colors */
+
+.u-textColor {
+    // for each color in the map, for 1 through 10, call the color funciton, and create a class
+    @each $color, $value in $palette {
+      &#{$color} {
+        color: swatch($color);
+      }
+    }
+}
+
+.u-textColorWhite { color: $color-white; }
+.u-textColorBlack { color: $color-black; }
+.u-textColorPrimary { color: $color-primary; }
+.u-textColorSecondary { color: $color-secondary; }
+.u-textColorTertiary { color: $color-tertiary; }
+.u-textColorNeutral { color: $color-neutral; }
+
+/**
+ * Kerning
+ */
+
+.u-textKernMinus200 {
+  letter-spacing: -0.2em;
+}
+.u-textKernMinus100 {
+  letter-spacing: -0.1em;
+}
+.u-textKernMinus70 {
+  letter-spacing: -0.07em;
+}
+.u-textKernMinus50 {
+  letter-spacing: -0.05em;
+}
+.u-textKernNormal {
+  letter-spacing: normal;
+}
+.u-textKernPlus50 {
+  letter-spacing: 0.05em;
+}
+.u-textKernPlus70 {
+  letter-spacing: 0.07em;
+}
+.u-textKernPlus100 {
+  letter-spacing: 0.1em;
+}
+.u-textKernPlus200 {
+  letter-spacing: 0.2em;
+}
+
+/**
+ * Line height
+ */
+
+.u-textHeightTight {
+  line-height: $font-base;
+}
+.u-textHeightDefault {
+  line-height: 120%;
+}
+.u-textHeightLoose {
+  line-height: 150%;
+}
+
+.u-textHeightSpacious {
+  line-height: 200%;
+}
+
+
+/**
+ * Sizes
+ */
+
+.u- {
+  &textSizeBase {
+    font-size: $font-base;
+  }
+  &textSizeZero {
+    font-size: 0;
+  }
+
+  @for $i from 10 through 1 {
+    &textSizePlus#{$i} {
+      font-size: typeScalePlus($i);
+    }
+  }
+  @for $i from 1 through 5 {
+    &textSizeMinus#{$i} {
+      font-size: typeScaleMinus($i);
+    }
+  }
+}
+
+/**
+ * Styles
+ */
+ body:not(.wp-admin) main,
+ .wp-admin .is-root-container, footer{
+  .u-textPrimary {
+    font-family: $font-stack-primary;
+  }
+  .u-textSecondary {
+    font-family: $font-stack-secondary;
+  }
+  .u-textTertiary {
+    font-family: $font-stack-tertiary;
+  }
+}
+.u-textFauxSmCaps {
+  font-feature-settings: 'kern' 1;
+  font-kerning: normal;
+  font-size: calc(#{$font-base} * #{$type-scale-reverse});
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/**
+ * Aligns
+ */
+
+@mixin create-align-classes($modifier, $breakpoint) {
+  @include create-mq($breakpoint) {
+    &#{$modifier}-textAlignLeft {
+      text-align: left;
+    }
+    &#{$modifier}-textAlignCenter {
+      text-align: center;
+    }
+    &#{$modifier}-textAlignRight {
+      text-align: right;
+    }
+    &#{$modifier}-textAlignJustify {
+      text-align: justify;
+    }
+  }
+}
+
+.u {
+  @each $modifier, $breakpoint in $map-width-props {
+    @include create-align-classes($modifier, $breakpoint);
+  }
+}
+
+/**
+ * Wraps
+ */
+
+.u-wsNowrap {
+  white-space: nowrap;
+}
+.u-wsWrap {
+  white-space: normal;
+}
+
+/**
+ * Transforms
+ */
+
+.u-textCapitalize {
+  text-transform: capitalize;
+}
+.u-textLowercase {
+  text-transform: lowercase;
+}
+.u-textNoTransform {
+  text-transform: none;
+}
+.u-textUppercase {
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
+}
+
+/**
+ * Weights
+ */
+
+.u-textWeightBold {
+  font-weight: $font-weight-bold;
+}
+.u-textWeightSemiBold {
+  font-weight: $font-weight-semibold;
+}
+.u-textWeightMedium {
+  font-weight: $font-weight-medium;
+}
+.u-textWeightRegular {
+  font-weight: $font-weight-regular;
+}
+.u-textWeightLight {
+  font-weight: $font-weight-light;
+}
+
+/**
+ * Styles
+ */
+
+.u-textDecoNone {
+  text-decoration: none;
+}
+.u-textDecoUnderline {
+  text-decoration: underline;
+}
+
+.u-textStyleNormal {
+  font-style: normal;
+}
+.u-textStyleItalic {
+  font-style: italic;
+}
+
+/**
+ * Flow reset
+ */
+.clear,
+.u-clear {
+  clear: both;
+}
+
+/**
+ * wysiwyg styles
+ */
+.u-wysiwyg {
+  h1,
+  h2 {
+    font-family: $font-stack-primary;
+    text-transform: uppercase;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,17 @@
+@use '../../abstracts' as *;
+
+/********************************
+	Button Group
+********************************/
+
+.btn__container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-self: flex-start;
+
+	&--justify-center,
+	.u-textAlignCenter & {
+		justify-content: center;
+	}
+}

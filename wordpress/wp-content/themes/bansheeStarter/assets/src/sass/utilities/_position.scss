@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+/**
+ * _position.scss
+ * Position helpers
+ */
+
+@mixin create-position-classes($modifier, $breakpoint) {
+    @include create-mq($breakpoint) {
+        /* Position */
+        &#{$modifier}-positionAbsolute {
+            position: absolute;
+        }
+        &#{$modifier}-positionFixed {
+            position: fixed;
+        }
+        &#{$modifier}-positionRelative {
+            position: relative;
+        }
+        &#{$modifier}-positionStatic {
+            position: static;
+        }
+
+        /* Float */
+        &#{$modifier}-floatLeft {
+            float: left;
+        }
+        &#{$modifier}-floatRight {
+            float: right;
+        }
+    }
+}
+
+.u {
+    @each $modifier, $breakpoint in $map-width-props {
+        @include create-position-classes($modifier, $breakpoint);
+    }
+}

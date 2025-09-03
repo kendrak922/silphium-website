@@ -1,0 +1,62 @@
+@use '../abstracts' as *;
+
+/** 
+ * _padding.scss
+ * Padding helpers
+ *
+ * ~1) Horizontal and Vertical
+ * ~2) Horizontal
+ * ~3) Vertical
+ * ~4) Media queries
+ */
+
+ @mixin create-padding-classes($modifier, $breakpoint) {
+  @include create-mq($breakpoint) {
+
+    &#{$modifier}-padding {
+
+      @for $i from 0 through 40 {
+        /* ~1) Horizontal and Vertical
+        ========================================================================== */
+        &#{$i}gu { padding: $grid-unit * $i; }
+      
+        /* ~2) Horizontal
+        ========================================================================== */
+      
+        /* Left */
+        &Left#{$i}gu { padding-left: $grid-unit * $i; }
+      
+        /* Right */
+        &Right#{$i}gu { padding-right: $grid-unit * $i; }
+      
+        /* Right/Left Pairs */
+        &Horiz#{$i}gu {
+          padding-left: $grid-unit * $i;
+          padding-right: $grid-unit * $i;
+        }
+      
+        /* ~3) Vertical
+        ========================================================================== */
+      
+        /* Bottom */
+        &Bottom#{$i}gu { padding-bottom: $grid-unit * $i; }
+      
+        /* Top */
+        &Top#{$i}gu { padding-top: $grid-unit * $i; }
+      
+        &Vert#{$i}gu {
+          padding-top: $grid-unit * $i;
+          padding-bottom: $grid-unit * $i;
+        }
+      }
+
+    }
+
+  }
+}
+
+.u {
+  @each $modifier, $breakpoint in $map-width-props {
+    @include create-padding-classes($modifier, $breakpoint);
+  }
+}

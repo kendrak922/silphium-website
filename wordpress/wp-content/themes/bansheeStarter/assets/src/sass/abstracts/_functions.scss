@@ -1,0 +1,54 @@
+@use 'variables' as *;
+@use 'sass:math';
+@use "sass:meta";
+@use "sass:map";
+@use "sass:color";
+
+
+
+/***********************************************
+    THEME FUNCTIONS
+***********************************************/
+@function swatch($color: 'Blue') {
+    @return map.get($palette, $color);
+}
+
+
+:root{
+    @each $color, $value in $palette {
+        --#{$color} : {$value};
+    }
+}
+// powers
+@function pow($number, $exponent) {
+    $value: 1;
+
+    @if $exponent > 0 {
+        @for $i from 1 through $exponent {
+            $value: $value * $number;
+        }
+    }
+
+    @return $value;
+}
+
+// letter-spacing
+@function kern($psd) {
+    @return calc(($psd / 1000) * 1rem);
+}
+
+// Type Scale
+
+@function typeScalePlus($number) {
+    @return (pow($type-scale, $number) * 1rem);
+}
+
+@function typeScaleMinus($number) {
+    @return (pow($type-scale-reverse, $number) * 1rem);
+}
+
+//used to convert pixels into rems
+$rem-base: 16;
+@function rem($pixels, $context: $rem-base) {
+    @return (math.div($pixels, $context) * 1rem);
+}

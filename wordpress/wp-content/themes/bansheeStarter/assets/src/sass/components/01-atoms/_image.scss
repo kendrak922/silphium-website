@@ -1,0 +1,112 @@
+@use '../../abstracts' as *;
+
+/********************************
+	Atom: Image
+********************************/
+.image {
+    img:not(.u-rounded) {
+        border-radius: 0.25rem;
+    }
+
+    // caption
+    &__link {
+        text-decoration: none;
+    }
+    &__caption {
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        font-weight: $font-weight-bold;
+        text-decoration: none;
+        margin-top: 1.25rem;
+    }
+
+    /* modal variant */
+    &--modaal {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.25rem;
+        // &::before {
+        //     background: rgba(0, 0, 0, 0.25);
+        //     border-radius: 0.25rem;
+        //     bottom: 0;
+        //     content: '';
+        //     left: 0;
+        //     position: absolute;
+        //     right: 0;
+        //     top: 0;
+        //     z-index: 1;
+        // }
+        svg {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            path {
+                transition: $transition-default;
+                fill: rgba($color: swatch('White'), $alpha: 0);
+            }
+        }
+        img {
+            transition: $transition-default;
+        }
+        &:hover {
+            svg {
+                path:nth-child(1) {
+                    fill: rgba($color: swatch('White'), $alpha: 0.3);
+                }
+                path:nth-child(2) {
+                    fill: rgba($color: swatch('White'), $alpha: 0);
+                }
+            }
+            img {
+                transform: scale(1.075);
+            }
+        }
+    }
+
+    /* hover variant */
+    &--has-hover {
+        .image__img {
+            opacity: 0;
+        }
+        .image__img--hover {
+            opacity: 1;
+        }
+        @include create-mq($md-width) {
+            .image__img {
+                opacity: 1;
+            }
+            .image__img--hover {
+                opacity: 0;
+            }
+            &:hover {
+                .image__img {
+                    opacity: 0;
+                }
+                .image__img--hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.image__wrapper {
+    background-color: $color-black; // creates "widescreen" bars if scaling is off
+    max-width: 100%;
+    overflow: hidden;
+    padding-bottom: $video_aspectRatio;
+    position: relative;
+    width: 100%;
+
+    img {
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+    }
+} // close: .image__wrapper

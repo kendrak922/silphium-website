@@ -1,0 +1,13 @@
+.content-entry__seperator {
+    &:last-child {
+        display: none;
+    }
+}
+
+.content-entry__tags a {
+    text-decoration: none;
+}
+
+.list__story-listing {
+    display: flex;
+}

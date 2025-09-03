@@ -1,0 +1,48 @@
+@use '../../abstracts' as *;
+
+/********************************
+	Breadcrumbs
+********************************/
+.breadcrumbs,
+.yoast-breadcrumbs {
+    font-family:  $font-stack-secondary;
+    font-size: 0.875rem;
+    margin-bottom: 4.25rem;
+    @include create-mq($md-width) {
+        margin-top: -1.5rem;
+        margin-bottom: 4.25rem; //72
+    }
+
+    .block--padding-large & {
+        @include create-mq($lg-width) {
+            margin-top: -4.5rem;
+        }
+    }
+
+    ul{
+        list-style: none; 
+        margin: 0; 
+        padding:0;
+        display: inline-block;
+        li{
+            margin: 0; 
+            padding:0;
+            display: inline;
+            word-wrap: break-word;
+            &:not(:last-child){
+                &::after{
+                    content: '|';
+                    display: inline-block;
+                    margin: 0 .5rem;
+                }
+            }
+        }
+    }
+
+    a {
+        text-decoration: underline;
+    }
+    .breadcrumb_last {
+        font-weight: 500;
+    }
+}
