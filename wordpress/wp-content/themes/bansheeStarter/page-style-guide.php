@@ -25,13 +25,13 @@ if (has_blocks($templateData['post']->post_content)) {
 // debug_to_console($templateData, 'Page $templateData');
 ?>
 <div class='page__wrapper'>
-	<?php if (have_posts()) : ?>
-		<div id="page_content" class="content container--full">
-			<?php while (have_posts()) : the_post(); ?>
-				<?php the_content(); ?>
-			<?php endwhile; ?>
-		</div>
-	<?php endif; ?>
+    <?php if (have_posts()) : ?>
+        <div id="page_content" class="content container--full">
+        <?php while (have_posts()) : the_post(); ?>
+            <?php the_content(); ?>
+        <?php endwhile; ?>
+        </div>
+    <?php endif; ?>
 
   <?php
     /**
@@ -52,7 +52,7 @@ if (has_blocks($templateData['post']->post_content)) {
   <section class="block">
     <div class="container container--narrow">
       <h2>Colors:</h2>
-      <p>These colors are very French to me! The site overall will be simple, but some color will be fun to play with here and there.</p>
+      <p>The site overall will be minimalist, but some color will be fun to play with here and there.</p>
       <a href="https://coolors.co/" target="_blank" >I use this tool to make sure colors go together</a>
   <br></br>
 
@@ -65,20 +65,22 @@ if (has_blocks($templateData['post']->post_content)) {
         // Text color
         'Neutral',
         // Style Guide
-        'Blue',
-        'LightBlue',
+        'Red',
+        'Orange',
         'Yellow',
         'Green',
         'LightGreen',
+        'Blue',
+        'LightBlue',
+        'Pink',
+        'Purple',
         'Gray',
-        'Red',
-        'Gold',
         'Black',
         'White',
         'Success',
         'Error',
       ];
-      ?>
+        ?>
 
       <div class="container grid grid--gutters">
         <?php foreach ($colors as $key => $color) : ?>
@@ -117,7 +119,7 @@ if (has_blocks($templateData['post']->post_content)) {
           </div>
     <?php
 
-      ?>
+    ?>
 
       <div class="container grid grid--gutters">
           

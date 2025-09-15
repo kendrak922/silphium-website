@@ -72,68 +72,69 @@ add_theme_support(
      array(
         'name'  => esc_attr__('cream', 'themeLangDomain'),
         'slug'  => 'Cream',
-        'color' => '#E6DFD4',
-     ),
-     array(
-        'name'  => esc_attr__('black', 'themeLangDomain'),
-        'slug'  => 'Black',
-        'color' => '#1A1D18',
-     ),
-     array(
-        'name'  => esc_attr__('light gray', 'themeLangDomain'),
-        'slug'  => 'LightGray',
-        'color' => '#8F9191',
-     ),array(
-        'name'  => esc_attr__('brand: blue', 'themeLangDomain'),
-        'slug'  => 'Blue',
-        'color' => '#1B5299',
-     ),
-     array(
-        'name'  => esc_attr__('brand: light-blue', 'themeLangDomain'),
-        'slug'  => 'LightBlue',
-        'color' => '#CFE4FF',
+        'color' => '#DAF7DC',
      ),
      array(
         'name'  => esc_attr__('brand: brown', 'themeLangDomain'),
         'slug'  => 'Brown',
-        'color' => '#8F6D50',
+        'color' => '#413620',
      ),
      array(
-        'name'  => esc_attr__('brand: neutral', 'themeLangDomain'),
-        'slug'  => 'Neutral',
-        'color' => '#4A3D25',
+        'name'  => esc_attr__('black', 'themeLangDomain'),
+        'slug'  => 'Black',
+        'color' => '#201E1F',
      ),
-    //  array(
-    //     'name'  => esc_attr__('brand: pink', 'themeLangDomain'),
-    //     'slug'  => 'Pink',
-    //     'color' => '#F75590',
-    //  ),
      array(
-        'name'  => esc_attr__('brand: gold', 'themeLangDomain'),
-        'slug'  => 'Gold',
-        'color' => '#A37C40',
+        'name'  => esc_attr__('light gray', 'themeLangDomain'),
+        'slug'  => 'LightGray',
+        'color' => '#CDD1DE',
      ),
+     array(
+        'name'  => esc_attr__('brand: red', 'themeLangDomain'),
+        'slug'  => 'Red',
+        'color' => '#9E2B25',
+      ),
+     array(
+      'name'  => esc_attr__('brand: yellow', 'themeLangDomain'),
+      'slug'  => 'Orange',
+      'color' => '#FF6F00',
+     ),   
+      array(
+       'name'  => esc_attr__('brand: yellow', 'themeLangDomain'),
+       'slug'  => 'Yellow',
+       'color' => '#FFCC01',
+      ),
      array(
         'name'  => esc_attr__('brand: green', 'themeLangDomain'),
         'slug'  => 'Green',
-        'color' => '#3C896D',
+        'color' => '#2FBF71',
      ),
      array(
         'name'  => esc_attr__('brand: light-green', 'themeLangDomain'),
         'slug'  => 'LightGreen',
-        'color' => '#D0EFB1',
-     ) ,
-     array(
-       'name'  => esc_attr__('brand: red', 'themeLangDomain'),
-       'slug'  => 'Red',
-       'color' => '#DB3A34',
+        'color' => '#DAF7DC',
      ),
      array(
-      'name'  => esc_attr__('brand: yellow', 'themeLangDomain'),
-      'slug'  => 'Yellow',
-      'color' => '#FCFDAF',
-     )   
-    ) 
+        'name'  => esc_attr__('brand: blue', 'themeLangDomain'),
+        'slug'  => 'Blue',
+        'color' => '#3943B7',
+     ),
+     array(
+        'name'  => esc_attr__('brand: light-blue', 'themeLangDomain'),
+        'slug'  => 'LightBlue',
+        'color' => '#85C7F2',
+     ), 
+     array(
+        'name'  => esc_attr__('brand: pink', 'themeLangDomain'),
+        'slug'  => 'Pink',
+        'color' => '#F283B6',
+     ), 
+     array(
+        'name'  => esc_attr__('brand: pink', 'themeLangDomain'),
+        'slug'  => 'Purple',
+        'color' => '#CB9CF2',
+     )
+    )
 );
 
 

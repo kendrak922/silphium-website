@@ -37,7 +37,7 @@
             object-fit: contain;
 
             @include create-mq($lg-width) {
-                height: 6.5rem;
+                height: 3.5rem;
                 transition: height ease-in-out $t-default;
 
                 body.scrolled & {
@@ -69,12 +69,14 @@
 
     // header bar molecule
     &-bar {
-        // border-bottom: 2px solid swatch('Primary');
-        // background-color: swatch('LightBlue');
+
         &--main {
             .header-bar__wrapper {
                 height: map.get($headerHeight, 'sm');
                 @include create-mq($lg-width) {
+                    margin: 20px;
+                    border: 2px solid swatch('Secondary');
+                    border-radius: 20px;
                     gap:32px;
                     height: map.get($headerHeight, 'lg');
                     transition: height ease-in-out $t-default;

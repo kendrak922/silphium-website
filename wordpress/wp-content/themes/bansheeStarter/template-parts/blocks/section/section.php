@@ -40,7 +40,7 @@ if ( ! empty( $block['backgroundColor'] ) ) {
         $classes[] = 'u-darkMode';
     }
 }else{
-	$classes[] = 'u-bgColorWhite';
+	$classes[] = 'u-bgColorNone';
 }
 if ( ! empty( $block['textColor'] ) ) {
     if ($block['textColor'] == 'white') {

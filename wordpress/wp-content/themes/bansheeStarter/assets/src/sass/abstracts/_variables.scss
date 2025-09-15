@@ -80,43 +80,47 @@ $map-width-props: (
 /// * COLORS * ///
 //////////////////
 
-$color-primary: #434341;;
-$color-secondary: #4A3D25;;
-$color-tertiary: #748CAB;
-$primary-hover: #8F6D50;
+$color-primary:  #3943B7;
+$color-secondary: #FFCC01;
+$color-tertiary: #201E1F;
+
 // Basics
-$color-black:#434341;
+$color-black:#201E1F;
 $color-white:#ffffff;
-$color-neutral: #4A3D25;
+$color-neutral:#201E1F;
 
 $palette: (
   'Primary': $color-primary,
-  'PrimaryHover': #8F6D50,
-  'PrimaryActive':#8F6D50,
+  'PrimaryHover':#9298DD,
+  'PrimaryActive':#9298DD,
   'Secondary': $color-secondary,
-  'SecondaryHover': #8F6D50,
-  'SecondaryActive': #8F6D50,
+  'SecondaryHover': #FFEB99,
+  'SecondaryActive':#FFEB99,
   'Tertiary': $color-tertiary,
   // Text color
   'Neutral': $color-neutral,
-  'LightNeutral' : #E6DFD4,
-  'Cream' : #E6DFD4,
-  'Yellow' : #FCFDAF,
+  'LightNeutral' : #FFFBEB,
+  'Cream' : #FFFBEB,
   // Style Guide
-  'Brown' : #4A3D25,
-  'LightBlue' : #CFE4FF,
-  'Red': #DB3A34,
-  'Blue' : #748CAB,
-  // 'Pink': #F75590,
-  'Green': #3C896D,
-  'LightGreen': #D0EFB1,
-  'Gray' : #8F9191,
-  'Gold' : #8F6D50,
+  'Brown' :#413620,
+  'Red': #9E2B25,
+  'Orange': #FF6F00,
+  'Yellow' : #FFCC01,
+  'Green': #2FBF71,
+  'LightGreen': #DAF7DC,
+  'Blue' : #3943B7,
+  'LightBlue' : #85C7F2,
+  'Purple': #CB9CF2,
+  'Pink': #F283B6,
+  'Gray' : #CDD1DE,
   'Black': $color-black,
   'White': $color-white,
-  'Success':#3C896D,
-  'Error': #DB3A34,
+  'Success':#2FBF71,
+  'Error': #9E2B25,
 );
+//for buttons
+$primary-hover:swatch('primaryHover');
+
 body {
 //   --tec-color-accent-primary: #{$color-primary};
 //   --tec-color-background : #{$color-secondary};
@@ -151,18 +155,18 @@ $font-weight-heavy: 900;
 
 // Font Stack
 $font-stack-primary: (
-  "IBM Plex Sans", sans-serif,
+  "Source Serif 4", serif,
   serif
 );
 $font-stack-secondary: (
-  "Old Standard TT", serif,
+  "Schibsted Grotesk", sans-serif,
   'Helvetica',
   sans-serif
 );
 
 
 $font-stack-tertiary: (
-  "rosella-deco",
+  "Passion One", sans-serif,
 );
 
 
@@ -252,3 +256,5 @@ $domain: (
 $outline-size: max(2px, 1.25px);
 $outline-style: solid;
 $outline-color: currentColor;
+
+

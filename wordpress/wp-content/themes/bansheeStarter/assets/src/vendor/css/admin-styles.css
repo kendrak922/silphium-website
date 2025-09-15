@@ -105,69 +105,13 @@ Add interface colored swatches to ACF picker
 
 
 .acf-radio-list > li > label:has(input[type=radio][value=White]) {
-  background-color: #F0FBEF;
+  background-color: #ffffff;
   border-color: #ccc;
 }
-
-.acf-radio-list > li > label:has(input[type=radio][value=Primary]) {
-  background-color: #8F4521;
-  border-color: #8F4521;
-  color: #fff;
-}
-
-.acf-radio-list > li > label:has(input[type=radio][value=Secondary]) {
-  background-color: #CFE4FF;
-  border-color: #CFE4FF;
-}
-
-.acf-radio-list > li > label:has(input[type=radio][value=Tertiary]) {
-  background-color: #3C896D;
-  border-color: #3C896D;
-  color: #fff;
-}
-
-.acf-radio-list > li > label:has(input[type=radio][value=Blue]) {
-  background-color: #1B5299;
-  border-color: #1B5299;
-  color: #fff;
-}
-
-.acf-radio-list > li > label:has(input[type=radio][value=Red]) {
-  background-color: #DB3A34;
-  border-color: #DB3A34;
-  color: #fff;
-}
-
-.acf-radio-list > li > label:has(input[type=radio][value=LightBlue]) {
-  background-color: #CFE4FF;
-  border-color: #CFE4FF;
-}
-
-.acf-radio-list > li > label:has(input[type=radio][value=Pink]) {
-  background-color: #F75590;
-  border-color: #F75590;
-}
-
-.acf-radio-list > li > label:has(input[type=radio][value=LightGreen]) {
-  background-color: #D0EFB1;
-  border-color: #D0EFB1;
-}
-
 .acf-radio-list > li > label:has(input[type=radio][value=Brown]) {
-  background-color: #8F4521;
-  border-color: #8F4521;
+  background-color: #413620;
+  border-color: #413620;
   color: #fff;
-}
-
-.acf-radio-list > li > label:has(input[type=radio][value=Green]) {
-  background-color: #3C896D;
-  border-color: #3C896D;
-  color: #fff;
-}
-
-.acf-radio-list > li > label:has(input[type=radio][value=Yellow]) {
-  background-color: #FCFDAF;
-  border-color: #FCFDAF;
 }
 
 
@@ -181,4 +125,53 @@ Add interface colored swatches to ACF picker
   border-color: #1A1D18;
   color: #fff;
 }
+
+.acf-radio-list > li > label:has(input[type=radio][value=Red]) {
+  background-color: #9E2B25;
+  border-color: #9E2B25;
+  color: #fff;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Orange]) {
+  background-color: #FF6F00;
+  border-color: #FF6F00;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Yellow]) {
+  background-color: #FFCC01;
+  border-color: #FFCC01;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Green]) {
+  background-color: #2FBF71;
+  border-color: #2FBF71;
+  color: #fff;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=LightGreen]) {
+  background-color: #DAF7DC;
+  border-color: #DAF7DC;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Blue]) {
+  background-color: #3943B7;
+  border-color: #3943B7;
+  color: #fff;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=LightBlue]) {
+  background-color:  #85C7F2;
+  border-color:  #85C7F2;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Pink]) {
+  background-color: #F283B6;
+  border-color:#F283B6;
+}
+
+.acf-radio-list > li > label:has(input[type=radio][value=Purple]) {
+  background-color: #CB9CF2;
+  border-color:#CB9CF2;
+}
+
 

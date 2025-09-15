@@ -4,7 +4,9 @@
 @use "sass:map";
 @use "sass:meta";
 
-
+/*************************************************************
+   ** FOOTER STYLES
+*************************************************************/
 
 .social {
     &__head {
@@ -83,7 +85,7 @@
         }
 
         a:not(.btn--primary) {
-            color: swatch('Primary');
+            color: swatch('Neutral');
             &:hover {
                 color: swatch('PrimaryHover');
             }
@@ -172,7 +174,7 @@
         align-items: center;
         flex-flow: column;
         padding: 20px;
-        border-top: 2px solid swatch('Primary');
+        border-top: 2px solid swatch('Secondary');
         @include create-mq($md-width) {
             display: flex;
             flex-flow: row;

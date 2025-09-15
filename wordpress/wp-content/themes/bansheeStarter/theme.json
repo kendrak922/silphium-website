@@ -56,9 +56,9 @@
           "slug": "IBM+Plex+Sans"
         },
         {
-          "fontFamily": "rosella-deco",
-          "name": "Rosella Deco",
-          "slug": "rosella-deco"
+          "fontFamily":"Passion One",
+          "name": "Passion One",
+          "slug": "passion-one"
         }
       ]
     },

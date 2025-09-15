@@ -1,0 +1,47 @@
+recipe: wordpress
+name: silphium
+config:
+  php: '8.4'
+  composer_version: '2.0.7'
+  via: apache:2.4
+  webroot: wordpress
+  database: mysql:8.0
+  xdebug: false
+services:
+  appserver:
+    app_mount: default
+    xdebug: debug
+    config:
+      php: .vscode/php.ini
+    overrides:
+      environment:
+        XDEBUG_MODE:
+  node:
+    type: node:20
+events:
+  post-start:
+    - rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload && echo "Xdebug disabled"
+tooling:
+  npm:
+    service: node
+    dir: /app/wordpress/wp-content/themes/bansheeStarter
+  node:
+    service: node
+    dir: /app/wordpress/wp-content/themes/bansheeStarter
+  gulp:
+    service: node
+    cmd: npx gulp
+    dir: /app/wordpress/wp-content/themes/bansheeStarter
+  wp-install:
+    service: appserver
+    cmd: wp core download --path='/app/wordpress' --allow-root --skip-content
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for Apache.
+    cmd: rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && docker-php-ext-enable xdebug && /etc/init.d/apache2 reload && echo "Xdebug enabled"
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for Apache.
+    cmd: rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload && echo "Xdebug disabled"
+    user: root

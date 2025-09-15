@@ -41,6 +41,7 @@ $btnWhite: (
 	@include font.font-appearance();
 	background: transparent;
 	text-align: center;
+	font-family: $font-stack-secondary;
 	border-radius: $buttonRadius;
 	box-shadow: none;
 	cursor: pointer;
@@ -61,12 +62,11 @@ $btnWhite: (
 	color: map.get($button, 'textColor');
 	display: inline-flex;
 	text-align: center;
-	font-family: $font-stack-primary;
+	font-family: $font-stack-secondary;
 	font-weight: $font-weight-medium;
 	gap:.5rem;
 	letter-spacing: kern(60);
 	line-height: 1.2rem;
-	// min-height: 3rem;
 	padding: 0.5rem 1.25rem 0.5rem;
 	position: relative;
 	text-align: center;
@@ -204,10 +204,10 @@ $btnWhite: (
 	Button - SOLID
 ********************************/
 $btnSolidDefault: (
-	'textColor': swatch('Neutral'),
-	'bgColor': swatch('LightNeutral'),
-	'borderColor': swatch('LightNeutral'),
-	'hoverTextColor': swatch('LightNeutral'),
+	'textColor': swatch('LightNeutral'),
+	'bgColor': swatch('Primary'),
+	'borderColor': swatch('Primary'),
+	'hoverTextColor': swatch('Neutral'),
 	'hoverBgColor': swatch('PrimaryHover'),
 	'hoverBorderColor': swatch('PrimaryHover'),
 	'disabled': swatch('Gray'),
@@ -217,10 +217,10 @@ $btnSolidDefault: (
 );
 // Secondary Colors
 $btnSolidSecondary: (
-	'textColor': swatch('LightNeutral'),
+	'textColor': swatch('Neutral'),
 	'bgColor': swatch('Secondary'),
 	'borderColor': swatch('Secondary'),
-	'hoverTextColor': swatch('LightNeutral'),
+	'hoverTextColor': swatch('Neutral'),
 	'hoverBgColor': swatch('SecondaryHover'),
 	'hoverBorderColor': swatch('SecondaryHover'),
 	'disabled': swatch('Gray'),
@@ -386,6 +386,7 @@ $btnArrowDark: (
 .btn--text,
 .btn--arrow {
 	@include btnColors($btnArrow);
+	font-family: $font-stack-secondary;
 	align-items: center;
 	display: inline-flex;
 	gap: 0.5rem;
@@ -400,13 +401,13 @@ $btnArrowDark: (
 	svg {
 		height: 1rem;
 		width: 1rem;
-		fill: swatch("Neutral") !important;
+		fill: map.get($btnArrow, 'textColor')!important;
 			@include create-mq($md-width) {
 			height: 1rem;
 			width: 1rem;
 		}
 		path{
-			stroke: swatch("Neutral") !important;
+			stroke: map.get($btnArrow, 'textColor')!important;
 		}
 	}
 
