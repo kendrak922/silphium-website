@@ -13,7 +13,7 @@ $blockID = (!empty($block['anchor']) ? $block['anchor'] : $block['id']);
 
 // BLOCK :: DATA
 $blockData = array(
-    'title' => get_field('title') ?? 'Our Work',
+    'title' => get_field('title') ?? '',
     'title_level' => get_field('title_level') ?? 'h2',
     'pull_type' => get_field('pull_type') ?? 'manual',
 );
@@ -24,7 +24,7 @@ if (! empty($block['className']) ) {
     $classes = array_merge($classes, explode(' ', $block['className']));
 }
 
-$storylisting[] = storiesFromQuery()
+$storylisting[] = postsFromQuery()
 
 // BLOCK :: RENDER
 ?>
@@ -51,7 +51,7 @@ $storylisting[] = storiesFromQuery()
                             [
                                 'heading'         => $story['title'],
                                 'heading_level'   => 'h3',
-                                'heading_style'   => 'h2 u-marginBottom2gu',
+                                'heading_style'   => 'h3 u-marginBottom2gu',
                             ]
                         );?>
                     </a>

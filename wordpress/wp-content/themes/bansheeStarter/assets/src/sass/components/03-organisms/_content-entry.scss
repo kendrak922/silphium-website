@@ -33,7 +33,7 @@
     flex-direction: column;
     gap: 1.5rem;
     @include create-mq($md-width) {
-        flex-basis: 50%;
+        flex-basis: 45%;
         // flex-direction: row;
         // flex-wrap: nowrap;
         align-content: center;
