@@ -52,40 +52,47 @@ if (has_blocks($templateData['post']->post_content)) {
   <section class="block">
     <div class="container container--narrow">
       <h2>Colors:</h2>
-      <p>The site overall will be minimalist, but some color will be fun to play with here and there.</p>
       <a href="https://coolors.co/" target="_blank" >I use this tool to make sure colors go together</a>
   <br></br>
 
     <?php
 
-      $colors = [
-        'Primary',
-        'Secondary',
-        'Tertiary',
-        // Text color
-        'Neutral',
+      $primaryColors = [
         // Style Guide
-        'Red',
-        'Orange',
-        'Yellow',
-        'Green',
-        'LightGreen',
-        'Blue',
-        'LightBlue',
-        'Pink',
-        'Purple',
-        'Gray',
-        'Black',
-        'White',
-        'Success',
-        'Error',
+        'Orange' => "#FF6F00",
+        'Yellow' => "#FFCC01",
+        'Green'=> "#2FBF71",
+        'Blue' => "#3943B7",
+        'Purple' => "#CB9CF2",
+        'Gray' => "#CDD1DE",
+        'Black'=> "#201E1F",
+        'White' =>"#ffffff",
       ];
-        ?>
+
+        $secondaryColors = [
+        'Red' => "#9E2B25",
+        'Cream' => "#FFFBEB",
+        'LightGreen'=> "#DAF7DC",
+        'LightBlue' => "#85C7F2",
+        'Pink'=> "#F283B6",
+        'Success'=> "#9E2B25",
+        'Error' => "#2FBF71",
+      ];
+
+      ?>
 
       <div class="container grid grid--gutters">
-        <?php foreach ($colors as $key => $color) : ?>
+      <h4>Primary Colors: Our Palette</h4>
+        <?php foreach ($primaryColors as $key => $color) : ?>
           <div class="grid__col grid__col--12 grid__col-sm--6--spaced grid__col-md--4--spaced u-marginBottom8gu grid grid--column">
-            <h5 class="u-textColorWhite u-bgColor<?php echo $color; ?> u-paddingVert8gu u-paddingHoriz4gu u-textSizePlus2 u-marginBottom2gu"><?php echo $color; ?></h5>
+            <h5 class="u-textColorWhite u-bgColor<?php echo $key; ?> u-paddingVert8gu u-paddingHoriz4gu u-textSizePlus2 u-marginBottom2gu"><?php echo $key; ?> : <?php echo $color; ?></h5>
+          </div>
+          <!--.grid__col-->
+        <?php endforeach; ?>
+        <h4>Seconday Colors: Approved colors to reach for if nothing in our palette is working</h4>
+        <?php foreach ($secondaryColors as $key => $color) : ?>
+          <div class="grid__col grid__col--12 grid__col-sm--6--spaced grid__col-md--4--spaced u-marginBottom8gu grid grid--column">
+            <h5 class="u-textColorWhite u-bgColor<?php echo $key; ?> u-paddingVert8gu u-paddingHoriz4gu u-textSizePlus2 u-marginBottom2gu"><?php echo $key; ?> : <?php echo $color; ?></h5>
           </div>
           <!--.grid__col-->
         <?php endforeach; ?>
@@ -104,17 +111,17 @@ if (has_blocks($templateData['post']->post_content)) {
       <br>
       <a href="https://fontpair.co/" target="_blank" >https://fontpair.co/</a>
       <div>
-            <h5 class="u-textPrimary u-marginBottom8gu u-marginTop16gu">Primary (body) Font</h5>
+            <h5 class="u-textPrimary u-marginBottom8gu u-marginTop16gu">Primary (body) Font : <a href="https://fonts.google.com/specimen/Source+Serif+4?preview.layout=grid" target="_blank">Source Serif 4</a></h5>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div class="grid__col grid__col--12 grid__col-sm--6--spaced grid__col-md--4--spaced u-marginBottom8gu grid grid--column">
-            <h5 class="u-textSecondary u-marginBottom8gu u-marginTop16gu">Secondary (Header) Font</h5>
+            <h5 class="u-textSecondary u-marginBottom8gu u-marginTop16gu">Secondary (Header) Font : <a href="https://fonts.google.com/specimen/Schibsted+Grotesk?preview.layout=grid" target="_blank">Schibsted Grotesk</a></h5>
             <h1>h1 - used for page titles</h1>
             <h2>h2 - used for section titles</h2>
             <h3>h3 - used for sections within sections</h3>
       </div>
       <div class="grid__col grid__col--12 grid__col-sm--6--spaced grid__col-md--4--spaced u-marginBottom8gu grid grid--column">
-            <h2 class="u-textTertiary u-marginBottom8gu u-marginTop16gu u-textSizePlus8">Accent Font</h2>
+            <h5 class="u-textTertiary u-marginBottom8gu u-marginTop16gu u-textSizePlus8">Accent Font : <a href="https://fonts.google.com/specimen/Passion+One?preview.layout=grid" target="_blank">Passion One</a></h5>
             <p class="u-textSizePlus8 u-textTertiary">This is the font we use sparingly when we need some pizzaz </p>
           </div>
     <?php

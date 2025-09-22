@@ -74,7 +74,9 @@
         object-fit: cover;
         object-position: center 10%;
         width: 100%;
-        border-radius: 20px;
+        max-height: 350px;
+        border-radius: 100px;
+        border: 40px solid swatch('Orange');
     }
 
     .h--smNav,
