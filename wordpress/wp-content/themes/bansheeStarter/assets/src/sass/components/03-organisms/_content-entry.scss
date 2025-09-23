@@ -9,6 +9,11 @@
         flex-wrap: wrap;
         gap: 21px;
         width: 100%;
+        @include create-mq($md-width) {
+            row-gap: 8rem;
+            justify-content: space-between;
+            column-gap: 3rem;
+        }
     }
 
     & + .content-listing{
@@ -34,10 +39,8 @@
     gap: 1.5rem;
     @include create-mq($md-width) {
         flex-basis: 45%;
-        // flex-direction: row;
-        // flex-wrap: nowrap;
+        
         align-content: center;
-        gap: 2rem;
         &.content-entry--reverse{
             flex-direction: row-reverse;
         }
@@ -75,8 +78,8 @@
         object-position: center 10%;
         width: 100%;
         max-height: 350px;
-        border-radius: 100px;
-        border: 40px solid swatch('Orange');
+        border-radius: 20px;
+        border: 5px solid swatch('Orange');
     }
 
     .h--smNav,
@@ -86,14 +89,5 @@
 
     .inner-block--divider span{
         width: 3.5rem;
-    }
-
-    &+.content-entry{
-        margin-top: 2rem; //32
-        padding-top: 2rem; //32
-        @include create-mq($md-width) {
-            margin-top: 6rem; //96
-            padding-top: 6rem; //96
-        }
     }
 }

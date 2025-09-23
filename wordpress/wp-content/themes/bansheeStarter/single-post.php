@@ -27,14 +27,9 @@ if (has_blocks($templateData['post']->post_content)) {
 // DEBUG
 // debug_to_console($templateData, 'Single $templateData');
 
-$hasSidebar = (!is_front_page() && $templateData['has_sidebar']);
 ?>
 
-<?php if($hasSidebar):?>
-<a class="screen-reader-text skip-link" href="#page_content">Skip to content</a>
-<?php endif;?>
-
-<div class='page__wrapper'>
+<div class='page__wrapper single-post'>
 	<?php if (have_posts()) : ?>
 		<div id="page_content" class="content container--narrow">
 			<?php while (have_posts()) : the_post(); ?>
@@ -45,5 +40,3 @@ $hasSidebar = (!is_front_page() && $templateData['has_sidebar']);
 	<?php endif; ?>
 
 </div>
-
-<?php get_footer('default',array('hasSidebar'=> $hasSidebar)); ?>
