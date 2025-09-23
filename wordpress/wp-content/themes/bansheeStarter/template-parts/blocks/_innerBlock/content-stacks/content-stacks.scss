@@ -18,7 +18,6 @@
 
 .content-stacks--two-mobile .content-stacks .content-stack__single {
     flex-basis: 46%;
-    border-radius: 20px;
     @include create-mq($md-width) {
         flex-basis: unset;
     }
@@ -26,6 +25,7 @@
 
 .content-stack__single {
 flex-basis: 400px;
+border-radius: 20px;
     [data-atom='heading']{
         border-radius: 50px;
         text-align: center;
