@@ -5,37 +5,25 @@
 ******************************/
 .testimonial {
     margin: 0 auto;
-    &--desktop {
-        max-width: 1080px;
-    }
-    @include create-mq($lg-width) {
-    min-height: 1500px
-    }
 }
 
 .swiper {
-    width: 280px;
-    height: 800px;
-    @include create-mq($xs-width) {
-        width: 320px;
-    }
+    width: 100%;
 }
 
 .testimonial__single {
-    max-width: 300px;
+    max-width: 100%;
     margin-bottom: 40px;
 
     @include create-mq($md-width) {
-        max-width: 520px;
+        max-width: 600px;
     }
     
     &-content {
-        padding: 32px 32px 50px 100px;
+        padding: 32px;
+        padding-top: 100px;
         position: relative;
         height: fit-content;
-        @include create-mq($md-width) {
-            padding: 32px 32px 50px 120px;
-        }
         &::before {
             content: '';
             background-image: url('/wp-content/themes/bansheeStarter/assets/dist/imgs/icons/icon-quote.png');
@@ -66,6 +54,11 @@
         display: flex;
         align-items: flex-end;
         max-height: 300px;
+
+        img {
+            border-radius: $border-radius  $border-radius 0px 0px;
+        }
+
         @include create-mq($md-width) {
             max-height: unset;
 
@@ -96,9 +89,3 @@
     
     }
 }
-
-// @media only screen and (max-width: 768px) {
-//     .testimonial__single {
-//         flex-basis: 100%;
-//     }
-// }

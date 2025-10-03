@@ -269,17 +269,17 @@ img.size-stretch {
 
 /* Border Radius */
 .u-rounded {
-  border-radius: 20px;
+  border-radius: $border-radius;
 
   img {
-    border-radius: 20px;
+    border-radius: $border-radius;
   }
 }
 .u-borderRadius {
-  border-radius: 0.25rem;
+  border-radius: $border-radius;
 }
 .u-borderRadiusBottom {
-  border-radius: 0 0 0.25rem 0.25rem;
+  border-radius: 0 0 $border-radius $border-radius;
 }
 
 .u-ratio-square,
