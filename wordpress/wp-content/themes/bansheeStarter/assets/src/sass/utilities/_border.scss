@@ -10,7 +10,7 @@
 */
 
 $border-color: swatch('Black');
-$border-width: 1px;
+$border-width: 2px;
 $border-stroke: solid;
 
 @mixin create-border-classes($modifier, $breakpoint) {
@@ -72,7 +72,7 @@ $border-stroke: solid;
 .u-borderColor {
   @each $color, $value in $palette {
     &#{$color} {
-      border: 1px solid;
+      border: $border-width solid;
       border-color: swatch($color);
       border-radius: $border-radius;
     }
