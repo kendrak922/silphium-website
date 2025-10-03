@@ -69,3 +69,12 @@ $border-stroke: solid;
     @include create-border-classes($modifier, $breakpoint);
   }
 }
+.u-borderColor {
+  @each $color, $value in $palette {
+    &#{$color} {
+      border: 1px solid;
+      border-color: swatch($color);
+      border-radius: $border-radius;
+    }
+  }
+}
