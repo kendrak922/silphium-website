@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+:root {
+    --swiper-navigation-color : swatch('Neutral');
+    --swiper-theme-color: swatch('Primary');
+}
+
+
+
+//Visual Portfolio
+figcaption.vp-portfolio__item-overlay {
+    display: none;
+}

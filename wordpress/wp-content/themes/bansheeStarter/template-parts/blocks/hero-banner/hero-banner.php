@@ -52,10 +52,12 @@ if (isset($blockData['background_image'])) {
     $bgImage = $blockData['background_image']['url'];
     $style[] =  "background-image:url($bgImage);";
     $style[] = "background-position:".$blockData['image_position'].";";
+    $blockData['classes'][] = 'u-bgMedia';
 }
 $style = implode(' ', $style);
-$blockData['classes'][] = 'u-bgMedia';
+
 $blockData['classes'][] = 'container--layout container--'.$blockData['width'];
+
 // BLOCK :: RENDER
 ?>
 
@@ -66,9 +68,6 @@ $blockData['classes'][] = 'container--layout container--'.$blockData['width'];
                 allowedBlocks="<?php echo esc_attr(wp_json_encode($blocks_allowed)); ?>" 
                 template="<?php echo esc_attr(wp_json_encode($blocks_template)); ?>" 
             />
-            <?php if($blockData['accent_image']) : ?>
-                <img alt="" loading="eager" class="skip-lazy" src="<?php echo $blockData['accent_image']['url']; ?>" />
-            <?php endif; ?>
         </div>
     </div>
 </section>
