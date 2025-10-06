@@ -88,14 +88,6 @@ section.block--hero-banner {
         @include create-mq($lg-width) {
 
         }
-        img {
-            right: 0;
-            max-width: 76px;
-            position: absolute;
-            @include create-mq($md-width) {
-                right: 50px;
-            }
-        }
         h1,h2,h3,h4 {
             margin:0;
         }
