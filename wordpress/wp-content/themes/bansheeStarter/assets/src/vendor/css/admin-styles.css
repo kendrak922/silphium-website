@@ -113,11 +113,11 @@ Add interface colored swatches to ACF picker
   border-color: #ccc;
 }
 
-/* .acf-radio-list > li > label:has(input[type=radio][value=Brown]) {
+.acf-radio-list > li > label:has(input[type=radio][value=Brown]) {
   background-color: #413620;
   border-color: #413620;
   color: #fff;
-} */
+}
 
 
 .acf-radio-list > li > label:has(input[type=radio][value=Gray]) {

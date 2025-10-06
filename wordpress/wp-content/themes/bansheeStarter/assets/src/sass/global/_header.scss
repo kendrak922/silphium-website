@@ -190,3 +190,7 @@
         background-color: swatch('Green');
     }
 }
+// gets rid of some weird browser styles
+button#menu-toggle {
+    border: none;
+}
