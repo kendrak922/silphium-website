@@ -15,7 +15,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: silphiumcollective.com
+        server: giowm1117.siteground.biz
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
         local-dir: "wordpress/wp-content/"
