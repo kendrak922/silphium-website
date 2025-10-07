@@ -80,6 +80,7 @@ section.block--hero-banner {
         position: relative;
         z-index: 1;
         padding: 12px;
+        max-width: 100%;
         @include create-mq($md-width) {
             padding: 48px;
             right: auto;
