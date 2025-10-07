@@ -80,7 +80,7 @@ $footer_link = get_field("footer_link", 'option');
                                                         
                                                         ?>
                                                         <a href="<?php echo $link; ?>" target="_blank">
-                                                            <img src="<?php echo $icon; ?>" height="40px" width="40px" />
+                                                            <img src="<?php echo $icon; ?>" height="40px" width="40px" alt="go to - <?php echo $title; ?>"/>
                                                         </a>
                                                 <?php endforeach;?>
                                             </div>
