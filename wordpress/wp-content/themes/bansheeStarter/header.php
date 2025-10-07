@@ -32,10 +32,7 @@ if ($header_button_link) {
     <meta name="format-detection" content="telephone=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://use.typekit.net/lnq6vyb.css">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Geist:wght@100..900&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=Oxygen:wght@300;400;700&family=Passion+One:wght@400;700;900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Zen+Old+Mincho&display=swap" rel="stylesheet">    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <meta name="statuscake" /><!-- or -->
     <!-- add additional scripts and stylesheets to my_add_theme_scripts() in functions.php -->

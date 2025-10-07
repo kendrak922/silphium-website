@@ -1,18 +1,67 @@
 @font-face {
-   font-family: 'Aboreto';
-   src: url('../../fonts/Aboreto/Aboreto-Regular.woff2') format('woff2'),
-       url('../../fonts/Aboreto/Aboreto-Regular.woff') format('woff');
-   font-weight: normal;
-   font-style: normal;
-   font-display: swap;
+    font-family: 'Source Serif 4';
+    src: url('SourceSerif4Roman-Regular.woff2') format('woff2'),
+        url('SourceSerif4Roman-Regular.woff') format('woff');
+    font-weight: normal;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-   font-family: 'Hina Mincho';
-   src: url('../../fonts/HinaMincho/HinaMincho-Regular.woff2') format('woff2'),
-       url('../../fonts/HinaMincho/HinaMincho-Regular.woff') format('woff');
-   font-weight: normal;
-   font-style: normal;
-   font-display: swap;
+    font-family: 'Source Serif 4';
+    src: url('../../fonts/SourceSerif4Italic-Italic.woff2') format('woff2'),
+        url('../../fonts/SourceSerif4Italic-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-optical-sizing: auto;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Schibsted Grotesk';
+    src: url('../../fonts/SchibstedGrotesk-Regular.woff2') format('woff2'),
+        url('../../fonts/SchibstedGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Schibsted Grotesk';
+    src: url('../../fonts/SchibstedGrotesk-Italic.woff2') format('woff2'),
+        url('../../fonts/SchibstedGrotesk-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-optical-sizing: auto;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Passion One';
+    src: url('../../fonts/PassionOne-Regular.woff2') format('woff2'),
+        url('../../fonts/PassionOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Passion One';
+    src: url('../../fonts/PassionOne-Bold.woff2') format('woff2'),
+        url('../../fonts/PassionOne-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Passion One';
+    src: url('../../fonts/PassionOne-Black.woff2') format('woff2'),
+        url('../../fonts/PassionOne-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
 }
 
