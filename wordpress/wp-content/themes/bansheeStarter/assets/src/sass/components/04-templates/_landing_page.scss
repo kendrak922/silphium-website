@@ -1,0 +1,11 @@
+@use '../../abstracts' as *;
+
+.page-template-page-landing {
+    nav {
+        display: none
+    }
+
+    header {
+        display: none;
+    }
+}

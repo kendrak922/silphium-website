@@ -53,7 +53,7 @@ $footer_link = get_field("footer_link", 'option');
                 </a>
             </div>
         <div class="footer__content">
-                        <?php if($footer_email) : ?>
+                        <!-- <?php if($footer_email) : ?>
                             <div class="footer__contact">
                                     <h3 class="h4 contact__head">Contact</h3>
                                     <?php if($footer_phone) : 
@@ -66,7 +66,7 @@ $footer_link = get_field("footer_link", 'option');
                                         </div>
                                     <?php endif; ?>
                             </div>
-                        <?php endif; ?>
+                        <?php endif; ?> -->
                             <?php /* Footer Menu */ ?>
                             <?php if($socials) : ?>
                                         <div class="footer__social social">
@@ -87,9 +87,9 @@ $footer_link = get_field("footer_link", 'option');
                                         </div>
                             <?php endif; ?>
                 </div>
-                <div class="footer__location">
+                <!-- <div class="footer__location">
                         <h3 class="h4">Silphium Collective</h3>
-                </div>
+                </div> -->
                 <div class="footer__bottom">
                 <nav class="menu-wrapper__content"  aria-label="Site Navigation" >
                                         <?php /*****
