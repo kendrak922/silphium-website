@@ -21,6 +21,8 @@
         position: fixed;
         width: 100%;
         z-index: 99999;
+        top: 0;
+        padding: 8px;
 
         &.animate {
             transition: top 0.6s ease-in-out;
@@ -32,8 +34,11 @@
         height: auto;
 
         img {
-            height: 4.5rem;
+            height: 3rem;
             width: auto;
+            margin-top: 4px;
+            position: relative;
+            z-index: 10;
             object-fit: contain;
 
             @include create-mq($lg-width) {

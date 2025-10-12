@@ -24,8 +24,6 @@ $footer_text = get_field("footer_text", 'option');
 $footer_email = get_field("email", 'option');
 $footer_phone = get_field("phone", 'option');
 $footer_link = get_field("footer_link", 'option');
-
-
 ?>
 
 <?php /*****
@@ -44,9 +42,9 @@ $footer_link = get_field("footer_link", 'option');
         <div class="footer__logo">
                 <a href="<?php bloginfo('url'); ?>"  aria-label="Link to homepage">
                     <?php if (get_field('global_imagery', 'options')['footer_logo']) : $logo = get_field('global_imagery', 'options')['footer_logo']; ?>
-                            <img height="166px" width="500px" src="<?php echo $logo['url']; ?>" alt="Banshee Starter Logo">
+                            <img height="112px" width="350px" src="<?php echo $logo['url']; ?>" alt="Banshee Starter Logo">
                     <?php elseif (file_exists($themeGlobals['theme_rel'] . '/assets/dist/imgs/logo-footer.png')) : ?>
-                            <img height="166px" width="500px" src="<?php echo $themeGlobals['theme_url']; ?>/assets/dist/imgs/logo-footer.png" alt="Banshee Starter Logo" class="u-lg-block" />               
+                            <img height="112px" width="350px" src="<?php echo $themeGlobals['theme_url']; ?>/assets/dist/imgs/logo-footer.png" alt="Banshee Starter Logo" class="u-lg-block" />               
                     <?php else : ?>
                             <strong><?php echo bloginfo('title'); ?></strong>
                     <?php endif; ?>

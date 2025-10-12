@@ -244,7 +244,7 @@
     }
 
     // vertical alignment, individual unit
-    &--align-top {
+    &--align-top { 
       align-self: flex-start;
     }
     &--align-middle {
@@ -271,32 +271,6 @@
     }
   }
 }
-
-// Show the QA grid
-.guides,
-.guides--spaced {
-  bottom: 0;
-  display: none;
-  left: 0;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 99999;
-  .container {
-    height: 100%;
-  }
-  .grid__col {
-    pointer-events: none;
-  }
-  .grid__col:nth-of-type(even) {
-    background: rgba(243, 142, 190, 0.3);
-  }
-  .grid__col:nth-of-type(odd) {
-    background: rgba(148, 161, 234, 0.3);
-  }
-}
-
 
 ////helper class to reverse column order on mobile
 .column-reverse-mobile {
