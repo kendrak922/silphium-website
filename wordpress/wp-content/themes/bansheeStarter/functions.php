@@ -114,9 +114,6 @@ function theme_enqueue_assets()
     /***
  * Custom Font Styles 
 ***/
-    wp_register_style('styles_fonts', "https://fonts.googleapis.com/css2?family=Baumans&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Parisienne&family=Petit+Formal+Script&family=Send+Flowers&display=swap");
-
-    wp_enqueue_style('styles_fonts');
 
     /***
  * Vendor Scripts 
