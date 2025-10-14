@@ -1,0 +1,49 @@
+// =============================================================================
+// THEME BUTTON UTILITY MIXINS
+// =============================================================================
+
+// Quick button generation mixin
+@mixin theme-btn($color: 'primary', $style: 'solid') {
+    @include theme-button-base;
+    @include generate-theme-button($color, $style);
+}
+
+// Primary theme button
+@mixin primary-btn($variant: 'solid') {
+    @include theme-button-base;
+    
+    @if $variant == 'solid' {
+        @include generate-theme-button('primary', 'solid');
+    } @else if $variant == 'outline' {
+        @include generate-theme-button('primary', 'outline');
+    } @else if $variant == 'ghost' {
+        @include generate-theme-button('primary', 'ghost');
+    }
+}
+
+// Secondary theme button
+@mixin secondary-btn($variant: 'solid') {
+    @include theme-button-base;
+    
+    @if $variant == 'solid' {
+        @include generate-theme-button('secondary', 'solid');
+    } @else if $variant == 'outline' {
+        @include generate-theme-button('secondary', 'outline');
+    } @else if $variant == 'ghost' {
+        @include generate-theme-button('secondary', 'ghost');
+    }
+}
+
+// Neutral theme button
+@mixin neutral-btn($variant: 'solid') {
+    @include theme-button-base;
+    
+    @if $variant == 'solid' {
+        @include generate-theme-button('neutral', 'solid');
+    } @else if $variant == 'outline' {
+        @include generate-theme-button('neutral', 'outline');
+    } @else if $variant == 'ghost' {
+        @include generate-theme-button('neutral', 'ghost');
+    }
+}
+

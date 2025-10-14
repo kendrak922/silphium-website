@@ -117,6 +117,32 @@
         },
         {
             "key": "field_68e01dc10e91a",
+            "label": "Border",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_68e01d820e919",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_68ec2332a9c63",
             "label": "Border Color",
             "name": "border_color",
             "aria-label": "",
@@ -156,5 +182,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1759518244
+    "modified": 1760307431
 }

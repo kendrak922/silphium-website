@@ -33,6 +33,7 @@ if ($header_button_link) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <meta name="statuscake" /><!-- or -->
     <!-- add additional scripts and stylesheets to my_add_theme_scripts() in functions.php -->

@@ -227,7 +227,9 @@ add_action('enqueue_block_editor_assets', 'admin_theme_assets');
  */
 function debug_to_console($data, $label = 'PHP Debug to Console')
 {
-    echo '<script type="text/javascript" data-debug="true">console.log("' . $label . ': ",' . json_encode($data) . ');</script>';
+    if (defined('WP_DEBUG') && WP_DEBUG) {
+        echo '<script type="text/javascript" data-debug="true">console.log("' . esc_js($label) . ': ",' . json_encode($data) . ');</script>';
+    }
 }
 
 /**
@@ -474,3 +476,15 @@ function frm_scroll_offset()
 {
     return 170; 
 }
+
+
+// Add this function after the existing font loading section
+function understory_enqueue_fonts() {
+    // Only load on understory template pages
+    if (is_page_template('page-understory.php')) {
+        $understory_fonts_url = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"';
+        wp_register_style('understory-fonts', $understory_fonts_url);
+        wp_enqueue_style('understory-fonts');
+    }
+}
+add_action('wp_enqueue_scripts', 'understory_enqueue_fonts');  

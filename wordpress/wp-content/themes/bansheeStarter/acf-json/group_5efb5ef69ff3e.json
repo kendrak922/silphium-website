@@ -16,12 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "relevanssi_exclude": 0,
             "choices": {
-                "Primary": "Primary",
-                "Secondary": "Secondary",
-                "Tertiary": "Tertiary",
-                "Neutral": "Neutral",
                 "Blue": "Blue",
                 "LightBlue": "LightBlue",
                 "Yellow": "Yellow",
@@ -33,6 +28,38 @@
                 "Black": "Black",
                 "White": "White",
                 "Brown": "Brown"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 1,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_68ec1e0ec0eb6",
+            "label": "Understory Theme Colors",
+            "name": "understory_theme_colors",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "Select a color from the theme palette",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Deep Forest (primary dark green)": "Deep Forest (primary dark green)",
+                "Forest Green (bright accent green)": "Forest Green (bright accent green)",
+                "Warm Brown (earth tone)": "Warm Brown (earth tone)",
+                "Golden Amber (highlight color)": "Golden Amber (highlight color)",
+                "Soft Cream (light background)": "Soft Cream (light background)",
+                "Charcoal (dark text)": "Charcoal (dark text)",
+                "Sage Green (muted green)": "Sage Green (muted green)",
+                "Earth Brown (dark earth tone)": "Earth Brown (dark earth tone)"
             },
             "default_value": "",
             "return_format": "value",
@@ -217,8 +244,8 @@
                         "id": ""
                     },
                     "choices": {
-                        "solid": "Solid - Dark Blue",
-                        "secondary": "Solid - Light Blue",
+                        "solid": "Solid - Dark",
+                        "secondary": "Solid - Light",
                         "border": "Border",
                         "arrow": "Arrow"
                     },
@@ -734,5 +761,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753903620
+    "modified": 1760307572
 }

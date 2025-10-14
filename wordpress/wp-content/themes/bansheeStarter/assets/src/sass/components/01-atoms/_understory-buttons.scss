@@ -1,0 +1,179 @@
+// =============================================================================
+// UNDERSTORY THEME COLOR BUTTON GENERATOR
+// =============================================================================
+
+// Understory Color Palette
+$understory-colors: (
+    'deep-forest': #1B4332,
+    'forest-green': #52B788,
+    'warm-brown': #D4A373,
+    'golden-amber': #E9C46A,
+    'soft-cream': #FDF6EC,
+    'charcoal': #2E2E2E,
+    'sage-green': #A3B18A,
+    'earth-brown': #8C6A4A
+);
+
+// Color contrast mapping for text colors
+$understory-contrast: (
+    'deep-forest': 'soft-cream',
+    'forest-green': 'soft-cream',
+    'warm-brown': 'charcoal',
+    'golden-amber': 'charcoal',
+    'soft-cream': 'charcoal',
+    'charcoal': 'soft-cream',
+    'sage-green': 'soft-cream',
+    'earth-brown': 'soft-cream'
+);
+
+// Hover color variations (darker/lighter versions)
+$understory-hover: (
+    'deep-forest': #0F2A1F,
+    'forest-green': #3A8B5F,
+    'warm-brown': #C1955A,
+    'golden-amber': #D4A73D,
+    'soft-cream': #F5E8D1,
+    'charcoal': #1A1A1A,
+    'sage-green': #8B9A6F,
+    'earth-brown': #7A5A3F
+);
+
+// Active color variations
+$understory-active: (
+    'deep-forest': #0A1F15,
+    'forest-green': #2D6B47,
+    'warm-brown': #B0854A,
+    'golden-amber': #C4992A,
+    'soft-cream': #F0DCC0,
+    'charcoal': #0F0F0F,
+    'sage-green': #7A8A5F,
+    'earth-brown': #6B4A2F
+);
+
+// =============================================================================
+// BUTTON GENERATION MIXIN
+// =============================================================================
+
+@mixin generate-understory-button($color-name, $style: 'solid') {
+    $bg-color: map-get($understory-colors, $color-name);
+    $text-color: map-get($understory-contrast, $color-name);
+    $text-color-value: map-get($understory-colors, $text-color);
+    $hover-color: map-get($understory-hover, $color-name);
+    $active-color: map-get($understory-active, $color-name);
+    
+    @if $style == 'solid' {
+        // Solid button style
+        background-color: $bg-color;
+        color: $text-color-value;
+        border: 2px solid $bg-color;
+        
+        &:hover {
+            background-color: $hover-color;
+            border-color: $hover-color;
+            color: $text-color-value;
+        }
+        
+        &:active {
+            background-color: $active-color;
+            border-color: $active-color;
+            color: $text-color-value;
+        }
+    }
+    
+    @if $style == 'outline' {
+        // Outline button style
+        background-color: transparent;
+        color: $bg-color;
+        border: 2px solid $bg-color;
+        
+        &:hover {
+            background-color: $bg-color;
+            color: $text-color-value;
+        }
+        
+        &:active {
+            background-color: $hover-color;
+            border-color: $hover-color;
+            color: $text-color-value;
+        }
+    }
+    
+    @if $style == 'ghost' {
+        // Ghost button style (no border)
+        background-color: transparent;
+        color: $bg-color;
+        border: 2px solid transparent;
+        
+        &:hover {
+            background-color: rgba($bg-color, 0.1);
+            color: $hover-color;
+        }
+        
+        &:active {
+            background-color: rgba($bg-color, 0.2);
+            color: $active-color;
+        }
+    }
+    
+}
+
+// =============================================================================
+// BUTTON BASE STYLES
+// =============================================================================
+
+@mixin understory-button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'SchibstedGrotesk', 'Helvetica', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 44px;
+    
+    // Focus styles for accessibility
+    &:focus {
+        outline: 2px solid var(--understory-golden-amber);
+        outline-offset: 2px;
+    }
+    
+    // Disabled state
+    &:disabled,
+    &[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+// =============================================================================
+// GENERATED BUTTON CLASSES
+// =============================================================================
+
+// Generate all color combinations for each style
+@each $color-name, $color-value in $understory-colors {
+    
+    // Solid buttons
+    .btn--understory-#{$color-name} {
+        @include understory-button-base;
+        @include generate-understory-button($color-name, 'solid');
+    }
+    
+    // Outline buttons
+    .btn--understory-#{$color-name}-outline {
+        @include understory-button-base;
+        @include generate-understory-button($color-name, 'outline');
+    }
+    
+    // Ghost buttons
+    .btn--understory-#{$color-name}-ghost {
+        @include understory-button-base;
+        @include generate-understory-button($color-name, 'ghost');
+    }
+}

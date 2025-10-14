@@ -2,4 +2,8 @@
 @forward 'login';
 @forward 'search';
 @forward 'post';
-@forward 'landing_page';
+@forward 'page-landing';
+@use 'page-understory';
+@use 'understory-blocks';
+@use 'header-understory';
+@use 'footer-understory';

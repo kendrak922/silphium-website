@@ -6,10 +6,11 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "scripts": {
-    "registerBlock": "rsync -rv ./template-parts/blocks/__register/$1 project-qa@l05:~/fjorge-wp-starter.l05.project-qa.com/wp-content/themes/fjorge-wp-starter/template-parts/blocks/__register/",
-    "which": "echo node $npm_package_engines_node; echo npm $npm_package_engines_npm;"
-  },
+ "scripts": {
+  "build": "gulp build",
+  "watch": "gulp watch",
+  "which": "echo node $npm_package_engines_node; echo npm $npm_package_engines_npm;"
+},
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "better-docs": "^1.1.4",

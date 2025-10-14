@@ -24,46 +24,12 @@ add_filter('allowed_block_types', 'restrict_blocks_by_template', 10, 2);
 //by post type
 // function restrict_blocks_by_post_type($allowed_blocks, $post) {
 //     // Define the post types for which you want to restrict blocks
-//     $restricted_post_types = array('your_custom_post_type');
-
-//     // Check if the current post's type is in the restricted list
-//     if (in_array($post->post_type, $restricted_post_types)) {
-//         // List the block names that you want to allow
-//         $allowed_blocks = array(
-//             'core/paragraph',
-//             'core/image',
-//             // Add more allowed block names here
-//         );
-//     }
-
-//     return $allowed_blocks;
-// }
-// add_filter('allowed_block_types', 'restrict_blocks_by_post_type', 10, 2);
-
-
-/**
- * Remove patterns from blocks
- */
-add_filter('should_load_remote_block_patterns', '__return_false');
-
-/**
- * Remove patterns that ship with WordPress Core.
- */
-function gutenberg_removals()
-{
-    // remove_theme_support( 'core-block-patterns' );
-    add_theme_support('disable-custom-colors');
-    add_theme_support('disable-custom-font-sizes');
-    add_theme_support('editor-font-sizes', []);
-    add_theme_support('custom-spacing');
-}
-add_action('after_setup_theme', 'gutenberg_removals');
-
-/**
- * Color Palette
- */
+//     $restricted_post_types = arr/**
+//  * Color Palette - Enhanced with Custom Understory Colors
+//  */
 add_theme_support(
     'editor-color-palette', array(
+    // Existing general theme colors
     array(
         'name'  => esc_attr__('white', 'themeLangDomain'),
         'slug'  => 'White',
@@ -133,6 +99,48 @@ add_theme_support(
         'name'  => esc_attr__('brand: pink', 'themeLangDomain'),
         'slug'  => 'Purple',
         'color' => '#CB9CF2',
+     ),
+     
+     // CUSTOM UNDERSTORY COLOR PALETTE
+     array(
+        'name'  => esc_attr__('understory: deep forest', 'themeLangDomain'),
+        'slug'  => 'DeepForest',
+        'color' => '#1B4332',
+     ),
+     array(
+        'name'  => esc_attr__('understory: forest green', 'themeLangDomain'),
+        'slug'  => 'ForestGreen',
+        'color' => '#52B788',
+     ),
+     array(
+        'name'  => esc_attr__('understory: warm brown', 'themeLangDomain'),
+        'slug'  => 'WarmBrown',
+        'color' => '#D4A373',
+     ),
+     array(
+        'name'  => esc_attr__('understory: golden amber', 'themeLangDomain'),
+        'slug'  => 'GoldenAmber',
+        'color' => '#E9C46A',
+     ),
+     array(
+        'name'  => esc_attr__('understory: soft cream', 'themeLangDomain'),
+        'slug'  => 'SoftCream',
+        'color' => '#FDF6EC',
+     ),
+     array(
+        'name'  => esc_attr__('understory: charcoal', 'themeLangDomain'),
+        'slug'  => 'Charcoal',
+        'color' => '#2E2E2E',
+     ),
+     array(
+        'name'  => esc_attr__('understory: sage green', 'themeLangDomain'),
+        'slug'  => 'SageGreen',
+        'color' => '#A3B18A',
+     ),
+     array(
+        'name'  => esc_attr__('understory: earth brown', 'themeLangDomain'),
+        'slug'  => 'EarthBrown',
+        'color' => '#8C6A4A',
      )
     )
 );

@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_685c2d3cae7f4",
-            "label": "Dark Mode",
+            "label": "Dark Mode (Understory)",
             "name": "dark_mode",
             "aria-label": "",
             "type": "true_false",
@@ -42,5 +42,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1750871418
+    "modified": 1760307205
 }

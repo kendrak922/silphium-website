@@ -1,0 +1,214 @@
+// =============================================================================
+// THEME COLOR BUTTON GENERATOR
+// =============================================================================
+
+// Theme Color Palette
+$theme-colors: (
+    'primary': #3943B7,
+    'secondary': #FFCC01,
+    'tertiary': #201E1F,
+    'cream': #FFFBEB,
+    'brown': #413620,
+    'red': #9E2B25,
+    'orange': #FF6F00,
+    'yellow': #FFCC01,
+    'green': #2FBF71,
+    'light-green': #DAF7DC,
+    'blue': #3943B7,
+    'light-blue': #85C7F2,
+    'purple': #CB9CF2,
+    'pink': #F283B6,
+    'gray': #CDD1DE,
+    'black': #201E1F,
+    'white': #ffffff,
+);
+
+// Color contrast mapping for text colors
+$theme-contrast: (
+    'primary': 'white',
+    'secondary': 'black',
+    'tertiary': 'white',
+    'cream': 'black',
+    'brown': 'white',
+    'red': 'white',
+    'orange': 'white',
+    'yellow': 'black',
+    'green': 'white',
+    'light-green': 'black',
+    'blue': 'white',
+    'light-blue': 'black',
+    'purple': 'white',
+    'pink': 'white',
+    'gray': 'black',
+    'black': 'white',
+    'white': 'black'
+);
+
+// Hover color variations (darker/lighter versions)
+$theme-hover: (
+    'primary': #2A3491,
+    'secondary': #E6B800,
+    'tertiary': #0F0E0F,
+    'cream': #F5F0E6,
+    'brown': #2F2817,
+    'red': #7A221C,
+    'orange': #E65A00,
+    'yellow': #E6B800,
+    'green': #26A65A,
+    'light-green': #C4E8C7,
+    'blue': #2A3491,
+    'light-blue': #6BB3E8,
+    'purple': #B885E8,
+    'pink': #E66A9A,
+    'gray': #B8BCC9,
+    'black': #0A0A0A,
+    'white': #F0F0F0,
+);
+
+// Active color variations
+$theme-active: (
+    'primary': #6B73CB,
+    'secondary': #CC9900,
+    'tertiary': #0A0A0A,
+    'cream': #F0EBD8,
+    'brown': #1F1A0F,
+    'red': #5F1A15,
+    'orange': #CC4A00,
+    'yellow': #CC9900,
+    'green': #1F8A4F,
+    'light-green': #B8E0BB,
+    'blue': #1F2A7A,
+    'light-blue': #5BA0E0,
+    'purple': #A670E0,
+    'pink': #D95A8A,
+    'gray': #A8ADBD,
+    'black': #000000,
+    'white': #E6E6E6
+);
+
+// =============================================================================
+// BUTTON GENERATION MIXIN
+// =============================================================================
+
+@mixin generate-theme-button($color-name, $style: 'solid') {
+    $bg-color: map-get($theme-colors, $color-name);
+    $text-color: map-get($theme-contrast, $color-name);
+    $text-color-value: map-get($theme-colors, $text-color);
+    $hover-color: map-get($theme-hover, $color-name);
+    $active-color: map-get($theme-active, $color-name);
+    
+    @if $style == 'solid' {
+        // Solid button style
+        background-color: $bg-color;
+        color: $text-color-value;
+        border: 2px solid $bg-color;
+        
+        &:hover {
+            background-color: $hover-color;
+            border-color: $hover-color;
+            color: $text-color-value;
+        }
+        
+        &:active {
+            background-color: $active-color;
+            border-color: $active-color;
+            color: $text-color-value;
+        }
+    }
+    
+    @if $style == 'outline' {
+        // Outline button style
+        background-color: transparent;
+        color: $bg-color;
+        border: 2px solid $bg-color;
+        
+        &:hover {
+            background-color: $bg-color;
+            color: $text-color-value;
+        }
+        
+        &:active {
+            background-color: $hover-color;
+            border-color: $hover-color;
+            color: $text-color-value;
+        }
+    }
+    
+    @if $style == 'ghost' {
+        // Ghost button style (no border)
+        background-color: transparent;
+        color: $bg-color;
+        border: 2px solid transparent;
+        
+        &:hover {
+            background-color: rgba($bg-color, 0.1);
+            color: $hover-color;
+        }
+        
+        &:active {
+            background-color: rgba($bg-color, 0.2);
+            color: $active-color;
+        }
+    }
+}
+
+// =============================================================================
+// BUTTON BASE STYLES
+// =============================================================================
+
+@mixin theme-button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'SchibstedGrotesk', 'Helvetica', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 44px;
+    
+    // Focus styles for accessibility
+    &:focus {
+        outline: 2px solid var(--secondary);
+        outline-offset: 2px;
+    }
+    
+    // Disabled state
+    &:disabled,
+    &[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+// =============================================================================
+// GENERATED BUTTON CLASSES
+// =============================================================================
+
+// Generate all color combinations for each style
+@each $color-name, $color-value in $theme-colors {
+    
+    // Solid buttons
+    .btn--#{$color-name} {
+        @include theme-button-base;
+        @include generate-theme-button($color-name, 'solid');
+    }
+    
+    // Outline buttons
+    .btn--#{$color-name}-outline {
+        @include theme-button-base;
+        @include generate-theme-button($color-name, 'outline');
+    }
+    
+    // Ghost buttons
+    .btn--#{$color-name}-ghost {
+        @include theme-button-base;
+        @include generate-theme-button($color-name, 'ghost');
+    }
+}

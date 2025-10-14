@@ -48,7 +48,7 @@ if (isset($block["className"])) {
     $blockData['classes'][] =  $block["className"];
 }
 $style = [];
-if (isset($blockData['background_image'])) {
+if (!empty($blockData['background_image'])) {
     $bgImage = $blockData['background_image']['url'];
     $style[] =  "background-image:url($bgImage);";
     $style[] = "background-position:".$blockData['image_position'].";";

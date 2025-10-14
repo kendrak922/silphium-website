@@ -21,7 +21,7 @@ $blockData = array(
     'horizontal-align' => get_field('formatting_horizontal_align') ?? 'left',
     'border_color' => get_field('add_border') ? get_field('border_color')['theme_colors'] : '',
 );
-
+debug_to_console(get_field('theme_colors'));
 // BLOCK :: CLASSES
 $classes = [ 'inner-block--container' ];
 $classes[] = 'container';

@@ -1,0 +1,60 @@
+// =============================================================================
+// UNDERSTORY BUTTON UTILITY MIXINS
+// =============================================================================
+
+// Quick button generation mixin
+@mixin understory-btn($color: 'deep-forest', $style: 'solid') {
+    @include understory-button-base;
+    @include generate-understory-button($color, $style);
+}
+
+// Quick forest-themed button
+@mixin forest-btn($variant: 'primary') {
+    @include understory-button-base;
+    
+    @if $variant == 'primary' {
+        @include generate-understory-button('deep-forest', 'solid');
+    } @else if $variant == 'secondary' {
+        @include generate-understory-button('forest-green', 'solid');
+    } @else if $variant == 'accent' {
+        @include generate-understory-button('golden-amber', 'solid');
+    } @else if $variant == 'outline' {
+        @include generate-understory-button('sage-green', 'outline');
+    } @else if $variant == 'ghost' {
+        @include generate-understory-button('earth-brown', 'ghost');
+    }
+}
+
+// Quick earth-themed button
+@mixin earth-btn($variant: 'primary') {
+    @include understory-button-base;
+    
+    @if $variant == 'primary' {
+        @include generate-understory-button('warm-brown', 'solid');
+    } @else if $variant == 'secondary' {
+        @include generate-understory-button('earth-brown', 'solid');
+    } @else if $variant == 'accent' {
+        @include generate-understory-button('golden-amber', 'solid');
+    } @else if $variant == 'outline' {
+        @include generate-understory-button('warm-brown', 'outline');
+    } @else if $variant == 'ghost' {
+        @include generate-understory-button('sage-green', 'ghost');
+    }
+}
+
+// Quick neutral button
+@mixin neutral-btn($variant: 'primary') {
+    @include understory-button-base;
+    
+    @if $variant == 'primary' {
+        @include generate-understory-button('charcoal', 'solid');
+    } @else if $variant == 'secondary' {
+        @include generate-understory-button('soft-cream', 'solid');
+    } @else if $variant == 'accent' {
+        @include generate-understory-button('golden-amber', 'solid');
+    } @else if $variant == 'outline' {
+        @include generate-understory-button('charcoal', 'outline');
+    } @else if $variant == 'ghost' {
+        @include generate-understory-button('soft-cream', 'ghost');
+    }
+}
