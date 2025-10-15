@@ -31,23 +31,26 @@
         }
 
         &:before, &:after {
-            background-image: url("/wp-content/themes/bansheeStarter/assets/dist/imgs/checkered.svg");
             width: 100%;
-            background-color: swatch('Black');
-            background-repeat: repeat;
+            background-repeat: no-repeat;
             height: 50px;
             display: inline-block;
             position: absolute;
-            background-size: 20px;
+            z-index: 4;
         }
 
         &:before {
+            background-image: url("/wp-content/themes/bansheeStarter/assets/dist/imgs/section_bottom.svg");
+            transform: rotate(153deg);
             top: -100px;
+            
         }
 
         &:after {
-            bottom: -100px;
-            transform: scale(-1, -1);
+            background-image: url("/wp-content/themes/bansheeStarter/assets/dist/imgs/section_top.svg");
+            right: 0;
+            transform: rotate(200deg);
+            background-size: contain;
         }
     }
 
