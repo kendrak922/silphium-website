@@ -42,7 +42,10 @@
         &:before {
             background-image: url("/wp-content/themes/bansheeStarter/assets/dist/imgs/section_bottom.svg");
             transform: rotate(153deg);
-            top: -100px;
+            top: -200px;
+            background-size: cover;
+            right: 34px;
+            width: 600px;
             
         }
 
