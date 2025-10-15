@@ -11,15 +11,6 @@ global $themeGlobals;
 
 $darkmode = get_field('dark_mode') == 'true' ? 'u-darkMode' : '';
 
-$header_button_link = get_field('header_button_link', 'options');
-$header_button = [];
-if ($header_button_link) {
-    $header_button = array(
-    'button_style' => 'solid',
-    'button_link' => $header_button_link,
-    'button_type' => 'link',
-    );
-}
 
 // Understory-specific settings
 $understory_header_settings = [
@@ -57,7 +48,7 @@ $understory_header_settings = [
     <!-- END: FAVICON -->
 </head>
 
-<body <?php body_class('understory-body'); ?> >
+<body <?php body_class(); ?> >
     <div class="wrapper understory-wrapper <?php echo $darkmode;?> ">
         <!-- Understory Header -->
         <header id="header" class="header header--understory">
@@ -85,13 +76,6 @@ $understory_header_settings = [
                             'walker' => new bansheeStarter_nav_walker()
                         ));
                         ?>
-                        
-                        <!-- Understory Header Button -->
-                        <?php if ($header_button_link): ?>
-                        <div class="nav__cta">
-                            <?php Load::molecule('button/button', $header_button); ?>
-                        </div>
-                        <?php endif; ?>
                     </div>
                 </nav>
                 <?php endif; ?>
