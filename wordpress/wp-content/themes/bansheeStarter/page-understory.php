@@ -87,11 +87,6 @@ if ($templateData['understory_settings']['scroll_effects']) {
             <?php endwhile; ?>
         </div>
     <?php endif; ?>
-
-    <!-- Understory Footer Elements -->
-    <!-- <div class="understory-footer-elements">
-    </div> -->
-
 </div>
 
 <!-- Ambient Sound Controls (if enabled) -->

@@ -86,4 +86,3 @@ $understory_header_settings = [
 
         <!-- Understory Main Content Wrapper -->
         <main id="main" class="main main--understory">
-                                

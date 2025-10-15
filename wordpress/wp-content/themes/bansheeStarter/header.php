@@ -18,7 +18,6 @@ if ($header_button_link) {
     'button_style' => 'solid',
     'button_link' => $header_button_link,
     'button_type' => 'link',
-    'button_color' => 'Primary',
     );
 }
 
