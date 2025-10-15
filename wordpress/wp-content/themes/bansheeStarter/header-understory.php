@@ -71,7 +71,6 @@ $understory_header_settings = [
                         <?php
                         wp_nav_menu(array(
                             'theme_location' => 'main-menu',
-                            'depth' => 2,
                             'menu_class' => 'menu menu--understory',
                             'walker' => new bansheeStarter_nav_walker()
                         ));
