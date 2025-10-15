@@ -7,20 +7,6 @@ use Lean\Load;
  * Custom footer for understory-themed pages with forest atmosphere
  */
 global $themeGlobals;
-
-// Understory footer settings
-$understory_footer_settings = [
-    'show_footer' => get_field('show_footer') ? true : true,
-    'footer_style' => get_field('footer_style') ?: 'minimal',
-    'forest_overlay' => get_field('forest_overlay') ? true : false,
-    'ambient_sounds' => get_field('ambient_sounds') ? true : false,
-];
-
-// organism variables
-
-
-$button = get_field('button', 'options');
-$footer_link = get_field("footer_link", 'option');
 ?>
 
 <?php /*****
@@ -52,27 +38,10 @@ $footer_link = get_field("footer_link", 'option');
                         <p>&copy; <?php echo date('Y'); ?> <?php echo bloginfo('name'); ?>. All rights reserved.</p>
                     </div>
                     
-                    <?php if ($footer_link): ?>
-                        <div class="footer__bottom-links">
-                            <a href="<?php echo $footer_link['url']; ?>" class="footer__bottom-link">
-                                <?php echo $footer_link['title']; ?>
-                            </a>
-                        </div>
-                    <?php endif; ?>
                 </div>
             </div>
         </section>          
     
-    
-    <!-- Understory Ambient Sound Controls -->
-    <?php if ($understory_footer_settings['ambient_sounds']): ?>
-        <div class="understory-sound-controls">
-            <button class="sound-toggle" aria-label="Toggle ambient forest sounds">
-                <span class="sound-icon">🌲</span>
-                <span class="sound-text">Forest Sounds</span>
-            </button>
-        </div>
-    <?php endif; ?>
     
 </footer>
 

@@ -69,12 +69,12 @@ $understory_header_settings = [
                     <!-- Understory Navigation Menu -->
                     <div class="nav__menu nav__menu--understory">
                         <?php
-                        wp_nav_menu(array(
+                        $understory_header_nav = [
                             'theme_location' => 'main-menu',
                             'menu_class' => 'menu menu--understory',
                             'walker' => new bansheeStarter_nav_walker()
-                        ));
-                        ?>
+                        ];  
+                        wp_nav_menu($understory_header_nav); ?>
                     </div>
                 </nav>
                 <?php endif; ?>
@@ -86,3 +86,4 @@ $understory_header_settings = [
 
         <!-- Understory Main Content Wrapper -->
         <main id="main" class="main main--understory">
+                                
