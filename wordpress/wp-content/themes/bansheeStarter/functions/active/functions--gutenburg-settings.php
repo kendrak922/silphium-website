@@ -104,42 +104,42 @@ add_theme_support(
      // CUSTOM UNDERSTORY COLOR PALETTE
      array(
         'name'  => esc_attr__('understory: deep forest', 'themeLangDomain'),
-        'slug'  => 'DeepForest',
+        'slug'  => 'deep-forest',
         'color' => '#1B4332',
      ),
      array(
         'name'  => esc_attr__('understory: forest green', 'themeLangDomain'),
-        'slug'  => 'ForestGreen',
+        'slug'  => 'forest-green',
         'color' => '#52B788',
      ),
      array(
         'name'  => esc_attr__('understory: warm brown', 'themeLangDomain'),
-        'slug'  => 'WarmBrown',
+        'slug'  => 'warm-brown',
         'color' => '#D4A373',
      ),
      array(
         'name'  => esc_attr__('understory: golden amber', 'themeLangDomain'),
-        'slug'  => 'GoldenAmber',
+        'slug'  => 'golden-amber',
         'color' => '#E9C46A',
      ),
      array(
         'name'  => esc_attr__('understory: soft cream', 'themeLangDomain'),
-        'slug'  => 'SoftCream',
+        'slug'  => 'soft-cream',
         'color' => '#FDF6EC',
      ),
      array(
         'name'  => esc_attr__('understory: charcoal', 'themeLangDomain'),
-        'slug'  => 'Charcoal',
+        'slug'  => 'charcoal',
         'color' => '#2E2E2E',
      ),
      array(
         'name'  => esc_attr__('understory: sage green', 'themeLangDomain'),
-        'slug'  => 'SageGreen',
+        'slug'  => 'sage-green',
         'color' => '#A3B18A',
      ),
      array(
         'name'  => esc_attr__('understory: earth brown', 'themeLangDomain'),
-        'slug'  => 'EarthBrown',
+        'slug'  => 'earth-brown',
         'color' => '#8C6A4A',
      )
     )

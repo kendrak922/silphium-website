@@ -1,7 +1,7 @@
 // =============================================================================
 // UNDERSTORY HEADER STYLES
 // =============================================================================
-
+@use '../../abstracts' as *;
 // Understory body and wrapper
 
 .understory-wrapper {
@@ -84,11 +84,11 @@
                 display: flex;
                 align-items: center;
                 text-decoration: none;
-                color: var(--understory-soft-cream);
+                color: $understory-soft-cream;
                 transition: all 0.3s ease;
                 
                 &:hover {
-                    color: var(--understory-golden-amber);
+                    color: $understory-golden-amber;
                 }
                 
                 .nav__logo-img {
@@ -101,7 +101,7 @@
                     font-family: 'PassionOne', serif;
                     font-size: 1.5rem;
                     font-weight: 700;
-                    color: var(--understory-golden-amber);
+                    color: $understory-golden-amber;
                 }
             }
         }
@@ -122,14 +122,14 @@
             .nav__toggle-line {
                 width: 100%;
                 height: 3px;
-                background: var(--understory-soft-cream);
+                background: $understory-soft-cream;
                 border-radius: 2px;
                 transition: all 0.3s ease;
                 transform-origin: center;
             }
             
             &:hover .nav__toggle-line {
-                background: var(--understory-golden-amber);
+                background: $understory-golden-amber;
             }
             
             // Active state
@@ -173,28 +173,29 @@
                 margin: 0;
                 padding: 0;
                 text-align: center;
+                flex-direction: column; 
                 
                 li {
                     margin: 1rem 0;
                     
                     a {
-                        color: var(--understory-soft-cream);
+                        color: $understory-soft-cream;
                         text-decoration: none;
                         font-size: 1.2rem;
                         font-weight: 500;
                         padding: 0.5rem 1rem;
-                        border-radius: 8px;
+                        border-radius: $border-radius;
                         transition: all 0.3s ease;
                         display: block;
                         
                         &:hover {
-                            color: var(--understory-golden-amber);
+                            color: $understory-golden-amber;
                             background: rgba(233, 196, 106, 0.1);
                         }
                     }
                     
                     &.current-menu-item a {
-                        color: var(--understory-golden-amber);
+                        color: $understory-golden-amber;
                         background: rgba(233, 196, 106, 0.2);
                     }
                 }
@@ -204,13 +205,13 @@
                 margin-top: 2rem;
                 
                 .button {
-                    background: var(--understory-golden-amber);
-                    color: var(--understory-charcoal);
-                    border: 2px solid var(--understory-golden-amber);
+                    background: $understory-golden-amber;
+                    color: $understory-charcoal;
+                    border: 2px solid $understory-golden-amber;
                     
                     &:hover {
                         background: transparent;
-                        color: var(--understory-golden-amber);
+                        color: $understory-golden-amber;
                     }
                 }
             }
@@ -230,8 +231,8 @@
     position: absolute;
     top: -40px;
     left: 6px;
-    background: var(--understory-deep-forest);
-    color: var(--understory-soft-cream);
+    background: $understory-deep-forest;
+    color: $understory-soft-cream;
     padding: 8px 16px;
     text-decoration: none;
     border-radius: 4px;

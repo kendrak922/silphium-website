@@ -38,7 +38,7 @@
     flex-direction: column;
     gap: 1.5rem;
     @include create-mq($md-width) {
-        flex-basis: 45%;
+        flex-basis: 30%;
         
         align-content: center;
         &.content-entry--reverse{
@@ -76,9 +76,8 @@
     img{
         object-fit: cover;
         object-position: center 10%;
-        width: 100%;
-        max-height: 350px;
-        border-radius: 20px;
+        width: auto;
+        border-radius: $border-radius;
         border: 5px solid swatch('Orange');
     }
 

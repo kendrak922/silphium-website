@@ -26,16 +26,13 @@ if (!isset($button['classes'])) {
 }
 
 // Define button style via classes
-if (isset($button['button_style'])) {
+if (isset($button['button_style'])) :
     $button['classes'] .= ' btn--' . $button['button_style'] . ' ';
-    if ($button['button_style'] === 'solid') :
-        $button['classes'] .= ' btn--primary ';
-    elseif ($button['button_style'] === 'seconday') :
-            $button['classes'] .= ' btn--solid ';
-    elseif ($button['button_style'] === 'border') :
-        $button['classes'] .= ' btn--outline ';
-    endif;
-}
+endif;
+
+if (isset($button['theme_colors'])) :
+    $button['classes'] .= ' btn--' . $button['theme_colors'] . ' ';
+endif;
 
 // $button['button_icon'] = 'utility-login';  //test icon
 if (isset($button['button_icon'])) :
@@ -78,7 +75,6 @@ if (!$label) {
 }
 
 $aria = str_replace('"', "'", $aria);
-
 ?>
 
 <?php /**********
@@ -88,6 +84,7 @@ $aria = str_replace('"', "'", $aria);
 ?>
 <a data-atom="button" class="btn <?php echo $button['classes']; ?>" href="<?php echo $href; ?>" target="<?php echo $target; ?>" <?php if($aria) :?>aria-label="<?php echo $aria; ?>"<?php 
 endif;?> <?php echo isset($button['button_file']) && $button['button_file'] ? 'download' : ''; ?>>
+
 <?php if ($button['button_style'] == 'arrow') :?>
         <span>
             <?php echo $label; ?>

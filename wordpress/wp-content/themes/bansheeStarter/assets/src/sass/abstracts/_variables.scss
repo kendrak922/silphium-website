@@ -118,24 +118,31 @@ $palette: (
   'Success':#2FBF71,
   'Error': #9E2B25,
 );
+
+// Understory Color Palette
+$understory-deep-forest: #1B4332;
+$understory-forest-green: #52B788;
+$understory-warm-brown: #D4A373;
+$understory-golden-amber: #E9C46A;
+$understory-soft-cream: #FDF6EC;
+$understory-charcoal: #2E2E2E;
+$understory-sage-green: #A3B18A;
+$understory-earth-brown: #8C6A4A;
+
+// Understory Derived Colors
+$understory-shadow-green: rgba(27, 67, 50, 0.8);
+$understory-overlay-green: rgba(82, 183, 136, 0.3);
+$understory-light-overlay: rgba(253, 246, 236, 0.7);
+
+// Understory Font Variables
+$understory-font-primary: 'Cormorant Garamond', serif;
+$understory-font-secondary: 'Nunito', sans-serif;
+$understory-font-tertiary: 'Playfair', serif;
+
 //for buttons
-$primary-hover:swatch('primaryHover');
+$primary-hover: swatch('PrimaryHover');
 
 $border-radius : 20px;
-
-body {
-//   --tec-color-accent-primary: #{$color-primary};
-//   --tec-color-background : #{$color-secondary};
-//   --tec-color-text-secondary :#{$color-white};
-//   --tec-color-button-primary : #{$color-white};
-//   --tec-color-button-primary-hover :#{$primary-hover};
-//   --tec-color-accent-primary-hover: #{$primary-hover};
-//   --tec-color-accent-primary-active: #{$primary-hover};
-//   --tec-color-button-primary-active: #{$primary-hover};
-//   --tec-color-text-event-title: #{$color-primary};
-  --tec-color-text-primary: #{$color-neutral};
-//   --tec-color-background-events-bar :  #{$color-white};
-}
 
 
 

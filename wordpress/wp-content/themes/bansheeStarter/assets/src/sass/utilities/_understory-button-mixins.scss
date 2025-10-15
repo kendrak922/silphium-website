@@ -43,7 +43,7 @@
 }
 
 // Quick neutral button
-@mixin neutral-btn($variant: 'primary') {
+@mixin understory-neutral-btn($variant: 'primary') {
     @include understory-button-base;
     
     @if $variant == 'primary' {

@@ -1,89 +1,96 @@
+@use "sass:map";
+@use '../../abstracts' as *;
+
 // =============================================================================
 // THEME COLOR BUTTON GENERATOR
 // =============================================================================
 
-// Theme Color Palette
+// Use existing theme colors from variables
 $theme-colors: (
-    'primary': #3943B7,
-    'secondary': #FFCC01,
-    'tertiary': #201E1F,
-    'cream': #FFFBEB,
-    'brown': #413620,
-    'red': #9E2B25,
-    'orange': #FF6F00,
-    'yellow': #FFCC01,
-    'green': #2FBF71,
-    'light-green': #DAF7DC,
-    'blue': #3943B7,
-    'light-blue': #85C7F2,
-    'purple': #CB9CF2,
-    'pink': #F283B6,
-    'gray': #CDD1DE,
-    'black': #201E1F,
-    'white': #ffffff,
+    'Primary': swatch('Primary'),
+    'Secondary': swatch('Secondary'),
+    'Tertiary': swatch('Tertiary'),
+    'Neutral': swatch('Neutral'),
+    'Cream': swatch('Cream'),
+    'Brown': swatch('Brown'),
+    'Red': swatch('Red'),
+    'Orange': swatch('Orange'),
+    'Yellow': swatch('Yellow'),
+    'Green': swatch('Green'),
+    'LightGreen': swatch('LightGreen'),
+    'Blue': swatch('Blue'),
+    'LightBlue': swatch('LightBlue'),
+    'Purple': swatch('Purple'),
+    'Pink': swatch('Pink'),
+    'Gray': swatch('Gray'),
+    'Black': swatch('Black'),
+    'White': swatch('White'),
 );
 
 // Color contrast mapping for text colors
 $theme-contrast: (
-    'primary': 'white',
-    'secondary': 'black',
-    'tertiary': 'white',
-    'cream': 'black',
-    'brown': 'white',
-    'red': 'white',
-    'orange': 'white',
-    'yellow': 'black',
-    'green': 'white',
-    'light-green': 'black',
-    'blue': 'white',
-    'light-blue': 'black',
-    'purple': 'white',
-    'pink': 'white',
-    'gray': 'black',
-    'black': 'white',
-    'white': 'black'
+    'Primary': 'White',
+    'Secondary': 'Black',
+    'Tertiary': 'White',
+    'Neutral': 'White',
+    'Cream': 'Black',
+    'Brown': 'White',
+    'Red': 'White',
+    'Orange': 'White',
+    'Yellow': 'Black',
+    'Green': 'White',
+    'LightGreen': 'Black',
+    'Blue': 'White',
+    'LightBlue': 'Black',
+    'Purple': 'White',
+    'Pink': 'White',
+    'Gray': 'Black',
+    'Black': 'White',
+    'White': 'Black'
 );
 
-// Hover color variations (darker/lighter versions)
+// Hover color variations using existing palette
 $theme-hover: (
-    'primary': #2A3491,
-    'secondary': #E6B800,
-    'tertiary': #0F0E0F,
-    'cream': #F5F0E6,
-    'brown': #2F2817,
-    'red': #7A221C,
-    'orange': #E65A00,
-    'yellow': #E6B800,
-    'green': #26A65A,
-    'light-green': #C4E8C7,
-    'blue': #2A3491,
-    'light-blue': #6BB3E8,
-    'purple': #B885E8,
-    'pink': #E66A9A,
-    'gray': #B8BCC9,
-    'black': #0A0A0A,
-    'white': #F0F0F0,
+    'Primary': swatch('PrimaryHover'),
+    'Secondary': swatch('SecondaryHover'),
+    'Tertiary': swatch('Tertiary'),
+    'Neutral': #1A1A1A,
+    'Cream': #F5F0E6,
+    'Brown': #2F2817,
+    'Red': #7A221C,
+    'Orange': #E65A00,
+    'Yellow': #E6B800,
+    'Green': #26A65A,
+    'LightGreen': #C4E8C7,
+    'Blue': swatch('PrimaryHover'),
+    'LightBlue': #6BB3E8,
+    'Purple': #B885E8,
+    'Pink': #E66A9A,
+    'Gray': #B8BCC9,
+    'Black': #0A0A0A,
+    'White': #F0F0F0,
 );
 
-// Active color variations
+// Active color variations using existing palette
 $theme-active: (
-    'primary': #6B73CB,
-    'secondary': #CC9900,
-    'tertiary': #0A0A0A,
-    'cream': #F0EBD8,
-    'brown': #1F1A0F,
-    'red': #5F1A15,
-    'orange': #CC4A00,
-    'yellow': #CC9900,
-    'green': #1F8A4F,
-    'light-green': #B8E0BB,
-    'blue': #1F2A7A,
-    'light-blue': #5BA0E0,
-    'purple': #A670E0,
-    'pink': #D95A8A,
-    'gray': #A8ADBD,
-    'black': #000000,
-    'white': #E6E6E6
+    'Primary': swatch('PrimaryActive'),
+    'Secondary': swatch('SecondaryActive'),
+    'Tertiary': #0A0A0A,
+    'Neutral': #0F0F0F,
+    'Cream': #F0EBD8,
+    'Brown': #1F1A0F,
+    'Red': #5F1A15,
+    'Orange': #CC4A00,
+    'Yellow': #CC9900,
+    'Green': #1F8A4F,
+    'LightGreen': #B8E0BB,
+    'Blue': swatch('PrimaryActive'),
+    'LightBlue': #5BA0E0,
+    'Purple': #A670E0,
+    'Pink': #D95A8A,
+    'Gray': #A8ADBD,
+    'Black': #000000,
+    'White': #E6E6E6
 );
 
 // =============================================================================
@@ -91,11 +98,11 @@ $theme-active: (
 // =============================================================================
 
 @mixin generate-theme-button($color-name, $style: 'solid') {
-    $bg-color: map-get($theme-colors, $color-name);
-    $text-color: map-get($theme-contrast, $color-name);
-    $text-color-value: map-get($theme-colors, $text-color);
-    $hover-color: map-get($theme-hover, $color-name);
-    $active-color: map-get($theme-active, $color-name);
+    $bg-color: map.get($theme-colors, $color-name);
+    $text-color: map.get($theme-contrast, $color-name);
+    $text-color-value: map.get($theme-colors, $text-color);
+    $hover-color: map.get($theme-hover, $color-name);
+    $active-color: map.get($theme-active, $color-name);
     
     @if $style == 'solid' {
         // Solid button style
@@ -160,16 +167,16 @@ $theme-active: (
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-family: 'SchibstedGrotesk', 'Helvetica', sans-serif;
-    font-weight: 600;
+    gap: calc(#{$grid-unit} * 2);
+    padding: calc(#{$grid-unit} * 3) calc(#{$grid-unit} * 6);
+    border-radius: $border-radius;
+    font-family:    $font-stack-primary;
+    font-weight: $font-weight-semibold;
     font-size: 0.9rem;
     line-height: 1.2;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: $transition-default;
     min-height: 44px;
     
     // Focus styles for accessibility

@@ -3,7 +3,7 @@
 @forward 'search';
 @forward 'post';
 @forward 'page-landing';
-@use 'page-understory';
-@use 'understory-blocks';
-@use 'header-understory';
-@use 'footer-understory';
+@forward 'page-understory';
+@forward 'understory-blocks'; 
+@forward 'header-understory';     
+@forward 'footer-understory';      

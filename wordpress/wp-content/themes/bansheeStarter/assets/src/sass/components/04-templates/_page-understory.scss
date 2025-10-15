@@ -4,32 +4,12 @@
 // UNDERSTORY PAGE TEMPLATE STYLES - Custom Color Palette
 // =============================================================================
 
-// Custom Understory Color Variables
-:root {
-    // Your Custom Forest Color Palette
-    --understory-deep-forest: #1B4332;      // Deep forest green
-    --understory-forest-green: #52B788;     // Bright forest green
-    --understory-warm-brown: #D4A373;       // Warm brown
-    --understory-golden-amber: #E9C46A;     // Golden amber
-    --understory-soft-cream: #FDF6EC;       // Soft cream
-    --understory-charcoal: #2E2E2E;         // Charcoal
-    --understory-sage-green: #A3B18A;       // Sage green
-    --understory-earth-brown: #8C6A4A;      // Earth brown
-    
-    // Derived colors for overlays and shadows
-    --understory-shadow-green: rgba(27, 67, 50, 0.8);
-    --understory-overlay-green: rgba(82, 183, 136, 0.3);
-    --understory-light-overlay: rgba(253, 246, 236, 0.95);
-
-    --understory-font-primary: 'Cormorant Garamond', serif;
-    --understory-font-secondary: 'Nunito', sans-serif;
-    --understory-font-tertiary: 'Playfair', serif;
-}
+// Understory variables are now defined in abstracts/_variables.scss
 
 .page-template-page-understory {
     position: relative;
     min-height: 100vh;
-    background: linear-gradient(180deg, var(--understory-deep-forest) 0%, var(--understory-charcoal) 50%, var(--understory-earth-brown) 100%);
+    background: linear-gradient(180deg, $understory-deep-forest 0%, $understory-charcoal 50%, $understory-earth-brown 100%);
     overflow-x: hidden;
 
     
@@ -83,6 +63,7 @@
     
     // Enhanced Hero Section
     .understory-hero {
+        min-height: 70vh;
         position: relative;
         display: flex;
         align-items: center;
@@ -96,28 +77,30 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 50% 20%, var(--understory-overlay-green) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 20%, $understory-overlay-green 0%, transparent 70%);
             z-index: 1;
         }
         
         .understory-content {
             position: relative;
             z-index: 2;
-            color: var(--understory-soft-cream);
+            padding: 8px;
+            border-radius: $border-radius;
+            background-color: $understory-light-overlay;
             
 
             .understory-title {
-                font-family: var(--understory-font-primary);
+                font-family: $understory-font-primary;
                 font-size: clamp(2.5rem, 8vw, 6rem);
                 font-weight: 700;
-                color: var(--understory-deep-forest);
+                color: $understory-deep-forest;
                 margin-bottom: 1rem;
                 line-height: 1.1;
             }
             
             .understory-subtitle {
                 font-size: clamp(1.1rem, 3vw, 1.5rem);
-                color: var(--understory-warm-brown);
+                color: $understory-charcoal;
                 max-width: 600px;
                 margin: 0 auto;
             }
@@ -129,7 +112,7 @@
             left: 0;
             width: 100%;
             height: 100px;
-            background: linear-gradient(0deg, var(--understory-shadow-green) 0%, transparent 100%);
+            background: linear-gradient(0deg, $understory-shadow-green 0%, transparent 100%);
             z-index: 1;
         }
     }
@@ -138,9 +121,9 @@
     .understory-content-area {
         position: relative;
         z-index: 2;
-        background: var(--understory-light-overlay);
+        background: $understory-light-overlay;
         backdrop-filter: blur(10px);
-        border-radius: 2rem 2rem 0 0;
+        border-radius: $border-radius $border-radius 0 0;
         margin-top: -2rem;
         padding: 4rem 2rem 2rem;
         box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
@@ -150,25 +133,25 @@
             margin: 0 auto;
             
             h2, h3, h4, h5, h6 {
-                color: var(--understory-deep-forest);
-                font-family: var(--understory-font-tertiary);
+                color: $understory-deep-forest;
+                font-family: $understory-font-tertiary;
                 margin-top: 2rem;
                 margin-bottom: 1rem;
             }
             
             h2 {
                 font-size: 2.5rem;
-                color: var(--understory-forest-green);
+                color: $understory-forest-green;
             }
             
             h3 {
                 font-size: 2rem;
-                color: var(--understory-sage-green);
+                color: $understory-sage-green;
             }
             
             p {
-                font-family: var(--understory-font-secondary);
-                color: var(--understory-charcoal);
+                font-family: $understory-font-secondary;
+                color: $understory-charcoal;
                 line-height: 1.7;
                 margin-bottom: 1.5rem;
             }
@@ -179,44 +162,44 @@
                 
                 &.u-bgColorDeepForest {
                     background: rgba(27, 67, 50, 0.1);
-                    border-left: 4px solid var(--understory-deep-forest);
+                    border-left: 4px solid $understory-deep-forest;
                     padding: 2rem;
-                    border-radius: 0 1rem 1rem 0;
+                    border-radius: 0 $border-radius $border-radius 0;
                 }
                 
                 &.u-bgColorForestGreen {
                     background: rgba(82, 183, 136, 0.1);
-                    border-left: 4px solid var(--understory-forest-green);
+                    border-left: 4px solid $understory-forest-green;
                     padding: 2rem;
-                    border-radius: 0 1rem 1rem 0;
+                    border-radius: 0 $border-radius $border-radius 0;
                 }
                 
                 &.u-bgColorWarmBrown {
                     background: rgba(212, 163, 115, 0.1);
-                    border-left: 4px solid var(--understory-warm-brown);
+                    border-left: 4px solid $understory-warm-brown;
                     padding: 2rem;
-                    border-radius: 0 1rem 1rem 0;
+                    border-radius: 0 $border-radius $border-radius 0;
                 }
                 
                 &.u-bgColorGoldenAmber {
                     background: rgba(233, 196, 106, 0.1);
-                    border-left: 4px solid var(--understory-golden-amber);
+                    border-left: 4px solid $understory-golden-amber;
                     padding: 2rem;
-                    border-radius: 0 1rem 1rem 0;
+                    border-radius: 0 $border-radius $border-radius 0;
                 }
                 
                 &.u-bgColorSageGreen {
                     background: rgba(163, 177, 138, 0.1);
-                    border-left: 4px solid var(--understory-sage-green);
+                    border-left: 4px solid $understory-sage-green;
                     padding: 2rem;
-                    border-radius: 0 1rem 1rem 0;
+                    border-radius: 0 $border-radius $border-radius 0;
                 }
                 
                 &.u-bgColorEarthBrown {
                     background: rgba(140, 106, 74, 0.1);
-                    border-left: 4px solid var(--understory-earth-brown);
+                    border-left: 4px solid $understory-earth-brown;
                     padding: 2rem;
-                    border-radius: 0 1rem 1rem 0;
+                    border-radius: 0 $border-radius $border-radius 0;
                 }
             }
         }
@@ -235,7 +218,7 @@
         //     left: 0;
         //     width: 100%;
         //     height: 100%;
-        //     background: linear-gradient(0deg, var(--understory-shadow-green) 0%, transparent 100%);
+        //     background: linear-gradient(0deg, $understory-shadow-green 0%, transparent 100%);
         // }
         
     }
@@ -249,9 +232,9 @@
         z-index: 1000;
         
         .sound-toggle {
-            background: var(--understory-deep-forest);
-            color: var(--understory-soft-cream);
-            border: 2px solid var(--understory-golden-amber);
+            background: $understory-deep-forest;
+            color: $understory-soft-cream;
+            border: 2px solid $understory-golden-amber;
             padding: 1rem;
             border-radius: 50%;
             cursor: pointer;
@@ -264,14 +247,14 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             
             &:hover {
-                background: var(--understory-forest-green);
-                border-color: var(--understory-warm-brown);
+                background: $understory-forest-green;
+                border-color: $understory-warm-brown;
                 transform: scale(1.1);
             }
             
             &.playing {
-                background: var(--understory-golden-amber);
-                color: var(--understory-charcoal);
+                background: $understory-golden-amber;
+                color: $understory-charcoal;
                 animation: pulse 2s infinite;
             }
             
@@ -318,14 +301,14 @@
 @media (max-width: 768px) {
     .understory-page {
         .understory-hero {
-            min-height: 60vh;
+            min-height: 50vh;
             padding: 2rem 1rem;
         }
         
         .understory-content-area {
             margin-top: -1rem;
             padding: 2rem 1rem 1rem;
-            border-radius: 1rem 1rem 0 0;
+            border-radius: $border-radius $border-radius 0 0;
         }
         
         .understory-footer-elements {
@@ -357,7 +340,7 @@
 
 // Custom pulse animation with your colors
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 var(--understory-golden-amber); }
+    0% { box-shadow: 0 0 0 0 $understory-golden-amber; }
     70% { box-shadow: 0 0 0 10px rgba(233, 196, 106, 0); }
     100% { box-shadow: 0 0 0 0 rgba(233, 196, 106, 0); }
 }

@@ -27,39 +27,15 @@
                 "Pink": "Pink",
                 "Black": "Black",
                 "White": "White",
-                "Brown": "Brown"
-            },
-            "default_value": "",
-            "return_format": "value",
-            "allow_null": 0,
-            "other_choice": 0,
-            "allow_in_bindings": 1,
-            "layout": "vertical",
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_68ec1e0ec0eb6",
-            "label": "Understory Theme Colors",
-            "name": "understory_theme_colors",
-            "aria-label": "",
-            "type": "radio",
-            "instructions": "Select a color from the theme palette",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "Deep Forest (primary dark green)": "Deep Forest (primary dark green)",
-                "Forest Green (bright accent green)": "Forest Green (bright accent green)",
-                "Warm Brown (earth tone)": "Warm Brown (earth tone)",
-                "Golden Amber (highlight color)": "Golden Amber (highlight color)",
-                "Soft Cream (light background)": "Soft Cream (light background)",
-                "Charcoal (dark text)": "Charcoal (dark text)",
-                "Sage Green (muted green)": "Sage Green (muted green)",
-                "Earth Brown (dark earth tone)": "Earth Brown (dark earth tone)"
+                "Brown": "Brown",
+                "understory-deep-forest": "Understory Deep Forest",
+                "understory-forest-green": "Understory Forest Green",
+                "understory-warm-brown": "Understory Warm Brown",
+                "understory-golden-amber": "Understory Golden Brown",
+                "understory-soft-cream": "Understory Soft Cream",
+                "understory-charcoal": "Understory Charcoal",
+                "understory-sage-green": "Understory Sage Green",
+                "understory-earth-brown": "Earth Brown"
             },
             "default_value": "",
             "return_format": "value",
@@ -244,9 +220,9 @@
                         "id": ""
                     },
                     "choices": {
-                        "solid": "Solid - Dark",
-                        "secondary": "Solid - Light",
-                        "border": "Border",
+                        "solid": "Solid",
+                        "outline": "Outline",
+                        "ghost": "Ghost",
                         "arrow": "Arrow"
                     },
                     "default_value": "solid",
@@ -447,6 +423,28 @@
                     "placeholder": "",
                     "create_options": 0,
                     "save_options": 0
+                },
+                {
+                    "key": "field_68efdec7328ba",
+                    "label": "Button Color",
+                    "name": "button_color",
+                    "aria-label": "",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "field_5f3f4d7639983"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
                 }
             ]
         },
@@ -761,5 +759,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760307572
+    "modified": 1760552099
 }

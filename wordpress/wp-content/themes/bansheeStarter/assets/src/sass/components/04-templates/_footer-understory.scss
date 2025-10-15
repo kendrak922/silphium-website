@@ -1,3 +1,5 @@
+@use '../../abstracts' as *;
+
 // =============================================================================
 // UNDERSTORY FOOTER STYLES
 // =============================================================================
@@ -46,7 +48,7 @@
 // Understory footer
 .footer--understory {
     position: relative;
-    color: var(--understory-soft-cream);
+    color: $understory-soft-cream;
     z-index: 2;
     
     // Main footer section
@@ -75,14 +77,14 @@
                 .footer__logo-text {
                     font-size: 1.8rem;
                     font-weight: 700;
-                    color: var(--understory-golden-amber);
+                    color: $understory-golden-amber;
                     text-decoration: none;
                     display: block;
                     margin-bottom: 1rem;
                 }
                 
                 .footer__description {
-                    color: var(--understory-warm-brown);
+                    color: $understory-warm-brown;
                     line-height: 1.6;
                     margin: 0;
                     max-width: 300px;
@@ -100,18 +102,18 @@
                         margin-bottom: 0.5rem;
                         
                         a {
-                            color: var(--understory-soft-cream);
+                            color: $understory-soft-cream;
                             text-decoration: none;
                             font-size: 0.9rem;
                             transition: all 0.3s ease;
                             
                             &:hover {
-                                color: var(--understory-golden-amber);
+                                color: $understory-golden-amber;
                             }
                         }
                         
                         &.current-menu-item a {
-                            color: var(--understory-golden-amber);
+                            color: $understory-golden-amber;
                         }
                     }
                 }
@@ -125,20 +127,20 @@
                     .footer__contact-label {
                         display: block;
                         font-size: 0.8rem;
-                        color: var(--understory-sage-green);
+                        color: $understory-sage-green;
                         margin-bottom: 0.2rem;
                         text-transform: uppercase;
                         letter-spacing: 0.5px;
                     }
                     
                     .footer__contact-link {
-                        color: var(--understory-soft-cream);
+                        color: $understory-soft-cream;
                         text-decoration: none;
                         font-size: 0.9rem;
                         transition: all 0.3s ease;
                         
                         &:hover {
-                            color: var(--understory-golden-amber);
+                            color: $understory-golden-amber;
                         }
                     }
                 }
@@ -148,7 +150,7 @@
             .footer__social--understory {
                 .footer__social-title {
                     font-size: 1.1rem;
-                    color: var(--understory-golden-amber);
+                    color: $understory-golden-amber;
                     margin-bottom: 1rem;
                 }
                 
@@ -161,14 +163,14 @@
                         display: flex;
                         align-items: center;
                         gap: 0.5rem;
-                        color: var(--understory-soft-cream);
+                        color: $understory-soft-cream;
                         text-decoration: none;
                         font-size: 0.9rem;
                         transition: all 0.3s ease;
                         padding: 0.3rem 0;
                         
                         &:hover {
-                            color: var(--understory-golden-amber);
+                            color: $understory-golden-amber;
                         }
                         
                         .footer__social-icon {
@@ -193,9 +195,9 @@
     z-index: 1000;
     
     .sound-toggle {
-        background: var(--understory-deep-forest);
-        color: var(--understory-soft-cream);
-        border: 2px solid var(--understory-golden-amber);
+        background: $understory-deep-forest;
+        color: $understory-soft-cream;
+        border: 2px solid $understory-golden-amber;
         padding: 1rem;
         border-radius: 50%;
         cursor: pointer;
@@ -210,14 +212,14 @@
         min-height: 60px;
         
         &:hover {
-            background: var(--understory-forest-green);
-            border-color: var(--understory-warm-brown);
+            background: $understory-forest-green;
+            border-color: $understory-warm-brown;
             transform: scale(1.1);
         }
         
         &.playing {
-            background: var(--understory-golden-amber);
-            color: var(--understory-charcoal);
+            background: $understory-golden-amber;
+            color: $understory-charcoal;
             animation: pulse 2s infinite;
         }
         

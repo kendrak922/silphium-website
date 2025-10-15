@@ -81,7 +81,7 @@
                 @include create-mq($lg-width) {
                     margin: 20px;
                     border: 2px solid swatch('Secondary');
-                    border-radius: 20px;
+                    border-radius: $border-radius;
                     gap:32px;
                     height: map.get($headerHeight, 'lg');
                     transition: height ease-in-out $t-default;

@@ -1,87 +1,89 @@
+@use '../../abstracts' as *;
+
 // Understory-specific block overrides with your custom colors
 .page-template-page-understory {
     .block {
         // Background color overrides
         &.has-deep-forest-background-color {
-            background-color: var(--understory-deep-forest) !important;
-            color: var(--understory-soft-cream);
+            background-color: $understory-deep-forest !important;
+            color: $understory-soft-cream;
         }
         
         &.has-forest-green-background-color {
-            background-color: var(--understory-forest-green) !important;
-            color: var(--understory-soft-cream);
+            background-color: $understory-forest-green !important;
+            color: $understory-soft-cream;
         }
         
         &.has-warm-brown-background-color {
-            background-color: var(--understory-warm-brown) !important;
-            color: var(--understory-charcoal);
+            background-color: $understory-warm-brown !important;
+            color: $understory-charcoal;
         }
         
         &.has-golden-amber-background-color {
-            background-color: var(--understory-golden-amber) !important;
-            color: var(--understory-charcoal);
+            background-color: $understory-golden-amber !important;
+            color: $understory-charcoal;
         }
         
         &.has-soft-cream-background-color {
-            background-color: var(--understory-soft-cream) !important;
-            color: var(--understory-charcoal);
+            background-color: $understory-soft-cream !important;
+            color: $understory-charcoal;
         }
         
         &.has-charcoal-background-color {
-            background-color: var(--understory-charcoal) !important;
-            color: var(--understory-soft-cream);
+            background-color: $understory-charcoal !important;
+            color: $understory-soft-cream;
         }
         
         &.has-sage-green-background-color {
-            background-color: var(--understory-sage-green) !important;
-            color: var(--understory-soft-cream);
+            background-color: $understory-sage-green !important;
+            color: $understory-soft-cream;
         }
         
         &.has-earth-brown-background-color {
-            background-color: var(--understory-earth-brown) !important;
-            color: var(--understory-soft-cream);
+            background-color: $understory-earth-brown !important;
+            color: $understory-soft-cream;
         }
     }
     
     // Text color overrides
     .wp-block-heading {
         &.has-deep-forest-color {
-            color: var(--understory-deep-forest) !important;
+            color: $understory-deep-forest !important;
         }
         
         &.has-forest-green-color {
-            color: var(--understory-forest-green) !important;
+            color: $understory-forest-green !important;
         }
         
         &.has-warm-brown-color {
-            color: var(--understory-warm-brown) !important;
+            color: $understory-warm-brown !important;
         }
         
         &.has-golden-amber-color {
-            color: var(--understory-golden-amber) !important;
+            color: $understory-golden-amber !important;
         }
         
         &.has-charcoal-color {
-            color: var(--understory-charcoal) !important;
+            color: $understory-charcoal !important;
         }
         
         &.has-sage-green-color {
-            color: var(--understory-sage-green) !important;
+            color: $understory-sage-green !important;
         }
         
         &.has-earth-brown-color {
-            color: var(--understory-earth-brown) !important;
+            color: $understory-earth-brown !important;
         }
     }
     
     // Paragraph text colors
     .wp-block-paragraph {
         &.has-charcoal-color {
-            color: var(--understory-charcoal) !important;
+            color: $understory-charcoal !important;
         }
         
         &.has-deep-forest-color {
-            color: var(--understory-deep-forest) !important;
+            color: $understory-deep-forest !important;
         }
     }
 }

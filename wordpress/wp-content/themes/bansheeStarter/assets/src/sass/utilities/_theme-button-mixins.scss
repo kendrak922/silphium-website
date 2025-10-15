@@ -35,15 +35,15 @@
 }
 
 // Neutral theme button
-@mixin neutral-btn($variant: 'solid') {
+@mixin theme-neutral-btn($variant: 'solid') {
     @include theme-button-base;
     
     @if $variant == 'solid' {
-        @include generate-theme-button('neutral', 'solid');
+        @include generate-theme-button('Neutral', 'solid');
     } @else if $variant == 'outline' {
-        @include generate-theme-button('neutral', 'outline');
+        @include generate-theme-button('Neutral', 'outline');
     } @else if $variant == 'ghost' {
-        @include generate-theme-button('neutral', 'ghost');
+        @include generate-theme-button('Neutral', 'ghost');
     }
 }
 

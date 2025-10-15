@@ -1,3 +1,6 @@
+@use "sass:map";
+@use '../../abstracts' as *;
+
 // =============================================================================
 // UNDERSTORY THEME COLOR BUTTON GENERATOR
 // =============================================================================
@@ -55,11 +58,11 @@ $understory-active: (
 // =============================================================================
 
 @mixin generate-understory-button($color-name, $style: 'solid') {
-    $bg-color: map-get($understory-colors, $color-name);
-    $text-color: map-get($understory-contrast, $color-name);
-    $text-color-value: map-get($understory-colors, $text-color);
-    $hover-color: map-get($understory-hover, $color-name);
-    $active-color: map-get($understory-active, $color-name);
+    $bg-color: map.get($understory-colors, $color-name);
+    $text-color: map.get($understory-contrast, $color-name);
+    $text-color-value: map.get($understory-colors, $text-color);
+    $hover-color: map.get($understory-hover, $color-name);
+    $active-color: map.get($understory-active, $color-name);
     
     @if $style == 'solid' {
         // Solid button style
@@ -127,7 +130,7 @@ $understory-active: (
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    border-radius: 8px;
+    border-radius: $border-radius;
     font-family: 'SchibstedGrotesk', 'Helvetica', sans-serif;
     font-weight: 600;
     font-size: 0.9rem;
@@ -139,7 +142,7 @@ $understory-active: (
     
     // Focus styles for accessibility
     &:focus {
-        outline: 2px solid var(--understory-golden-amber);
+        outline: 2px solid $understory-golden-amber;
         outline-offset: 2px;
     }
     

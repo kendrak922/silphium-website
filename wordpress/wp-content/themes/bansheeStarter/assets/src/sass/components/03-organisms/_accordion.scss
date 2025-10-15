@@ -1,7 +1,7 @@
 @use '../../abstracts' as *;
 
-@use '../../components/01-atoms/_chip.scss' as chip;
-@use '../../components/01-atoms/_button.scss' as button;
+@use '../../components/01-atoms/chip' as chip;
+@use '../../components/01-atoms/button' as button;
 
 /***********************************************
     TAB MIXINS
